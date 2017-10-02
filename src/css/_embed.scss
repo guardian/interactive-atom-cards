@@ -1,6 +1,6 @@
 html,
 body {
-    @include fs-bodyCopy(2);
+    
 
     overflow: hidden;
     padding: 0;
@@ -63,8 +63,8 @@ body {
      width: 100%;
      overflow: hidden;
      // height: 300px;
-     margin-left:10px;
-     margin-right:10px;
+     // margin-left:10px;
+     // margin-right:10px;
      display: flex;
 
      @include mq(tablet) {
@@ -93,7 +93,7 @@ body {
     border-radius: 6px;
     box-sizing: border-box;
     padding: 3px 8px 12px;
-    width: calc(100% - 20px);
+    width: 100%;
     background-color: $ux-grey;
    
     &.blue{
@@ -122,9 +122,9 @@ body {
 
      p {
           margin: 0;
-          font-size: 15px;
-		    line-height: 18px;
-		    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+          font-size: 14px;
+		  line-height: 20px;
+		  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
      }
 
      @include mq(tablet) {
@@ -143,11 +143,10 @@ body {
 .card-summary {
     padding-bottom: 4px;
     padding-top: 6px;
-    font-size: 15px;
-    line-height: 18px;
-    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-
-    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-weight: 200;
     clear: both;
      .bullet-pt {
          display: block;
@@ -173,7 +172,7 @@ body {
     .card-summary .pledge,
     .card-analysis,
     .card-links {
-        @include fs-bodyCopy(2);
+       // @include fs-bodyCopy(2);
         
     }
 }
@@ -266,13 +265,7 @@ div.card-icon {
         z-index: 140;
         border-top: 1px solid #EEE;
         // margin-top: 6px;
-    @include mq($until: tablet) {
-         padding-left: 20px;
-    }
-
-    @include mq(tablet) {
-         padding-left: 20px;
-    }
+  
 
     @include mq(leftCol) {
          padding-left: 180px;
