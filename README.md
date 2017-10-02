@@ -2,14 +2,17 @@
 
 
 ###For embed
-// comment out this function on last line of app.js
+```// comment out this function on last line of app.js
 initFullScrn();
+```
 
-In main.scss uncomment
+```In main.scss uncomment
 @import "embed";
+```
 
-and comment out 
+```and comment out 
 @import "fullscreen";
+```
 
 ###For full size interactive with swiper.js functionality
 // uncomment 
