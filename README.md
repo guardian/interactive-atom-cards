@@ -1,4 +1,28 @@
-# Interactive atom template
+#Card atom
+
+
+###For embed
+// comment out this function on last line of app.js
+initFullScrn();
+
+In main.scss uncomment
+@import "embed";
+
+and comment out 
+@import "fullscreen";
+
+###For full size interactive with swiper.js functionality
+// uncomment 
+initFullScrn();
+
+In main.scss uncomment
+@import "fullscreen";
+
+and comment out 
+@import "embed";
+
+
+### Based on interactive atom template
 
 ```
 npm install
