@@ -25,6 +25,14 @@ and comment out
 @import "embed";
 ```
 
+###Data
+```
+Make a copy of this spreadsheet
+https://docs.google.com/spreadsheets/d/1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ/edit#gid=0
+
+Once data added and published in s3 tool update following line in render.js
+const altKey = your_googledoc_key_id_here
+```
 
 ### Based on interactive atom template
 
