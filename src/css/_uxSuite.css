@@ -1,7 +1,7 @@
 $ux-grey: #717D85;
 
 .gv-back-top-btn {
-    position: absolute;
+    position: fixed;
     bottom: 90px;
     left: calc(50% - 24px);
     width: 48px;
@@ -16,6 +16,7 @@ $ux-grey: #717D85;
     cursor: pointer;
     transform: rotate(270deg);
     z-index: 1001;
+    display:block;
 
     &.open{
         transform: rotate(180deg);
@@ -30,6 +31,10 @@ $ux-grey: #717D85;
 
     &.fixed{
         position: fixed;
+    }
+
+    &.hidden{
+        display:none;
     }
 }
 

@@ -504,9 +504,10 @@ figure.element.element-atom {
 }
 
 .gv-hidden-footer{
+	position:relative;
     width:100%;
-    height:120px;
-    background-color:#FFF;
+    height:12px;
+    background-color:none;
 
 }
 

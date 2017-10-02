@@ -141,6 +141,15 @@ function addListeners(){
             scrollTo(body, jumpOffset,  240); 
         }
     )
+
+    var Window =  window || document;
+
+    Window.addEventListener("scroll", WindowScrollListener);
+
+}
+
+function WindowScrollListener(){
+    checkFixView()
 }
 
 
@@ -156,22 +165,39 @@ function getSlidesMaxH(){
 }
 
 function checkFixView() {
-    let h = 0;
+    let footTop = 0;
+    let navTop = document.querySelector(".interactive-nav").getBoundingClientRect().top;
     var pos_top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    if (document.querySelector(".hidden-footer")){
-        h = document.querySelector(".hidden-footer").offsetHeight;
+    if (document.querySelector(".gv-hidden-footer")){
+        footTop = document.querySelector(".gv-hidden-footer").offsetTop;
     }
 
-    console.log("knobs",pos_top, h)
+    console.log(document.querySelector(".gv-hidden-footer").getBoundingClientRect().top)
 
     // if (pos_top > h) {
-    //     document.querySelector('.gv-back-top-btn').classList.remove('fixed');
+    //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
     // } else if (pos_top < h) {
-    //     document.querySelector('.gv-back-top-btn').classList.add('fixed');
+    //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
     // }
 
+        if( navTop < 0  && pos_top < (footTop - 240)){
+           document.querySelector('.gv-back-top-btn').classList.remove('hidden'); 
+        }
+        else if(pos_top > (footTop - 240) || navTop > 0 ){
+            document.querySelector('.gv-back-top-btn').classList.add('hidden');
+        }
+
+
+        // }else if (pos_top > navTop) {
+        //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
+        // } 
+        // else if (pos_top < h) {
+        //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
+        // }
+   
+
 }
-// uncomment for full screen
-//initFullScrn();
+// comment out for embed
+initFullScrn();
 
