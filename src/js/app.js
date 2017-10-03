@@ -149,7 +149,7 @@ function addListeners(){
 }
 
 function WindowScrollListener(){
-    checkFixView()
+    //checkFixView()
 }
 
 

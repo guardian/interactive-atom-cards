@@ -4,11 +4,11 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-const altKey = '13THTjGbKogHxEr0S6Z1sKlmPPJLzWGPYILldIXzloQI';
+const altKey = '1zzv_uB1ySZPJgdp4_1gA3YTKZWU2RWZ3UnK9pC4AyUM';
 
 export async function render() {
 	 return rp({
-        uri: 'https://interactive.guim.co.uk/docsdata/'+altKey+'.json',
+        uri: 'https://interactive.guim.co.uk/docsdata-test/13THTjGbKogHxEr0S6Z1sKlmPPJLzWGPYILldIXzloQI.json',
         json: true
     }).then((data) => {
 
