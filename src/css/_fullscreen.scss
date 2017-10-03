@@ -96,11 +96,11 @@ body {
 
 
     &.blue{
-		background-color:$blue;
+		background-color:rgba($blue,0.4);
 	}
 
 	&.pink{
-		background-color:$pink;
+		background-color:rgba($pink,0.4);
 	}
 
 	&.yellow{
@@ -112,7 +112,7 @@ body {
     }
 
      &.purple{
-        background-color:$purple;
+        background-color:rgba($purple,0.3);
         
         @include mq(tablet){
             width: 340px;
@@ -125,7 +125,7 @@ body {
     }
 
      &.grey{
-        background-color:$grey;
+        background-color:rgba($grey,0.4);
     }
 
      p {
@@ -191,8 +191,8 @@ p.card-links {
 }
 
 div.card-icon {
-     height: 60px;
-     width: 60px;
+     height: 57px;
+     width: 57px;
      float: left;
      border-radius: 1000px;
      margin-top: -12px !important;
@@ -200,6 +200,26 @@ div.card-icon {
      background-position: center center;
      background-color: rgba(231,231,231, 0.25);
      margin-right: 5px;
+
+     &.purple{
+        background-color: $purple;
+        border: 3px solid $purple;
+     }
+
+     &.blue{
+        background-color: $blue;
+        border: 3px solid $blue;
+     }
+
+     &.grey{
+        background-color: $grey;
+        border: 3px solid $grey;
+     }
+
+     &.pink{
+        background-color: $pink;
+        border: 3px solid $pink;
+     }
 
      .swiper-slide--con & {
           background-color: rgba(28,56,102, 0.25);
@@ -275,10 +295,9 @@ div.card-icon {
 
         &__title {
             margin-top: 0 !important;
-            font-size: 22px;
-            line-height: 22px;
-            font-family: "Guardian Egyptian Web", Georgia, serif;
-            font-weight: 900;
+            font-size: 18px !important;
+            line-height: 20px !important;
+            font-weight:900;
             margin-bottom: 3px;
             color: #222;
             @include mq(tablet) {
@@ -289,9 +308,13 @@ div.card-icon {
         }
         &__description {
             margin-top: 0 !important;
-            font-size: 18px !important;
-            line-height: 22px !important;
-            color: $neutral-mid;
+            font-size: 36px;
+            line-height: 30px;
+            font-family: "Guardian Egyptian Web", Georgia, serif;
+            font-weight: 200;
+            
+            color: #222;
+            
             @include mq(tablet) {
                max-width: 620px;
             }
