@@ -18,7 +18,7 @@ function initSwiper() {
       cardStacks[s].setAttribute('data-stack-position', s+1);
 
       var swiper = new Swiper(cardStacks[s], {
-            paginationClickable: true, 
+            paginationClickable: true,
             loop: true,
             slidesPerView: 1.2,
             loopedSlides: 2,
@@ -28,21 +28,21 @@ function initSwiper() {
         })
         .on('slideChangeEnd', function(currentSwiper, event) {
 
-            swipers.forEach(function(s,i) {
-              var eq = (currentSwiper == s) ? true : false;
-              if(eq){
-                var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-                analytics.registerEvent('stack_card_view', i)
-              }
-
-                if (s.activeIndex != currentSwiper.activeIndex) {
-                  //s.activeIndex = currentSwiper.activeIndex;
-                    s.slideTo(currentSwiper.activeIndex, 0, false);
-                } else {
-
-
-                }
-            });
+            // swipers.forEach(function(s,i) {
+            //   var eq = (currentSwiper == s) ? true : false;
+            //   if(eq){
+            //     var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+            //     analytics.registerEvent('stack_card_view', i)
+            //   }
+            //
+            //     if (s.activeIndex != currentSwiper.activeIndex) {
+            //       //s.activeIndex = currentSwiper.activeIndex;
+            //         s.slideTo(currentSwiper.activeIndex, 0, false);
+            //     } else {
+            //
+            //
+            //     }
+            // });
         })
         .on('onTouchStart', function(currentSwiper, e) {
             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
@@ -103,7 +103,7 @@ function removeDisabled(){
 
     for (var n = 0; n < swipeSlides.length; n++) {
         swipeSlides[n].classList.remove('swipe-disabled');
-    }  
+    }
 }
 
 // scrollTrigger
@@ -122,15 +122,15 @@ function initFullScrn(){
 
     if(document.querySelector("body").clientWidth > 740) {
         removeDisabled();
-    }  
+    }
 
     addListeners();
-     
+
 }
 
 function addListeners(){
 
-    document.querySelector('.gv-back-top-btn').addEventListener("click", 
+    document.querySelector('.gv-back-top-btn').addEventListener("click",
         function(e){
             var jumpTarget = document.querySelector('.interactive-nav');
             var body = document.documentElement || document.body || document.querySelector('body');
@@ -138,7 +138,7 @@ function addListeners(){
             var jumpOffset = body.scrollTop + jumpTarget.getBoundingClientRect().top - jumpTarget.offsetHeight + dadgummit;
             //body.scrollTo(0, jumpOffset);
             // console.log(jumpOffset)
-            scrollTo(body, jumpOffset,  240); 
+            scrollTo(body, jumpOffset,  240);
         }
     )
 
@@ -157,7 +157,7 @@ function getSlidesMaxH(){
     let a = false;
     let swipeSlides = document.querySelectorAll('.swiper-slide');
 
-        for (var n = 0; n < swipeSlides.length; n++) {       
+        for (var n = 0; n < swipeSlides.length; n++) {
             if (swipeSlides[n].offsetHeight > maxNoneSwipeH){ a = true; console.log(swipeSlides[n].offsetHeight) };
         }
 
@@ -182,7 +182,7 @@ function checkFixView() {
     // }
 
         if( navTop < 0  && pos_top < (footTop - 240)){
-           document.querySelector('.gv-back-top-btn').classList.remove('hidden'); 
+           document.querySelector('.gv-back-top-btn').classList.remove('hidden');
         }
         else if(pos_top > (footTop - 240) || navTop > 0 ){
             document.querySelector('.gv-back-top-btn').classList.add('hidden');
@@ -191,14 +191,13 @@ function checkFixView() {
 
         // }else if (pos_top > navTop) {
         //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
-        // } 
+        // }
         // else if (pos_top < h) {
         //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
         // }
-   
+
 
 }
 
 // comment out for embed
 initFullScrn();
-

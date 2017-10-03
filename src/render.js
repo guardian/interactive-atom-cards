@@ -4,21 +4,21 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-const altKey = '1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ';
+const altKey = '13THTjGbKogHxEr0S6Z1sKlmPPJLzWGPYILldIXzloQI';
 
 export async function render() {
 	 return rp({
         uri: 'https://interactive.guim.co.uk/docsdata/'+altKey+'.json',
         json: true
-    }).then((data) => {    
+    }).then((data) => {
 
     	let d = formatData(data);
-        
+
         let html = compileHTML(d);
 
         return html;
     });
-   
+
 }
 
 function formatData(data) {
@@ -26,7 +26,7 @@ function formatData(data) {
     let count = 0;
 
     let headGroup  = data.sheets.headerCopy;
-    
+
     data.sheets.Sheet1.map((obj,k) => {
     	obj.ref = k;
     })
@@ -45,12 +45,12 @@ function formatData(data) {
             if(headOb['card-group'] == obj.sortOn )  {
                 obj.Header = headOb.Header;
                 obj.Standfirst = headOb.Standfirst;
-            }  
+            }
         })
 
 
     });
-    
+
     newObj.groups = groups;
 
     return newObj;
@@ -118,5 +118,3 @@ function sortByKeys(obj) {
 
     return a;
 }
-
-
