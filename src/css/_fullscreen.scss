@@ -444,6 +444,37 @@ figure.element.element-atom {
     }
 }
 
+.gv-card-header-area{
+    position:absolute;
+    top: 4px;
+    left: 78px;
+    min-height:90px;
+
+}
+
+.gv-card-paragraph-area{
+    position: relative;
+    float:  left;
+    clear: both;
+    margin-top:12px;
+}
+
+
+.card-summary {
+    padding-bottom: 4px;
+    padding-top: 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-weight: 300;
+}
+
+h3.card-head {
+     @include fs-header(4);
+     margin: 0;
+}
+
+
 .gv-hidden-footer {
     position: relative;
     width: 100%;

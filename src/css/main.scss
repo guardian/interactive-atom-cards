@@ -1,13 +1,13 @@
 
 $blue: #4bc6df;
-$pink: #4bc6df;//
-$purple: #005689;//
-$grey: #4bc6df;//
+$pink: #4bc6df;
+$purple: #005689;
+$grey: #4bc6df;
 $yellow: rgba(#ffbb00,0.6);
 $green:rgba(#5ebfba,0.5);
 $neutral-light: rgb(231,231,231);
 $neutral-mid: rgb(181,181,181);
-$neutral-dark: rgb(31,31,31);
+$neutral-dark: rgb(118,118,118);
 
 @import "mq";
 @import "fonts";
@@ -17,24 +17,7 @@ $neutral-dark: rgb(31,31,31);
 
 
 // Uncomment for embeds
-@import "embed";
+//@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
-//@import "fullscreen";
-
-// move to fullScreen
-// .gv-card-header-area{
-// 	position:absolute;
-// 	top: 4px;
-// 	left: 78px;
-// 	min-height:90px;
-
-// }
-
-// .gv-card-paragraph-area{
-// 	position: relative;
-// 	float:	left;
-// 	clear: both;
-// 	margin-top:12px;
-// }
-
+@import "fullscreen";
