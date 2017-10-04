@@ -7,7 +7,7 @@ $yellow: rgba(#ffbb00,0.6);
 $green:rgba(#5ebfba,0.5);
 $neutral-light: rgb(231,231,231);
 $neutral-mid: rgb(181,181,181);
-$neutral-dark: rgb(118,118,118);
+$neutral-dark: rgb(31,31,31);
 
 @import "mq";
 @import "fonts";
@@ -17,38 +17,24 @@ $neutral-dark: rgb(118,118,118);
 
 
 // Uncomment for embeds
-//@import "embed";
+@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
-@import "fullscreen";
+//@import "fullscreen";
 
+// move to fullScreen
+// .gv-card-header-area{
+// 	position:absolute;
+// 	top: 4px;
+// 	left: 78px;
+// 	min-height:90px;
 
-.gv-card-header-area{
-	position:absolute;
-	top: 4px;
-	left: 78px;
-	min-height:90px;
+// }
 
-}
+// .gv-card-paragraph-area{
+// 	position: relative;
+// 	float:	left;
+// 	clear: both;
+// 	margin-top:12px;
+// }
 
-.gv-card-paragraph-area{
-	position: relative;
-	float:	left;
-	clear: both;
-	margin-top:12px;
-}
-
-
-.card-summary {
-    padding-bottom: 4px;
-    padding-top: 0;
-    font-size: 16px;
-    line-height: 16px;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 300;
-}
-
-h3.card-head {
-     @include fs-header(4);
-     margin: 0;
-}

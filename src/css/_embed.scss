@@ -96,28 +96,23 @@ body {
     width: 100%;
     background-color: $ux-grey;
    
-    &.blue{
-		background-color:$blue;
-	}
-
-	&.pink{
-		background-color:$pink;
-	}
-
-	&.yellow{
-		background-color:$yellow;
-	}
-
-    &.green{
-        background-color:$green;
+    &.blue {
+        background-color: rgba($blue, 0.4);
     }
-
-     &.purple{
-        background-color:$purple;
+    &.pink {
+        background-color: rgba($pink, 0.4);
     }
-
-     &.grey{
-        background-color:$grey;
+    &.yellow {
+        background-color: $yellow;
+    }
+    &.green {
+        background-color: $green;
+    }
+    &.purple {
+        background-color: rgba($purple, 0.3);
+    }
+    &.grey {
+        background-color: rgba($grey, 0.4);
     }
 
      p {
@@ -125,47 +120,32 @@ body {
           font-size: 14px;
 		  line-height: 20px;
 		  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+           @include mq(mobileLandscape) {
+                font-family: "Guardian Egyptian Web", Georgia, serif;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom:8px;
+            }
      }
 
-     @include mq(tablet) {
-          // flex: 1;
-          // flex-basis: 300px;
-          width: 340px;
-          margin-right: 20px;
-          margin-bottom: 24px;
+     @include mq(mobileLandscape) {
+        margin-right: 20px;
+        margin-bottom: 12px;
      }
-     @include mq(desktop) {
-         width: 300px;
-     }
+     
 
 }
 
 .card-summary {
     padding-bottom: 4px;
-    padding-top: 6px;
+    padding-top: 0;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 18px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 200;
-    clear: both;
-     .bullet-pt {
-         display: block;
-         font-weight: 300 !important;
-         &:before {
-             content: '';
-             display: inline-block;
-             background-color: currentColor;
-             opacity: 0.8;
-             width: 13px;
-             height: 13px;
+    margin:0;
 
-             vertical-align: middle;
-             border-radius: 100%;
-             position: relative;
-             bottom: 1px;
-             margin-right: 4px;
-         }
-     }
+
 }
 
 .swiper-slide {
@@ -218,31 +198,43 @@ p.card-links {
 }
 
 div.card-icon {
-     height: 48px;
-     width: 48px;
-     float: left;
-     border-radius: 60px;
-     margin-top: -12px !important;
-     background-size: cover;
-     background-position: center center;
-     background-color:#EEE;
-     margin-right: 5px;
-
-     .swiper-slide--con & {
-          background-color: rgba(28,56,102, 0.25);
-     }
-
-     .swiper-slide--lab & {
-          background-color: rgba(185,30,40,0.25);
-     }
-
-     .swiper-slide--ld & {
-          background-color: rgba(194,136,21,0.25);
-     }
-
-     .swiper-slide--snp & {
-          background-color: rgba(148,128,15,0.25);
-     }
+    height: 57px;
+    width: 57px;
+    float: left;
+    border-radius: 1000px;
+    margin-top: -12px !important;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(231, 231, 231, 0.25);
+    margin-right: 5px;
+    &.purple {
+        background-color: $purple;
+        border: 3px solid $purple;
+    }
+    &.blue {
+        background-color: $blue;
+        border: 3px solid $blue;
+    }
+    &.grey {
+        background-color: $grey;
+        border: 3px solid $grey;
+    }
+    &.pink {
+        background-color: $pink;
+        border: 3px solid $pink;
+    }
+    .swiper-slide--con & {
+        background-color: rgba(28, 56, 102, 0.25);
+    }
+    .swiper-slide--lab & {
+        background-color: rgba(185, 30, 40, 0.25);
+    }
+    .swiper-slide--ld & {
+        background-color: rgba(194, 136, 21, 0.25);
+    }
+    .swiper-slide--snp & {
+        background-color: rgba(148, 128, 15, 0.25);
+    }
 }
 
 .pagination {
@@ -261,7 +253,7 @@ div.card-icon {
     box-sizing: border-box;
     padding: 0;
     overflow: hidden;
-    @include fs-headline(2);
+    font-family: "Guardian Egyptian Web", Georgia, serif;
         z-index: 140;
         border-top: 1px solid #EEE;
         // margin-top: 6px;
@@ -277,29 +269,16 @@ div.card-icon {
     
     &__text {
         padding-top: 12px;
-        width: calc(80% - 10px);
-        max-width: 460px;
-        min-height: 60px;
 
-        @include mq(tablet) {
-            padding-top: 6px;
-            padding-bottom: 12px;
-        }
-        @include mq(leftCol) {
-            max-width: 380px;
-        }
-        @include mq(wide) {
-            max-width: 460px;
-        }
+
 
         &__title {
             margin-top: 0 !important;
-            font-size: 22px;
-            line-height: 22px;
-            font-family: "Guardian Egyptian Web", Georgia, serif;
+           
+            font-size:18px;
             font-weight: 900;
             margin-bottom: 3px;
-            color: #222;
+            color: $neutral-dark;
             @include mq(tablet) {
                 
                 //margin-bottom: 11px;
@@ -308,9 +287,11 @@ div.card-icon {
         }
         &__description {
             margin-top: 0 !important;
-            font-size: 18px !important;
-            line-height: 22px !important;
-            color: $neutral-mid;
+            margin-bottom: 0 !important;
+            font-size: 30px !important;
+            line-height: 30px !important;
+            font-weight: 200;
+            color: $neutral-dark;
             @include mq(tablet) {
                
             }
@@ -449,6 +430,35 @@ figure.element.element-atom {
     }
 }
 
+
+.gv-card-paragraph-area{
+    position: relative;
+    width:100%;
+    margin-top:12px;
+}
+
+.gv-card-header-area{
+    position:relative;
+    top: 4px;
+    margin-left: 78px;
+}
+
+.card-summary {
+    padding-bottom: 4px;
+    padding-top: 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-weight: 300;
+}
+
+h3.card-head {
+     @include fs-header(4);
+     margin: 0;
+     padding:0;
+}
+
+
 .gv-hidden-footer {
 	display:none;
 }
@@ -456,4 +466,7 @@ figure.element.element-atom {
 .gv-back-top-btn {
 	display:none;
 }
+
+
+
 

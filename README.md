@@ -34,6 +34,13 @@ Once data added and published in s3 tool update following line in render.js
 const altKey = your_googledoc_key_id_here
 ```
 
+###Emded in Guardian Composer
+```
+Designed to work as an inline or supporting embed
+![Alt text](/src/assets/readMe.jpg?raw=true "Optional Title")
+```
+
+
 ### Based on interactive atom template
 
 ```
