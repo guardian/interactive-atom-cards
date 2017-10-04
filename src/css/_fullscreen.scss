@@ -244,7 +244,7 @@ div.card-icon {
     padding: 18px 0 26px;
 
     .swiper-pagination-bullet {
-        margin-right: 2px;
+        margin-right: 3px;
     }
 }
 
@@ -378,11 +378,16 @@ div.card-icon {
 
 }
 
-.swiper-pagination-bullet-active, .swiper-pagination-bullet{
-    border: 1px solid #fff;
+.swiper-pagination-bullet{
+    border: 1px solid $neutral-light;
+    background-color: $neutral-light;
+    border-color: $neutral-light;
+}
 
-    background-color: #FFF;
-    border-color: #FFF;
+.swiper-pagination-bullet-active{
+    border: 1px solid $neutral-dark;
+    background-color: $neutral-dark;
+    border-color: $neutral-dark;
 }
 
 .badge-slot {

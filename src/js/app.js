@@ -13,37 +13,43 @@ function initSwiper() {
 
     removeDisabled();
 
-    for (var s = 0; s < cardStacks.length; s++) {
+    console.log(cardStacks)
 
+    for (var s = 0; s < cardStacks.length; s++) {
+// console.log(document.getElementByID("#pagination-"+s);
       cardStacks[s].setAttribute('data-stack-position', s+1);
 
-      var swiper = new Swiper(cardStacks[s], {
+// refs added to allow different lengths of swiper
+      var swiperTgt = document.querySelector(".swiperContainer"+s);
+      var paginateTgt = document.querySelector(".paginate"+s)
+     
+      var swiper = new Swiper(swiperTgt, {
             paginationClickable: true,
             loop: true,
             slidesPerView: 1.2,
-            loopedSlides: 2,
+            loopedSlides: cardStacks[s].length,
             spaceBetween: 10,
-            pagination: ".pagination",
+            pagination: paginateTgt ,
             centeredSlides: true
         })
-        .on('slideChangeEnd', function(currentSwiper, event) {
+        // .on('slideChangeEnd', function(currentSwiper, event) {
 
-            // swipers.forEach(function(s,i) {
-            //   var eq = (currentSwiper == s) ? true : false;
-            //   if(eq){
-            //     var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-            //     analytics.registerEvent('stack_card_view', i)
-            //   }
-            //
-            //     if (s.activeIndex != currentSwiper.activeIndex) {
-            //       //s.activeIndex = currentSwiper.activeIndex;
-            //         s.slideTo(currentSwiper.activeIndex, 0, false);
-            //     } else {
-            //
-            //
-            //     }
-            // });
-        })
+        //     swipers.forEach(function(s,i) {
+        //       var eq = (currentSwiper == s) ? true : false;
+        //       if(eq){
+        //         var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+        //         analytics.registerEvent('stack_card_view', i)
+        //       }
+            
+        //         if (s.activeIndex != currentSwiper.activeIndex) {
+        //           //s.activeIndex = currentSwiper.activeIndex;
+        //             s.slideTo(currentSwiper.activeIndex, 0, false);
+        //         } else {
+            
+            
+        //         }
+        //     });
+        // })
         .on('onTouchStart', function(currentSwiper, e) {
             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                 window.GuardianJSInterface.registerRelatedCardsTouch(true);

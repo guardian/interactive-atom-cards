@@ -102,7 +102,7 @@ button.swiper-pagination-bullet {
   cursor: pointer;
 }
 .swiper-pagination-white .swiper-pagination-bullet {
-  background: #fff;
+  background: #222;
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
@@ -110,7 +110,7 @@ button.swiper-pagination-bullet {
   /*border: 1px solid #bdbdbd;*/
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  background: #fff;
+  background: #222;
 }
 .swiper-pagination-black .swiper-pagination-bullet-active {
   background: #000;
