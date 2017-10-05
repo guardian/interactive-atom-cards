@@ -8,7 +8,7 @@ const altKey = '1zzv_uB1ySZPJgdp4_1gA3YTKZWU2RWZ3UnK9pC4AyUM';
 
 export async function render() {
 	 return rp({
-        uri: 'https://interactive.guim.co.uk/docsdata-test/13THTjGbKogHxEr0S6Z1sKlmPPJLzWGPYILldIXzloQI.json',
+        uri: 'https://interactive.guim.co.uk/docsdata-test/'+altKey+'.json',
         json: true
     }).then((data) => {
 
