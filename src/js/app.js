@@ -111,17 +111,17 @@ var trigger = new ScrollTrigger({
     offset: { x: -50, y: 50 }
 });
 
-function init(){
+function initFullScrn(){
 
     let exceededMaxH = getSlidesMaxH();
 
-
     if(document.querySelector("body").clientWidth < 740 && exceededMaxH) {
+      // comment out for embeds
         initSwiper();
     }
 
     if(document.querySelector("body").clientWidth > 740) {
-        removeDisabled()
+        removeDisabled();
     }  
 
     addListeners();
@@ -141,6 +141,15 @@ function addListeners(){
             scrollTo(body, jumpOffset,  240); 
         }
     )
+
+    var Window =  window || document;
+
+    Window.addEventListener("scroll", WindowScrollListener);
+
+}
+
+function WindowScrollListener(){
+    checkFixView()
 }
 
 
@@ -152,28 +161,44 @@ function getSlidesMaxH(){
             if (swipeSlides[n].offsetHeight > maxNoneSwipeH){ a = true; console.log(swipeSlides[n].offsetHeight) };
         }
 
-        
     return a;
 }
 
 function checkFixView() {
-    let h = 0;
-
-    if (document.querySelector("bannerandheader")){
-        h = document.getElementById("bannerandheader").offsetHeight;
-    }
-
+    let footTop = 0;
+    let navTop = document.querySelector(".interactive-nav").getBoundingClientRect().top;
     var pos_top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    if (pos_top > h) {
-        document.querySelector('.gv-back-top-btn').classList.add('fixed');
-        document.querySelector('.gv-back-top-btn').classList.add('fixed');
-    } else if (pos_top < h) {
-        document.querySelector('.gv-back-top-btn').classList.remove('fixed');
-        document.querySelector('.gv-back-top-btn').classList.remove('fixed');
+    if (document.querySelector(".gv-hidden-footer")){
+        footTop = document.querySelector(".gv-hidden-footer").offsetTop;
     }
+
+    console.log(document.querySelector(".gv-hidden-footer").getBoundingClientRect().top)
+
+    // if (pos_top > h) {
+    //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
+    // } else if (pos_top < h) {
+    //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
+    // }
+
+        if( navTop < 0  && pos_top < (footTop - 240)){
+           document.querySelector('.gv-back-top-btn').classList.remove('hidden'); 
+        }
+        else if(pos_top > (footTop - 240) || navTop > 0 ){
+            document.querySelector('.gv-back-top-btn').classList.add('hidden');
+        }
+
+
+        // }else if (pos_top > navTop) {
+        //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
+        // } 
+        // else if (pos_top < h) {
+        //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
+        // }
+   
 
 }
 
-init();
+// comment out for embed
+initFullScrn();
 

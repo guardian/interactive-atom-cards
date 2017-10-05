@@ -1,4 +1,40 @@
-# Interactive atom template
+#Card atom
+
+
+###For embed
+```
+// comment out this function on last line of app.js
+initFullScrn();
+
+In main.scss uncomment
+@import "embed";
+
+and comment out 
+@import "fullscreen";
+```
+
+###For full size interactive with swiper.js functionality
+```
+// uncomment 
+initFullScrn();
+
+In main.scss uncomment
+@import "fullscreen";
+
+and comment out 
+@import "embed";
+```
+
+###Data
+```
+Make a copy of this spreadsheet
+https://docs.google.com/spreadsheets/d/1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ/edit#gid=0
+
+Once data added and published in s3 tool update following line in render.js
+const altKey = your_googledoc_key_id_here
+```
+
+### Based on interactive atom template
 
 ```
 npm install
