@@ -4,7 +4,7 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-const altKey = '1zzv_uB1ySZPJgdp4_1gA3YTKZWU2RWZ3UnK9pC4AyUM';
+const altKey = '1KGrub0cJ-aaSrFyl4qgsUZu0D2uFJN7Q-BaabFvvrMY';
 
 export async function render() {
 	 return rp({
