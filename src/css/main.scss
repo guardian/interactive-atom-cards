@@ -15,7 +15,7 @@ $neutral-mid: rgb(118,118,118);
 
 
 // Uncomment for embeds
-//@import "embed";
+@import "embed";
 
 // Uncomment for full screen (including immersive article main media)
 // @import "fullscreen";
@@ -104,7 +104,7 @@ body {
     border-radius: 6px;
     box-sizing: border-box;
     padding: 3px 8px 12px;
-    width: calc(100% - 60px);
+    width: calc(100%);
     background-color: $ux-grey;
    
     &.blue{
@@ -140,12 +140,12 @@ body {
      @include mq(tablet) {
           // flex: 1;
           // flex-basis: 300px;
-          width: 340px;
+          max-width: 710px;
           margin-right: 20px;
           margin-bottom: 24px;
      }
      @include mq(desktop) {
-         width: 300px;
+         width: 100%;
      }
 
 }
