@@ -1,16 +1,23 @@
 
 
 <div class="main">
-         
+
     {{#groups}}
-    <div class='card-group' id="group-{{groupRef}}" data-scroll>
-        <div class="card-group__header">
-            <div class='card-group__header__text' id="group-header-{{groupRef}}">
-                <h2 class='card-group__header__text__title'>{{Header}}</h2>
-                <p class='card-group__header__text__description'>{{Standfirst}}</p>
-            </div>
+        <div class='card-group' id="group-{{groupRef}}" data-scroll>
+                <div class="card-group__header">
+                    <div class='card-group__header__text' id="group-header-{{groupRef}}">
+                        <h2 class='card-group__header__text__title'>{{Header}}</h2>
+                        <p class='card-group__header__text__description'>{{Standfirst}}</p>
+                    </div>
+                </div>
+            {{>cardstack}}
+            <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div>
         </div>
-        {{>cardstack}}
-        <div class='pagination'></div>
-    </div>
     {{/groups}}
+
+   <div class="gv-back-top-btn hidden"></div>
+
+
+</div>
+<div class="gv-hidden-footer"> </div>
+
