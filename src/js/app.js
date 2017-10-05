@@ -182,11 +182,7 @@ function checkFixView() {
 
     console.log(document.querySelector(".gv-hidden-footer").getBoundingClientRect().top)
 
-    // if (pos_top > h) {
-    //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
-    // } else if (pos_top < h) {
-    //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
-    // }
+
 
     if (navTop < 0 && pos_top < (footTop - 240)) {
         document.querySelector('.gv-back-top-btn').classList.remove('hidden');
@@ -195,12 +191,6 @@ function checkFixView() {
     }
 
 
-    // }else if (pos_top > navTop) {
-    //     document.querySelector('.gv-back-top-btn').classList.remove('hidden');
-    // }
-    // else if (pos_top < h) {
-    //     document.querySelector('.gv-back-top-btn').classList.add('hidden');
-    // }
 
 
 }
