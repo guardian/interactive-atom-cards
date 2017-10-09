@@ -1,10 +1,7 @@
 #Card atom
 
-
-###For embed
-```
-// comment out this function on last line of app.js
-Use the master branch of this repo
+###For embeds
+Use the master branch of this repo, see README ther for instructions
 
 This branch is for a full-screen/full-page interactive where user interaction with 1 swiper slide (on mobile) moves all slides on the page.
 ```
