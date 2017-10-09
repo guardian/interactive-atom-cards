@@ -1,4 +1,6 @@
+$ux-light: #EEE;
 $ux-grey: #717D85;
+$ux-dark: #222;
 
 .gv-back-top-btn {
     position: fixed;
@@ -7,12 +9,14 @@ $ux-grey: #717D85;
     width: 48px;
     height: 48px;
     margin-top: 36px;
-    background-color: #222;
+    background-color:  $ux-light;
     background-image: url(./assets/arrow.svg);
     border-radius: 9999px;
+
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
+
     cursor: pointer;
     transform: rotate(270deg);
     z-index: 1001;
@@ -36,8 +40,73 @@ $ux-grey: #717D85;
     &.hidden{
         display:none;
     }
+
+
 }
 
 .gv-back-top-btn:hover {
-    background-color: $ux-grey;
+    background-image: url(./assets/arrow-hover.svg);
+}
+
+
+.interactive-nav {
+    &__inner {
+        position: relative;
+        padding-right: 20px;
+        @include mq(desktop) {
+            max-width: 640px;
+            &:before {
+                left: 0;
+            }
+        }
+    }
+    font-weight: 800;
+    color: #005689;
+    //  color: rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    position: -webkit-sticky;
+    position: sticky;
+    // border-bottom: 1px solid $c-grey;
+    background-color: none;
+    font-family: 'Guardian Text Sans Web',
+    Helvetica,
+    Arial,
+    sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-bottom: 6px;
+    @include mq($until: tablet) {
+        padding-left: 20px;
+    }
+    @include mq(tablet) {
+        padding-left: 20px;
+        padding-top: 9px;
+        padding-bottom: 18px;
+    }
+    @include mq(leftCol) {
+        padding-left: 180px;
+    }
+    @include mq(wide) {
+        padding-left: 260px;
+    }
+    .android &,
+    .ios & {
+        position: initial;
+    }
+    top: -3px;
+    z-index: 160;
+}
+
+.swiper-pagination-bullet {
+    border: 1px solid $neutral-light;
+    background-color: $neutral-light;
+    border-color: $neutral-light;
+}
+
+.swiper-pagination-bullet-active {
+    border: 1px solid $neutral-dark;
+    background-color: $neutral-dark;
+    border-color: $neutral-dark;
 }

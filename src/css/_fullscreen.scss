@@ -97,10 +97,10 @@ body {
         background-color: rgba($pink, 0.4);
     }
     &.yellow {
-        background-color: $yellow;
+        background-color: rgba($yellow, 0.7);
     }
     &.green {
-        background-color: $green;
+        background-color: rgba($green, 0.6);
     }
     &.purple {
         background-color: rgba($purple, 0.3);
@@ -195,6 +195,14 @@ div.card-icon {
         background-color: $pink;
         border: 3px solid $pink;
     }
+    &.green {
+        background-color: $green;
+        border: 3px solid $green;
+    }
+    &.yellow {
+        background-color: $yellow;
+        border: 3px solid $yellow;
+    }
 }
 
 .pagination {
@@ -258,79 +266,21 @@ div.card-icon {
         }
         &__description {
             margin-top: 0 !important;
-            font-size: 36px;
-            line-height: 30px;
+            font-size: 24px;
+            line-height: 26px;
             font-family: "Guardian Egyptian Web", Georgia, serif;
             font-weight: 200;
             color: $neutral-dark;
             @include mq(tablet) {
+                font-size: 36px;
+                line-height: 30px;
                 max-width: 620px;
             }
         }
     }
 }
 
-.interactive-nav {
-    &__inner {
-        position: relative;
-        padding-right: 20px;
-        @include mq(desktop) {
-            max-width: 640px;
-            &:before {
-                left: 0;
-            }
-        }
-    }
-    font-weight: 800;
-    color: #005689;
-    //  color: rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    position: -webkit-sticky;
-    position: sticky;
-    // border-bottom: 1px solid $c-grey;
-    background-color: none;
-    font-family: 'Guardian Text Sans Web',
-    Helvetica,
-    Arial,
-    sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    padding-top: 3px;
-    padding-left: 10px;
-    padding-bottom: 6px;
-    @include mq($until: tablet) {
-        padding-left: 20px;
-    }
-    @include mq(tablet) {
-        padding-left: 20px;
-        padding-top: 9px;
-        padding-bottom: 18px;
-    }
-    @include mq(leftCol) {
-        padding-left: 180px;
-    }
-    @include mq(wide) {
-        padding-left: 260px;
-    }
-    .android &,
-    .ios & {
-        position: initial;
-    }
-    top: -3px;
-    z-index: 160;
-}
 
-.swiper-pagination-bullet {
-    border: 1px solid $neutral-light;
-    background-color: $neutral-light;
-    border-color: $neutral-light;
-}
-
-.swiper-pagination-bullet-active {
-    border: 1px solid $neutral-dark;
-    background-color: $neutral-dark;
-    border-color: $neutral-dark;
-}
 
 .badge-slot {
     width: 42px;
