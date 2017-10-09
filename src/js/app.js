@@ -21,7 +21,7 @@ function initSwiper() {
 
         // refs added to allow different lengths of swiper
         var swiperTgt = document.querySelector(".swiperContainer" + s);
-        var paginateTgt = document.querySelector(".paginate" + s)
+        var paginateTgt = ".paginate" + s;
 
         var swiper = new Swiper(swiperTgt, {
                 paginationClickable: true,
@@ -32,6 +32,7 @@ function initSwiper() {
                 pagination: paginateTgt,
                 centeredSlides: true
             })
+        //uncomment to change all sliders when 1 slider updates
         // .on('slideChangeEnd', function(currentSwiper, event) {
 
         //     swipers.forEach(function(s,i) {
@@ -196,4 +197,5 @@ function checkFixView() {
 }
 
 // comment out for embed
-initFullScrn();
+//initFullScrn();
+

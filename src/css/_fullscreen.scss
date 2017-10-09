@@ -4,6 +4,7 @@
 // .interactive-atom {
 //     height: 100%;
 // }
+
 .main {
     margin: auto;
     min-height: 100vh;
@@ -418,7 +419,7 @@ figure.element.element-atom {
 .gv-nav-holder {
     display: inline-block;
     background-color: #EEE;
-    margin: 0 6px 3px 0;
+    margin: 0 6px 12px 0;
     padding: 3px 18px;
     border-radius: 100px;
     a {
@@ -452,6 +453,7 @@ figure.element.element-atom {
 
 }
 
+
 .gv-card-paragraph-area{
     position: relative;
     float:  left;
@@ -478,7 +480,7 @@ h3.card-head {
 .gv-hidden-footer {
     position: relative;
     width: 100%;
-    height: 12px;
+    height: 120px;
     background-color: none;
 }
 
