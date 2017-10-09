@@ -177,15 +177,12 @@ function checkFixView() {
     let navTop = document.querySelector(".interactive-nav").getBoundingClientRect().top;
     var pos_top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     
-    if (document.querySelector(".content-footer")) {
-        footTop = document.querySelector(".content-footer").offsetTop - document.querySelector(".content-footer").offsetHeight;
+
+    if (document.querySelector(".gv-hidden-footer")) {
+        footTop = document.querySelector(".gv-hidden-footer").offsetTop - document.querySelector(".gv-hidden-footer").offsetHeight;
     }
 
-    // if (document.querySelector(".gv-hidden-footer")) {
-    //     footTop = document.querySelector(".gv-hidden-footer").offsetTop - document.querySelector(".gv-hidden-footer").offsetHeight;
-    // }
 
-    console.log(document.querySelector(".gv-hidden-footer").getBoundingClientRect().top);
 
     if (navTop < 0 && pos_top < (footTop - 240)) {
         document.querySelector('.gv-back-top-btn').classList.remove('hidden');
