@@ -97,10 +97,10 @@ body {
         background-color: rgba($pink, 0.4);
     }
     &.yellow {
-        background-color: $yellow;
+        background-color: rgba($yellow, 0.8);
     }
     &.green {
-        background-color: $green;
+        background-color: rgba($green, 0.6);
     }
     &.purple {
         background-color: rgba($purple, 0.3);
@@ -266,12 +266,14 @@ div.card-icon {
         }
         &__description {
             margin-top: 0 !important;
-            font-size: 36px;
-            line-height: 30px;
+            font-size: 24px;
+            line-height: 28px;
             font-family: "Guardian Egyptian Web", Georgia, serif;
             font-weight: 200;
             color: $neutral-dark;
             @include mq(tablet) {
+                font-size: 36px;
+                line-height: 30px;
                 max-width: 620px;
             }
         }

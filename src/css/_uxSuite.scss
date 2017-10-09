@@ -68,10 +68,7 @@ $ux-dark: #222;
     position: sticky;
     // border-bottom: 1px solid $c-grey;
     background-color: none;
-    font-family: 'Guardian Text Sans Web',
-    Helvetica,
-    Arial,
-    sans-serif;
+    font-family: 'Guardian Text Sans Web',Helvetica, Arial,  sans-serif;
     font-size: 16px;
     line-height: 22px;
     padding-top: 3px;
@@ -97,6 +94,35 @@ $ux-dark: #222;
     }
     top: -3px;
     z-index: 160;
+}
+
+.gv-nav-holder {
+    display: inline-block;
+    background-color: #EEE;
+    margin: 0 6px 12px 0;
+    padding: 3px 18px;
+    border-radius: 100px;
+    a {
+        font-weight: 400;
+        display: inline-block;
+        color: $ux-grey;
+        text-decoration: none;
+        padding: 3px 0;
+        @include mq(desktop) {
+            padding: 0;
+        }
+        &:hover {
+            color: #333;
+            &::before {
+                color: $ux-grey;
+            }
+        }
+        &:first-of-type {
+            &::before {
+                opacity: 0.25;
+            }
+        }
+    }
 }
 
 .swiper-pagination-bullet {
