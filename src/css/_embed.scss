@@ -100,10 +100,10 @@ body {
         background-color: rgba($pink, 0.4);
     }
     &.yellow {
-        background-color: $yellow;
+        background-color: rgba($yellow, 0.8);
     }
     &.green {
-        background-color: $green;
+        background-color: rgba($green, 0.6);
     }
     &.purple {
         background-color: rgba($purple, 0.3);
@@ -115,8 +115,8 @@ body {
      p {
           margin: 0;
           font-size: 14px;
-		  line-height: 20px;
-		  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+          line-height: 20px;
+          font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
            @include mq(mobileLandscape) {
                 font-family: "Guardian Egyptian Web", Georgia, serif;
                 font-size: 16px;
@@ -137,10 +137,11 @@ body {
     padding-bottom: 4px;
     padding-top: 0;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 22px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 200;
     margin:0;
+    min-height:24px;
 
 
 }
@@ -220,6 +221,14 @@ div.card-icon {
         background-color: $pink;
         border: 3px solid $pink;
     }
+    &.yellow {
+        background-color: $yellow;
+        border: 3px solid $yellow;
+    }
+    &.green {
+        background-color: $green;
+        border: 3px solid $green;
+    }
     .swiper-slide--con & {
         background-color: rgba(28, 56, 102, 0.25);
     }
@@ -273,7 +282,7 @@ div.card-icon {
             margin-top: 0 !important;
            
             font-size:30px;
-            line-height:30px;
+            line-height:28px;
             font-weight: 200;
             margin-bottom: 3px;
             color: $neutral-dark;
@@ -288,7 +297,7 @@ div.card-icon {
             margin-bottom: 0 !important;
             font-size: 18px !important;
             line-height: 22px !important;
-            font-weight: 400;
+            font-weight: 500;
             color: $neutral-dark;
             @include mq(tablet) {
                
@@ -441,14 +450,6 @@ figure.element.element-atom {
     margin-left: 78px;
 }
 
-.card-summary {
-    padding-bottom: 4px;
-    padding-top: 0;
-    font-size: 16px;
-    line-height: 16px;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 300;
-}
 
 h3.card-head {
      @include fs-header(4);
@@ -458,10 +459,10 @@ h3.card-head {
 
 
 .gv-hidden-footer {
-	display:none;
+    display:none;
 }
 
 .gv-back-top-btn {
-	display:none;
+    display:none;
 }
 
