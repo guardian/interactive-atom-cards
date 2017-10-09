@@ -100,10 +100,10 @@ body {
         background-color: rgba($pink, 0.4);
     }
     &.yellow {
-        background-color: $yellow;
+        background-color: rgba($yellow, 0.8);
     }
     &.green {
-        background-color: $green;
+        background-color: rgba($green, 0.6);
     }
     &.purple {
         background-color: rgba($purple, 0.3);
@@ -137,10 +137,11 @@ body {
     padding-bottom: 4px;
     padding-top: 0;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 22px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 200;
     margin:0;
+    min-height:24px;
 
 
 }
@@ -448,14 +449,6 @@ figure.element.element-atom {
     margin-left: 78px;
 }
 
-.card-summary {
-    padding-bottom: 4px;
-    padding-top: 0;
-    font-size: 16px;
-    line-height: 16px;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 300;
-}
 
 h3.card-head {
      @include fs-header(4);

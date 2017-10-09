@@ -4,25 +4,19 @@
 ###For embed
 ```
 // comment out this function on last line of app.js
-initFullScrn();
+Use the master branch of this repo
 
-In main.scss uncomment
-@import "embed";
-
-and comment out 
-@import "fullscreen";
+This branch is for a full-screen/full-page interactive where user interaction with 1 swiper slide (on mobile) moves all slides on the page.
 ```
 
 ###For full size interactive with swiper.js functionality
 ```
-// uncomment 
+In app.js // uncomment 
 initFullScrn();
 
 In main.scss uncomment
 @import "fullscreen";
 
-and comment out 
-@import "embed";
 ```
 
 ###Data
