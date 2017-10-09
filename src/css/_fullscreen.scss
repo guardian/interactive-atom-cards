@@ -179,7 +179,7 @@ div.card-icon {
     background-position: center center;
     background-color: rgba(231, 231, 231, 0.95);
     margin-right: 5px;
-    &.purple {
+     &.purple {
         background-color: $purple;
         border: 3px solid $purple;
     }
@@ -194,6 +194,14 @@ div.card-icon {
     &.pink {
         background-color: $pink;
         border: 3px solid $pink;
+    }
+    &.green {
+        background-color: $green;
+        border: 3px solid $green;
+    }
+    &.yellow {
+        background-color: $yellow;
+        border: 3px solid $yellow;
     }
 }
 
@@ -416,34 +424,6 @@ figure.element.element-atom {
     margin-top: 9px;
 }
 
-.gv-nav-holder {
-    display: inline-block;
-    background-color: #EEE;
-    margin: 0 6px 12px 0;
-    padding: 3px 18px;
-    border-radius: 100px;
-    a {
-        font-weight: 400;
-        display: inline-block;
-        color: $ux-grey;
-        text-decoration: none;
-        padding: 3px 0;
-        @include mq(desktop) {
-            padding: 0;
-        }
-        &:hover {
-            color: #333;
-            &::before {
-                color: $ux-grey;
-            }
-        }
-        &:first-of-type {
-            &::before {
-                opacity: 0.25;
-            }
-        }
-    }
-}
 
 .gv-card-header-area{
     position:absolute;
