@@ -200,5 +200,5 @@ function checkFixView() {
 }
 
 // comment out for embed
-initFullScrn();
+//initFullScrn();
 

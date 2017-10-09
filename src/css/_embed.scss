@@ -220,6 +220,14 @@ div.card-icon {
         background-color: $pink;
         border: 3px solid $pink;
     }
+    &.yellow {
+        background-color: $yellow;
+        border: 3px solid $yellow;
+    }
+    &.green {
+        background-color: $green;
+        border: 3px solid $green;
+    }
     .swiper-slide--con & {
         background-color: rgba(28, 56, 102, 0.25);
     }
