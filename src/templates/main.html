@@ -1,5 +1,3 @@
-
-
 <div class="main">
     <!-- <div class="interactive-nav">
         <div class='interactive-nav__inner'>
@@ -14,7 +12,8 @@
 
     {{#groups}}
 
-    <iframe class="card-group-iframe" id="iFrame{{groupRef}}" src="https://interactive.guim.co.uk/uploader/embed/2017/10/may_circle-zip/giv-3902geAeo79O8UBs/">  </iframe>
+        
+
         <div class='card-group' id="group-{{groupRef}}" data-scroll>
                 <div class="card-group__header">
                     <div class='card-group__header__text' id="group-header-{{groupRef}}">
@@ -22,6 +21,7 @@
                         <p class='card-group__header__text__description'>{{Standfirst}}</p>
                     </div>
                 </div>
+                <div class="visual-element--iframe" data-url="{{embedURL}}">  </div>
             {{>cardstack}}
             <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div>
 
@@ -35,3 +35,6 @@
 
 </div>
 <div class="gv-hidden-footer"> </div>
+
+
+

@@ -2,6 +2,9 @@ import Swiper from 'swiper'
 import tracker from './tracker'
 import ScrollTrigger from './scrollTrigger'
 
+import iframeMessenger from './iframeMessenger'
+
+
 var isAndroidApp = (window.location.origin === "file://" && /(android)/i.test(navigator.userAgent)) ? true : false;
 
 const maxNoneSwipeH = 160;
@@ -13,7 +16,6 @@ function initSwiper() {
 
     removeDisabled();
 
-    console.log(cardStacks)
 
     for (var s = 0; s < cardStacks.length; s++) {
         // console.log(document.getElementByID("#pagination-"+s);
@@ -183,17 +185,15 @@ function checkFixView() {
     }
 
 
-
     if (navTop < 0 && pos_top < (footTop - 240)) {
         document.querySelector('.gv-back-top-btn').classList.remove('hidden');
     } else if (pos_top > (footTop - 240) || navTop > 0) {
         document.querySelector('.gv-back-top-btn').classList.add('hidden');
     }
 
-
-
-
 }
+
+//iframeMessenger.enableAutoResize();
 
 // comment out for embed
 initFullScrn();

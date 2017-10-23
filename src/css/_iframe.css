@@ -1,6 +1,21 @@
-.card-group-iframe{
-    width:100%;
+.visual-element--iframe{
+    width:300px;
     border-width: 1px;
     border-color: red;
+    padding-left:20px;
+
+    &#iFrame0{
+        
+    }
+
+    &#iFrame1{
+        
+    }
+    &#iFrame2{
+        
+    }
+    &#iFrame3{
+        
+    }
 
 }
