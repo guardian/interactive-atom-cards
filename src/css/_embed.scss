@@ -160,7 +160,7 @@ body {
         background-color: rgba($pink, 0.4);
     }
     &.state {
-        background-color:rgba($state, 0.8);
+        background-color:$state;
     }
     &.green {
         background-color: $green;
@@ -173,7 +173,7 @@ body {
     }
 
     &.autonomy{
-      background-color: $autonomy;
+      background-color: rgba($autonomy, 0.8);
     }
 
      p {
