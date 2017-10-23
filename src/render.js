@@ -47,11 +47,10 @@ function formatData(data) {
 
     groups.map((obj, k) => {
     	obj.groupRef = k;
-        obj['card-color'] = getCardColor(obj);
+        getCardColor(obj);
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
-            console.log(ob.autonomous)
-            ob['card-color'] = obj['card-color'];
+            ob['card-color'] = getCardColor(ob);
         })
 
         headGroup.map((headOb) => {
@@ -70,16 +69,13 @@ function formatData(data) {
 }
 
 
-function getCardColor(obj){
-
-    
+function getCardColor(ob){
 
     let color = "grey";
 
-    if (obj['card-group'] == "group-eastern"){ color=="pink" }
-    if (obj['card-group'] == "group-northern"){ color=="blue"  }
-    if (obj['card-group'] == "group-southern"){ color=="yellow"  }
-    if (obj['card-group'] == "group-western"){ color=="green"  }
+    if (ob['state-autonomy'] == "state"){ color = "state" }
+    if (ob['state-autonomy'] == "autonomy"){ color = "autonomy" }
+
 
     return color;
 }

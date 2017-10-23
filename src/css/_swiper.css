@@ -1,6 +1,5 @@
 .swiper-container {
-  margin-left: auto;
-  margin-right: auto;
+
   position: relative;
   /* Fix of Webkit flickering */
   z-index: 1;

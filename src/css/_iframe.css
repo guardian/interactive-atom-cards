@@ -1,21 +1,18 @@
 .visual-element--iframe{
-    width:300px;
+
+    width:100%;
     border-width: 1px;
     border-color: red;
-    padding-left:20px;
+    padding-left:0;
 
-    &#iFrame0{
-        
+    @include mq(embedFiveEighty){
+        width:580px;
     }
 
-    &#iFrame1{
-        
+     @include mq(embedSixTwenty){
+        width:620px;
     }
-    &#iFrame2{
-        
-    }
-    &#iFrame3{
-        
-    }
+
+   
 
 }

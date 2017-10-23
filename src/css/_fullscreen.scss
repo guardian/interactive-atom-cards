@@ -56,7 +56,7 @@
 
 body {
     // background-color: #eaeaea;
-    overflow-x: hidden;
+    //overflow-x: hidden;
 }
 
 .swiper-container {
@@ -146,7 +146,7 @@ body {
     .card-summary .pledge,
     .card-analysis,
     .card-links {
-        @include fs-bodyCopy(2);
+        @include fs-textSans(3);
     }
 }
 

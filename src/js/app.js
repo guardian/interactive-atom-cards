@@ -16,6 +16,7 @@ function initSwiper() {
 
     removeDisabled();
 
+    console.log(cardStacks)
 
     for (var s = 0; s < cardStacks.length; s++) {
         // console.log(document.getElementByID("#pagination-"+s);
@@ -185,16 +186,20 @@ function checkFixView() {
     }
 
 
+
     if (navTop < 0 && pos_top < (footTop - 240)) {
         document.querySelector('.gv-back-top-btn').classList.remove('hidden');
     } else if (pos_top > (footTop - 240) || navTop > 0) {
         document.querySelector('.gv-back-top-btn').classList.add('hidden');
     }
 
+
+
+
 }
 
 //iframeMessenger.enableAutoResize();
 
 // comment out for embed
-initFullScrn();
+//initFullScrn();
 
