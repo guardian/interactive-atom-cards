@@ -3,18 +3,18 @@
 <div class="main">
     <!-- <div class="interactive-nav">
         <div class='interactive-nav__inner'>
-           
+
             {{#groups}}
             <div class="gv-nav-holder">
                 <a href="#group-{{groupRef}}" data-jump-to='{{groupRef}}'>{{sortOn}}</a>
-            </div>    
+            </div>
             {{/groups}}
         </div>
     </div> -->
 
     {{#groups}}
 
-    <iframe class="card-group-iframe" id="iFrame{{groupRef}}">  </iframe>  
+    <iframe class="card-group-iframe" id="iFrame{{groupRef}}">  </iframe>
         <div class='card-group' id="group-{{groupRef}}" data-scroll>
                 <div class="card-group__header">
                     <div class='card-group__header__text' id="group-header-{{groupRef}}">
@@ -24,10 +24,10 @@
                 </div>
             {{>cardstack}}
             <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div>
-            
+
         </div>
 
-       
+
     {{/groups}}
 
    <div class="gv-back-top-btn hidden"></div>
@@ -35,4 +35,3 @@
 
 </div>
 <div class="gv-hidden-footer"> </div>
-

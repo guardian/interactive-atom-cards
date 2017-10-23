@@ -4,7 +4,7 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-const altKey = '1RhUpNbvMmj7hTFvBI6wAtyPttdQaR614iD8kTAvICVc';
+const altKey = '13Fkmu6CWuabGS1NbmICQ0ttx2LeUTgZy7cTU5i7Gna0';
 
 export async function render() {
 	 return rp({
@@ -50,10 +50,10 @@ function formatData(data) {
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
             ob['card-color'] = obj['card-color'];
-            
+
         })
 
-        
+
 
         headGroup.map((headOb) => {
             if(headOb['card-group'] == obj.sortOn )  {
