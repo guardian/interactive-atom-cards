@@ -4,7 +4,7 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-const altKey = '13THTjGbKogHxEr0S6Z1sKlmPPJLzWGPYILldIXzloQI';
+const altKey = '1RhUpNbvMmj7hTFvBI6wAtyPttdQaR614iD8kTAvICVc';
 
 export async function render() {
 	 return rp({
@@ -32,14 +32,28 @@ function formatData(data) {
     })
 
     let groups = groupBy(data.sheets.Sheet1, 'card-group');
+    var tempGroups = [];
 
     groups = sortByKeys(groups);
 
     groups.map((obj, k) => {
+        if(obj.sortOn != "group-header"){
+            tempGroups.push(obj)
+        }
+
+    })
+    groups = tempGroups;
+
+    groups.map((obj, k) => {
     	obj.groupRef = k;
+        obj['card-color'] = getCardColor(obj);
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
+            ob['card-color'] = obj['card-color'];
+            
         })
+
+        
 
         headGroup.map((headOb) => {
             if(headOb['card-group'] == obj.sortOn )  {
@@ -57,6 +71,17 @@ function formatData(data) {
 }
 
 
+function getCardColor(obj){
+
+    let color = "grey";
+
+    if (obj['card-group'] == "group-eastern"){ color=="pink" }
+    if (obj['card-group'] == "group-northern"){  color=="blue"  }
+    if (obj['card-group'] == "group-southern"){  color=="yellow"  }
+    if (obj['card-group'] == "group-western"){  color=="green"  }
+
+    return color;
+}
 
 function compileHTML(dataIn) {
     Handlebars.registerHelper('html_decoder', function(text) {

@@ -1,13 +1,18 @@
 
 $blue: #4bc6df;//dc2a7d
-$pink: #4bc6df;//
-$purple: #005689;//
-$grey: #4bc6df;//
+$pink: #dc2a7d;//
+$purple: #4e0375;//
+$grey: #63717a;//
 $yellow: #ffbb00;
 $green: #5ebfba;
 $neutral-light: rgb(231,231,231);
 $neutral-mid: rgb(81,81,81);
 $neutral-dark: rgb(31,31,31);
+
+
+$guardian-brand: #005689 ;
+$guardian-brand-light: #94b1ca;
+$guardian-brand-dark: #00456e;
 
 @import "mq";
 @import "fonts";
