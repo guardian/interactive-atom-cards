@@ -3,11 +3,33 @@
 	display:block;
 	background-color:#CCC;
 	width: 100%;
-	
+
 	@include mq(tablet){
 		display:inline-block;
 		width: calc(100% / 3)
 	}
 
-	
+
+}
+
+
+.gv-pop-bar {
+	width: 100%;
+	height: 10px;
+	background: rgba(255,255,255,.25);
+	position: relative;
+	.gv-total {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 10px;
+		background: rgba(255,255,255,.75);
+	}
+}
+
+.gv-pop-summary {
+	font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
 }
