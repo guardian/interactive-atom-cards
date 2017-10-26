@@ -383,30 +383,9 @@ div.card-icon {
     width: 42px;
     height: 30px;
 }
-.content__headline,
-.content__headline,
-.content__section-label__link {
-    font-size: 28px;
-    line-height: 28px;
-}
 
-.content__section-label__link {
-    display: inline-block;
-    height: 28px;
-    width: 210px;
-    overflow: hidden;
-    color: #63747C;
-    @include mq(375px) {
-        overflow: auto;
-        width: auto;
-    }
-    @include mq(tablet) {
-        height: auto;
-        font-size: 22px;
-        line-height: 1em;
-        padding-top: 3px;
-    }
-}
+
+
 
 // removes second date line
 .content__head .content__main-column .content__dateline {
