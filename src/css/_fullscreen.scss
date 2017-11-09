@@ -84,12 +84,14 @@ body {
 .swiper-slide {
     font-size: 18px;
     color: $neutral-dark;
-    border-radius: 6px;
+
     box-sizing: border-box;
     padding: 3px 8px 12px;
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     min-height: 300px;
-    background-color: $ux-grey;
+    background-color: #FFF;
+    border: 3px solid black;
+    margin: 0 20px;
     &.blue {
         background-color: rgba($blue, 0.4);
     }
@@ -122,9 +124,8 @@ body {
     @include mq(tablet) {
         // flex: 1;
         // flex-basis: 300px;
-        width: 340px;
-        margin-right: 20px;
-        margin-bottom: 24px;
+        width: calc(50% - 30px);
+        margin: 20px 20px 24px 0;
     }
     @include mq(desktop) {
         width: 300px;
@@ -170,14 +171,21 @@ p.card-links {
 }
 
 div.card-icon {
-    height: 57px;
-    width: 57px;
+    position: relative;
+    height: 84px;
+    width: 84px;
     float: left;
-    border-radius: 1000px;
-    margin-top: -12px !important;
+    // margin-top: -12px !important;
+    // margin-left: -17px !important;
+
+    margin-top: -3px !important;
+    margin-left: -8px !important;
+   
+    // border-radius: 1000px;
+ 
     background-size: cover;
     background-position: center center;
-    background-color: rgba(231, 231, 231, 0.25);
+    background-color: rgba($paradise-yellow, 1);
     margin-right: 5px;
     &.purple {
         background-color: $purple;
@@ -204,6 +212,28 @@ div.card-icon {
         border: 3px solid $yellow;
     }
 }
+
+.card-icon:before{
+    content:'';
+    position: absolute;
+    height: 78px;
+    width: 78px;
+    top:-9px;
+    left:-9px;
+    border-top: 9px solid $paradise-orange;
+    border-left: 9px solid $paradise-orange;
+}
+
+// .card-icon:after{
+//     content:'';
+//     position: absolute;
+//     height: 78px;
+//     width: 78px;
+//     top:6px;
+//     left:6px;
+//     border-right: 9px solid $paradise-orange;
+//     border-bottom: 9px solid $paradise-orange;
+// }
 
 .pagination {
     text-align: center;
@@ -397,8 +427,8 @@ figure.element.element-atom {
 
 .gv-card-header-area{
     position:absolute;
-    top: 4px;
-    left: 78px;
+    top: 6px;
+    left: 96px;
     min-height:90px;
 
 }
@@ -408,22 +438,25 @@ figure.element.element-atom {
     position: relative;
     float:  left;
     clear: both;
-    margin-top:12px;
+
 }
 
 
 .card-summary {
     padding-bottom: 4px;
     padding-top: 0;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 20px;
+    line-height: 24px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 300;
+     color: $paradise-orange;
 }
 
 h3.card-head {
      @include fs-header(4);
+     line-height: 24px;
      margin: 0;
+     color: $paradise-orange;
 }
 
 
