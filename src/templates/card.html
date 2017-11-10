@@ -20,9 +20,9 @@
 </div>
 {{#if storyLink}}
 <div class="gv-card-button-holder">
-	
-		<div class="gv-read-more-btn" link-ref="{{storyLink}}">read more</div>
-	
+	<a href="{{storyLink}}">
+		<div class="gv-read-more-btn" data-url="{{storyLink}}"><div class="gv-button-label">read more</div></div>
+	</a>
 </div>
 {{/if}}
 

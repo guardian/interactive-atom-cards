@@ -73,15 +73,15 @@ function initSwiper() {
 
 function addListeners(){
 
-    Array.from(document.querySelectorAll('.gv-read-more-btn')).forEach((el,k) => {
+    // Array.from(document.querySelectorAll('.gv-read-more-btn')).forEach((el,k) => {
 
-            el.addEventListener('click', function(){   
-                    window.open(el.getAttribute("link-ref"), "_self");
+    //         el.addEventListener('click', function(){  
+    //             var newURL = el.getAttribute("data-url");
 
-                console.log(el.getAttribute("link-ref") ) });  
-                     
-        })  
+    //             window.open(newURL, "_self");                     
+    //         })  
  
+    //     }
 }
 
 

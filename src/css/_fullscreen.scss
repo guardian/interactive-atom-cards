@@ -88,7 +88,7 @@ body {
     width: calc(100% - 40px);
     min-height: 300px;
     background-color: #FFF;
-    border: 3px solid black;
+    border: 3px solid $paradise-warm-grey;
     margin: 20px 20px;
     float: left;
 
@@ -223,8 +223,8 @@ div.card-icon {
     width: 78px;
     top:-9px;
     left:-9px;
-    border-top: 9px solid $paradise-orange;
-    border-left: 9px solid $paradise-orange;
+    border-top: 9px solid $paradise-yellow;
+    border-left: 9px solid $paradise-yellow;
 }
 
 // .card-icon:after{
@@ -272,7 +272,7 @@ div.card-icon {
     }
     &__text {
         padding-top: 12px;
-        width: calc(80% - 10px);
+        width: calc(90% - 10px);
         max-width: 460px;
         @include mq(tablet) {
             padding-top: 6px;
@@ -444,9 +444,8 @@ figure.element.element-atom {
 
 .gv-card-button-holder{
      position: absolute;
-     bottom: -30px;
-     right:-3px;
-     margin-top: 30px;
+     bottom: -20px;
+     right: -10px;
    
 }
 
@@ -463,7 +462,7 @@ figure.element.element-atom {
 h3.card-head {
      @include fs-header(4);
      line-height: 24px;
-     margin: 0;
+     margin: 0 10px 0 0;
      color: $paradise-orange;
 }
 

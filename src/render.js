@@ -38,15 +38,16 @@ function formatData(data) {
 
     groups = sortByKeys(groups);
 
-    console.log(groups)
+   
 
     groups.map((obj, k) => {
     	obj.groupRef = k;
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
         })
-
+        console.log(obj)
         headGroup.map((headOb) => {
+            console.log(headOb)
             if(headOb['card-group'] == obj.sortOn )  {
                 obj.Header = headOb.Header;
                 obj.Standfirst = headOb.Standfirst;

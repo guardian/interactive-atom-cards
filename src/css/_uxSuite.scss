@@ -5,18 +5,24 @@ $ux-dark: #222;
     position: relative;
     left: 0;
     width: 142px;
-    height: 36px;
-    padding: 10px 0 0 18px;
-    margin-top: 26px;
+    height: 46px;    
     background-color: #3c3e3c;
-    background-image: url(./assets/arrow-orange.svg);
-    background-size: 18px;
-    background-repeat: no-repeat;
-    background-position: 130px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-size: 16px;
-    color: #f6983c;
+    color: $paradise-yellow;
     cursor: pointer;
+}
+
+.gv-button-label{
+    position:absolute;
+    top:10px;
+    left:12px;
+    height: 21px;
+    width:120px;
+    background-image: url('<%= path %>/assets/arrow-orange.svg');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 100px 4px;
 }
 
 
