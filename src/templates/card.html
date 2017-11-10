@@ -15,7 +15,16 @@
 {{#if card-copy}}
  <p class="card-analysis">{{{card-copy}}}</p>
 {{/if}}
+
+
 </div>
+{{#if storyLink}}
+<div class="gv-card-button-holder">
+	
+		<div class="gv-read-more-btn" link-ref="{{storyLink}}">read more</div>
+	
+</div>
+{{/if}}
 
 
 <!-- {{#if links}}

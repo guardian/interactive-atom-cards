@@ -49,7 +49,7 @@ function initSwiper() {
         //         }
         //     });
         // })
-        .on('onTouchStart', function(currentSwiper, e) {
+            .on('onTouchStart', function(currentSwiper, e) {
                 if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                     window.GuardianJSInterface.registerRelatedCardsTouch(true);
                 }
@@ -64,8 +64,24 @@ function initSwiper() {
 
     }
 
-    let swipeSlides = document.querySelectorAll('.swiper-slide');
 
+//let swipeSlides = document.querySelectorAll('.swiper-slide');
+
+    
+
+}
+
+function addListeners(){
+
+    Array.from(document.querySelectorAll('.gv-read-more-btn')).forEach((el,k) => {
+
+            el.addEventListener('click', function(){   
+                    window.open(el.getAttribute("link-ref"), "_self");
+
+                console.log(el.getAttribute("link-ref") ) });  
+                     
+        })  
+ 
 }
 
 
@@ -79,6 +95,7 @@ function removeDisabled() {
 
 
 function initFullScrn() {
+    addListeners()
     if (document.querySelector("body").clientWidth > 740) {
        removeDisabled(); 
     }

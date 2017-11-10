@@ -29,11 +29,16 @@ function formatData(data) {
 
     data.sheets.Sheet1.map((obj,k) => {
     	obj.ref = k;
+        if (obj["full-story-link"]){
+            obj.storyLink = obj["full-story-link"];
+        }
     })
 
     let groups = groupBy(data.sheets.Sheet1, 'card-group');
 
     groups = sortByKeys(groups);
+
+    console.log(groups)
 
     groups.map((obj, k) => {
     	obj.groupRef = k;

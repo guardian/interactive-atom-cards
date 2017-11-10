@@ -1,11 +1,28 @@
 $ux-light: #EEE;
 $ux-grey: #717D85;
 $ux-dark: #222;
+.gv-read-more-btn{
+    position: relative;
+    left: 0;
+    width: 142px;
+    height: 36px;
+    padding: 10px 0 0 18px;
+    margin-top: 26px;
+    background-color: #3c3e3c;
+    background-image: url(./assets/arrow-orange.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 130px;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-size: 16px;
+    color: #f6983c;
+    cursor: pointer;
+}
+
 
 .gv-back-top-btn {
-    position: fixed;
-    bottom: 90px;
-    left: calc(50% - 24px);
+    position: relative;
+    left: 0;
     width: 48px;
     height: 48px;
     margin-top: 36px;
@@ -18,7 +35,7 @@ $ux-dark: #222;
     background-position: center;
 
     cursor: pointer;
-    transform: rotate(270deg);
+
     z-index: 1001;
     display:block;
 
