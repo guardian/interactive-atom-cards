@@ -36,7 +36,11 @@
   box-sizing: content-box;
 
    &.swipe-disabled{
-    display:block;
+     @media screen and (max-width: 740px) {
+       display:block;
+     }
+
+
   }
 }
 .swiper-container-android .swiper-slide,
