@@ -128,7 +128,7 @@ body {
         margin: 20px 20px 24px 0;
     }
     @include mq(desktop) {
-        width: 300px;
+        width: calc(33% - 30px);
     }
 }
 
