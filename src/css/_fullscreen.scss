@@ -25,35 +25,6 @@
     }
 }
 
-.ios,
-.android,
-.windows {
-    p,
-    h1,
-    h2,
-    h3 {
-        margin: 0;
-        padding: 0;
-    }
-    .interactive-nav {
-        background-color: transparent;
-    }
-    .interactive-atom {
-        border-top: 0;
-    }
-    .article__header {
-        #section {
-            display: none;
-        }
-        #headline {
-            font-weight: 600;
-        }
-        .standfirst {
-            margin-top: -18px;
-        }
-    }
-}
-
 body {
     // background-color: #eaeaea;
     overflow-x: hidden;
