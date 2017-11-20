@@ -104,12 +104,6 @@ body {
     }
     &.purple {
         background-color: rgba($purple, 0.3);
-        @include mq(tablet) {
-            width: 340px;
-        }
-        @include mq(wide) {
-            width: 406px !important;
-        }
     }
     &.grey {
         background-color: rgba($grey, 0.4);
