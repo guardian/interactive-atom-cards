@@ -76,12 +76,37 @@ body {
 }
 
 .swiper-wrapper {
-    @include mq(tablet) {
-        flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+  margin: 0 20px;
+
+  display:block; 
+
+  @include mq(tablet){
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      margin: 0;
     }
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  flex-wrap: wrap;
 }
 
 .swiper-slide {
+    position:relative;
     font-size: 18px;
     color: $neutral-dark;
     border-radius: 6px;

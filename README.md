@@ -1,11 +1,9 @@
-#Card atom
+#Cards atom
 
+###FOR a swiper version checkout master-swiper branch on this repo
 
 ###For embed
 ```
-// comment out this function on last line of app.js
-initFullScrn();
-
 In main.scss uncomment
 @import "embed";
 
@@ -13,11 +11,8 @@ and comment out
 @import "fullscreen";
 ```
 
-###For full size interactive with swiper.js functionality
+###For full size interactive 
 ```
-// uncomment 
-initFullScrn();
-
 In main.scss uncomment
 @import "fullscreen";
 
