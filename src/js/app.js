@@ -10,10 +10,10 @@ function initSwiper() {
     var analytics = tracker();
     var swipers = [];
     var cardStacks = document.querySelectorAll('.swiper-container');
-
-    removeDisabled();
-
-    console.log(cardStacks)
+    // 
+    // removeDisabled();
+    //
+    // console.log(cardStacks)
 
     for (var s = 0; s < cardStacks.length; s++) {
         // console.log(document.getElementByID("#pagination-"+s);
@@ -176,7 +176,7 @@ function checkFixView() {
     let footTop = 0;
     let navTop = document.querySelector(".interactive-nav").getBoundingClientRect().top;
     var pos_top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    
+
 
     if (document.querySelector(".gv-hidden-footer")) {
         footTop = document.querySelector(".gv-hidden-footer").offsetTop - document.querySelector(".gv-hidden-footer").offsetHeight;
@@ -197,4 +197,3 @@ function checkFixView() {
 
 // comment out for embed
 //initFullScrn();
-

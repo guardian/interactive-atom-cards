@@ -3,16 +3,19 @@
 <div class="gv-card-header-area">
 	<h3 class="card-head">{{card-head}}</h3>
 
-	
+
 	<h4 class="card-summary">
 		{{#if card-sub-heading}}{{card-sub-heading}}{{/if}}
 	</h4>
-	
+
 </div>
 
 <div class="gv-card-paragraph-area">
-{{#if card-copy}}
- <p class="card-analysis">{{{card-copy}}}</p>
+{{#if card-2017-18}}
+ <p class="card-analysis"><span>2017-18</span> {{{card-2017-18}}}</p>
+{{/if}}
+{{#if card-2018-19}}
+ <p class="card-analysis second"><span>2018-19</span> {{{card-2018-19}}}</p>
 {{/if}}
 </div>
 
