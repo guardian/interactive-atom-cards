@@ -10,7 +10,7 @@ function initSwiper() {
     var analytics = tracker();
     var swipers = [];
     var cardStacks = document.querySelectorAll('.swiper-container');
-    // 
+    //
     // removeDisabled();
     //
     // console.log(cardStacks)
@@ -196,4 +196,4 @@ function checkFixView() {
 }
 
 // comment out for embed
-//initFullScrn();
+initFullScrn();
