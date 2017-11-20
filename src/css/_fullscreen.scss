@@ -254,27 +254,27 @@ div.card-icon {
         }
         &__title {
             margin-top: 0 !important;
-            font-size: 18px !important;
-            line-height: 20px !important;
-            font-weight: 900;
+           
+            font-size:30px;
+            line-height:28px;
+            font-weight: 200;
             margin-bottom: 3px;
             color: $neutral-dark;
             @include mq(tablet) {
+                
                 //margin-bottom: 11px;
                 // transform: translateY(5.5px);
             }
         }
         &__description {
             margin-top: 0 !important;
-            font-size: 24px;
-            line-height: 26px;
-            font-family: "Guardian Egyptian Web", Georgia, serif;
-            font-weight: 200;
+            margin-bottom: 0 !important;
+            font-size: 18px !important;
+            line-height: 22px !important;
+            font-weight: 500;
             color: $neutral-dark;
             @include mq(tablet) {
-                font-size: 36px;
-                line-height: 30px;
-                max-width: 620px;
+               
             }
         }
     }
