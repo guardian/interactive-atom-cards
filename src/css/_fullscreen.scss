@@ -241,7 +241,7 @@ div.card-icon {
         padding-top: 12px;
         width: calc(80% - 10px);
         max-width: 460px;
-        min-height: 60px;
+        // min-height: 60px;
         @include mq(tablet) {
             padding-top: 6px;
             padding-bottom: 12px;

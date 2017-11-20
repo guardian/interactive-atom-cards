@@ -1,12 +1,12 @@
 
 
 <div class="main">
-    <div class="interactive-nav">
+    <div class="interactive-nav display-none">
         <div class='interactive-nav__inner'>
            
             {{#groups}}
             <div class="gv-nav-holder">
-                <a href="#group-{{groupRef}}" data-jump-to='{{groupRef}}'>{{sortOn}}</a>
+                <a href="#group-{{groupRef}}" data-jump-to='{{groupRef}}'>{{Header}}</a>
             </div>    
             {{/groups}}
         </div>
@@ -25,7 +25,7 @@
         </div>
     {{/groups}}
 
-   <div class="gv-back-top-btn hidden"></div>
+   <div class="gv-back-top-btn hidden display-none"></div>
 
 
 </div>
