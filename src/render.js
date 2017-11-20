@@ -4,6 +4,8 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
+//duplicate this spreadsheet and update altKey
+
 const altKey = '1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ';
 
 export async function render() {
