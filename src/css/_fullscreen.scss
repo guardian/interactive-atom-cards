@@ -340,9 +340,15 @@ div.card-icon {
     position: relative;
     z-index: 0;
     @include mq($from: tablet) {
+        justify-content: center;
         .ad-slot--rendered {
             margin: 20px 0 40px 0;
         }
+    }
+
+    @include mq($from: wide) {
+        justify-content: left;
+        margin-left: 260px;
     }
 }
 

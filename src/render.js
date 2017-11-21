@@ -47,6 +47,7 @@ function formatData(data) {
             if(headOb['card-group'] == obj.sortOn )  {
                 obj.Header = headOb.Header;
                 obj.Standfirst = headOb.Standfirst;
+								obj.showAd = headOb.showAd;
             }
         })
 
