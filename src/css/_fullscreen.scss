@@ -92,13 +92,13 @@ body {
     min-height: 300px;
     background-color: $ux-grey;
     &.blue {
-        background-color: rgba($blue, 0.4);
+        background-color: rgba($blue, 1);
     }
     &.pink {
-        background-color: rgba($pink, 0.4);
+        background-color: rgba($pink, .7);
     }
     &.yellow {
-        background-color: rgba($yellow, 0.7);
+        background-color: rgba($yellow, 0.5);
     }
     &.green {
         background-color: rgba($green, 0.6);
@@ -136,7 +136,7 @@ body {
     .card-summary .pledge,
     .card-analysis,
     .card-links {
-        @include fs-bodyCopy(1);
+        @include fs-bodyCopy(2);
     }
 }
 
@@ -473,7 +473,7 @@ figure.element.element-atom {
 }
 
 h3.card-head {
-     @include fs-header(2);
+     @include fs-header(3);
      margin: 0;
 }
 
