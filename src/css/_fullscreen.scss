@@ -474,6 +474,7 @@ figure.element.element-atom {
 
 h3.card-head {
      @include fs-header(3);
+     line-height: 24px;
      margin: 0;
 }
 
@@ -490,4 +491,9 @@ h3.card-head {
     @include mq(tablet) {
         min-height: 460px;
     }
+}
+
+.card-h-block {
+  min-height: 40px;
+
 }
