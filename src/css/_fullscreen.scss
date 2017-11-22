@@ -136,7 +136,10 @@ body {
     .card-summary .pledge,
     .card-analysis,
     .card-links {
-        @include fs-bodyCopy(2);
+        @include fs-bodyCopy(1);
+        @include mq(tablet) {
+          @include fs-bodyCopy(2);
+        }
     }
 }
 
@@ -473,8 +476,11 @@ figure.element.element-atom {
 }
 
 h3.card-head {
-     @include fs-header(3);
-     line-height: 24px;
+     @include fs-header(2);
+     @include mq(tablet) {
+       @include fs-header(3);
+       line-height: 24px;
+     }
      margin: 0;
 }
 
