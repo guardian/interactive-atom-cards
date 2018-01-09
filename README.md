@@ -105,7 +105,7 @@ with the correct absolute path.
 var url = '<%= path %>/assets/image.png';
 ```
 
-### Atom size
+### Atom size###
 Interactive atoms are baked into the initial page response so you need to be careful about
 how much weight you are adding. While CSS and HTML are unlikely to ever be that large,
 you should worry about the size of your JS.
