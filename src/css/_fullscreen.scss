@@ -84,12 +84,12 @@ body {
 .swiper-slide {
     font-size: 18px;
     color: $neutral-dark;
-    border-radius: 6px;
+    // border-radius: 6px;
     box-sizing: border-box;
     padding: 3px 8px 12px;
     width: calc(100% - 60px);
-    min-height: 300px;
-    background-color: $ux-grey;
+    min-height: 240px;
+    // background-color: $ux-grey;
     &.blue {
         background-color: rgba($blue, 0.4);
     }
@@ -117,8 +117,10 @@ body {
         // flex: 1;
         // flex-basis: 300px;
         width: 140px;
-        margin-right: 20px;
-        margin-bottom: 24px;
+        // margin-right: 20px;
+        // margin-bottom: 24px;
+        border-right: 2px dotted #AAA;
+        border-bottom: 2px dotted #AAA;
     }
     @include mq(desktop) {
         width: 140px;
@@ -415,7 +417,7 @@ figure.element.element-atom {
 }
 
 h3.card-head {
-     @include fs-header(4);
+     @include fs-header(1);
      line-height:22px;
      margin: 0;
 }
