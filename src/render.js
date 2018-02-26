@@ -6,7 +6,7 @@ import cardTemplate from './src/templates/card.html!text'
 
 //duplicate this spreadsheet and update altKey
 
-const altKey = '1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ';
+const altKey = '1Fk3YkwTXnnKf1Ofodjpd1rpxvAie_i14YCPD0ciRI88';
 
 export async function render() {
 	 return rp({
@@ -27,13 +27,11 @@ function formatData(data) {
     var newObj = {};
     let count = 0;
 
-    let headGroup  = data.sheets.headerCopy;
-
     data.sheets.Sheet1.map((obj,k) => {
     	obj.ref = k;
     })
 
-    let groups = groupBy(data.sheets.Sheet1, 'card-group');
+    let groups = groupBy(data.sheets.Sheet1, 'Team');
 
     groups = sortByKeys(groups);
 
@@ -41,14 +39,17 @@ function formatData(data) {
     	obj.groupRef = k;
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
+            ob.teamRef = ob.Team.toLowerCase();
+            ob.teamRef = ob.teamRef.split(" ").join("-");
+            if(ob['Shirt-Thumb']){ob.thumbImg = ob.teamRef+"_"+ob.Year+"_1-01.png" };
         })
 
-        headGroup.map((headOb) => {
-            if(headOb['card-group'] == obj.sortOn )  {
-                obj.Header = headOb.Header;
-                obj.Standfirst = headOb.Standfirst;
-            }
-        })
+        // headGroup.map((headOb) => {
+        //     if(headOb['card-group'] == obj.sortOn )  {
+        //         obj.Header = headOb.Header;
+        //         obj.Standfirst = headOb.Standfirst;
+        //     }
+        // })
 
 
     });

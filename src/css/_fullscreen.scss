@@ -116,12 +116,12 @@ body {
     @include mq(tablet) {
         // flex: 1;
         // flex-basis: 300px;
-        width: 340px;
+        width: 140px;
         margin-right: 20px;
         margin-bottom: 24px;
     }
     @include mq(desktop) {
-        width: 300px;
+        width: 140px;
     }
 }
 
@@ -390,9 +390,8 @@ figure.element.element-atom {
 }
 
 .gv-card-header-area{
-    position:absolute;
-    top: 4px;
-    left: 78px;
+
+    left: 6px;
     min-height:90px;
 
 }
@@ -410,13 +409,14 @@ figure.element.element-atom {
     padding-bottom: 4px;
     padding-top: 0;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 18px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 300;
 }
 
 h3.card-head {
      @include fs-header(4);
+     line-height:22px;
      margin: 0;
 }
 
