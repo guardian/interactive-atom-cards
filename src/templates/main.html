@@ -12,14 +12,15 @@
         </div>
     </div>
 
+
+
     {{#groups}}
-        <div class='card-group' id="group-{{groupRef}}" data-scroll>
-                <div class="card-group__header">
-                    <div class='card-group__header__text' id="group-header-{{groupRef}}">
-                        <h2 class='card-group__header__text__title'>{{sortOn}}</h2>
-                        <p class='card-group__header__text__description'>{{Standfirst}}</p>
-                    </div>
-                </div>
+    <div class="breaker breaker-top"></div>
+    <div class="breaker"></div>
+    <div class="breaker"></div>
+    <div class="breaker"></div>
+        <div class='card-group' id="group-{{groupRef}}" data-scroll data-title="{{sortOn}}">
+              
             {{>cardstack}}
             <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div>
         </div>

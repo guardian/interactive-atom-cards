@@ -9,6 +9,12 @@ $neutral-light: rgb(231,231,231);
 $neutral-mid: rgb(81,81,81);
 $neutral-dark: rgb(31,31,31);
 
+$yellow-accent: #ffe500;
+$cyan-accent: #7BD7FF;
+
+$blue-sport:#1896D7;
+
+
 @import "mq";
 @import "fonts";
 @import "cardItem";
@@ -28,4 +34,27 @@ a {
 
 .display-none{
 	display:none !important;
+}
+
+.breaker {
+	position:relative;
+    border-top: 1px dotted #7BD7FF;
+    padding-bottom: 3px;
+    width: 200vw;
+    margin-left: -100%;
+}
+
+.breaker-top{
+
+}
+
+.spacer{
+	padding-bottom:10px;
+}
+
+.l-side-margins:after, .l-side-margins:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    background: #FFF !important;
 }

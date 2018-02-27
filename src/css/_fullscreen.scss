@@ -5,6 +5,9 @@
 //     height: 100%;
 // }
 
+
+
+
 .main {
     margin: auto;
     min-height: 100vh;
@@ -59,6 +62,36 @@ body {
     overflow-x: hidden;
 }
 
+.card-group{
+    width:100%;
+    @include mq(wide){
+        width: calc(100% - 260px);
+        padding-left:260px;  
+    }
+    
+}
+
+.card-group::before {
+    content: attr(data-title);
+    max-width: 180px;
+    font-size: 24px;
+    line-height: 26px;
+    font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    font-weight: 700;
+    color: #FFF;
+    background-color: $blue-sport;
+    padding: 3px 5px 0px;
+    z-index: 3;
+
+    @include mq(leftCol){
+        position: absolute;
+        left:20px;
+        margin-top:-16px;
+    }
+
+}
+
 .swiper-container {
     width: 100%;
     overflow: hidden;
@@ -69,10 +102,13 @@ body {
         margin-bottom: 24px;
     }
     @include mq(tablet) {
-        padding-left: 20px;
+        padding-left: 10px;
         padding-right: 20px;
     }
-    @include mq($from:leftCol, $until:wide) {}
+    @include mq($from:leftCol, $until:wide) {
+        padding: 0;
+
+    }
 }
 
 .swiper-wrapper {
@@ -86,28 +122,11 @@ body {
     color: $neutral-dark;
     // border-radius: 6px;
     box-sizing: border-box;
-    padding: 3px 8px 12px;
+    padding: 3px 10px 12px;
     width: calc(100% - 60px);
     min-height: 240px;
     // background-color: $ux-grey;
-    &.blue {
-        background-color: rgba($blue, 0.4);
-    }
-    &.pink {
-        background-color: rgba($pink, 0.4);
-    }
-    &.yellow {
-        background-color: rgba($yellow, 0.7);
-    }
-    &.green {
-        background-color: rgba($green, 0.6);
-    }
-    &.purple {
-        background-color: rgba($purple, 0.3);
-    }
-    &.grey {
-        background-color: rgba($grey, 0.4);
-    }
+    
     p {
         margin: 0;
         @include fs-headline(2);
@@ -119,8 +138,9 @@ body {
         width: 140px;
         // margin-right: 20px;
         // margin-bottom: 24px;
-        border-right: 2px dotted #AAA;
-        border-bottom: 2px dotted #AAA;
+      
+        border-bottom: 1px dotted #7BD7FF;
+        border-right: 1px dotted #7BD7FF;
     }
     @include mq(desktop) {
         width: 140px;
@@ -219,7 +239,7 @@ div.card-icon {
     margin-bottom: 12px;
     margin-top: -2px;
     z-index: 140;
-    border-top: 1px solid #EEE;
+    
     // margin-top: 6px;
     @include mq($until: tablet) {
         padding-left: 20px;
@@ -249,13 +269,17 @@ div.card-icon {
             max-width: 620px;
         }
         &__title {
+            display:inline-block;
             margin-top: 0 !important;
-           
+           background-color: $yellow-accent;
             font-size:30px;
             line-height:28px;
-            font-weight: 200;
             margin-bottom: 3px;
             color: $neutral-dark;
+                padding: 0 5px 4px 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    position: relative;
             @include mq(tablet) {
                 
                 //margin-bottom: 11px;
