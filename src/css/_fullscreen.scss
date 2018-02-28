@@ -164,7 +164,7 @@ body {
     // border-radius: 6px;
     box-sizing: border-box;
     padding: 3px 10px 12px;
-    width: calc(100% - 60px);
+    width: 140px;
     height: 220px;
     // background-color: $ux-grey;
     
@@ -180,11 +180,23 @@ body {
         // margin-right: 20px;
         // margin-bottom: 24px;
       
-        border-bottom: 1px dotted #7BD7FF;
+        // border-bottom: 1px dotted #7BD7FF;
         border-right: 1px dotted #7BD7FF;
     }
     @include mq(desktop) {
         width: 140px;
+    }
+
+    &.no-border-top{
+        border-top:none;
+    }
+
+    &.no-border-right{
+        border-right:none;
+    }
+
+    &.no-border-bottom{
+        border-bottom:none;
     }
 }
 

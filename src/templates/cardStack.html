@@ -3,7 +3,7 @@
     <div class="swiper-wrapper swipe-disabled">
         
       {{#each objArr}}​    	
-      	  <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} {{card-color}}">
+      	  <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} " data-country="{{sortOn}}">
             {{>card}}
           </div>
       {{/each}}

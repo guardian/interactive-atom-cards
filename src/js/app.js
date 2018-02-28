@@ -13,8 +13,6 @@ function initSwiper() {
 
     removeDisabled();
 
-    console.log(cardStacks)
-
     for (var s = 0; s < cardStacks.length; s++) {
         // console.log(document.getElementByID("#pagination-"+s);
         cardStacks[s].setAttribute('data-stack-position', s + 1);
@@ -152,10 +150,39 @@ function addListeners() {
 
     Window.addEventListener("scroll", WindowScrollListener);
 
+    adjustView();
+
 }
 
 function WindowScrollListener() {
     checkFixView()
+}
+
+
+function adjustView(){
+let slides = document.querySelectorAll('.swiper-slide');
+
+
+    var prevTop = 0;
+    var prevEl;
+    var prevCountry="Narnia";
+    var topPosArr = [];
+
+    slides.forEach((el, k) => {
+             if (prevEl && prevCountry!= el.getAttribute("data-country")){ 
+                    prevEl.classList.add("no-border-right");
+                }
+             if(el.offsetTop != prevTop){ 
+                    prevEl.classList.add("no-border-right");
+                }
+             
+             prevTop = el.offsetTop; 
+             prevEl = el;    
+             prevCountry = el.getAttribute("data-country")
+
+        })
+
+   
 }
 
 
