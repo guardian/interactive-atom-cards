@@ -64,32 +64,73 @@ body {
 
 .card-group{
     width:100%;
+    border-left: none;
+    @include mq(leftCol){
+        width: calc(100% - 180px);
+        margin-left:180px;  
+    }
     @include mq(wide){
         width: calc(100% - 260px);
-        padding-left:260px;  
+        margin-left:260px;  
     }
     
 }
 
-.card-group::before {
-    content: attr(data-title);
+.left-col{
+    position:relative;
+    float:none;
     max-width: 180px;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    font-weight: normal;
+    font-weight: 700;
+    color: $neutral-dark;
+    background-color: none;
+    border-right:none;
+    top: 0px;
+    padding: 3px 5px;
+    box-decoration-break: clone !important;
+    -webkit-box-decoration-break: clone !important;
+
+    
+    z-index: 3;
+
+    @include mq(leftCol){
+        float:left;
+        top: -14px;
+    }
+
+    
+}
+
+.left-col::before {
+    content: attr(data-title);
     font-size: 24px;
     line-height: 26px;
     font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
     font-weight: normal;
     font-weight: 700;
+    padding: 3px 5px 0px;
     color: #FFF;
     background-color: $blue-sport;
-    padding: 3px 5px 0px;
-    z-index: 3;
+}
 
-    @include mq(leftCol){
-        position: absolute;
-        left:20px;
-        margin-top:-16px;
+.left-col-summary{
+    display:block;
+    top: 180px;
+    color:#FFF;
+    background-color:none;
+    
+
+    .summary-text{
+        display:inline;
+        color:#FFF;
+        background-color:$neutral-dark;
+        padding: 3px 5px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
     }
-
 }
 
 .swiper-container {
@@ -124,7 +165,7 @@ body {
     box-sizing: border-box;
     padding: 3px 10px 12px;
     width: calc(100% - 60px);
-    min-height: 240px;
+    height: 220px;
     // background-color: $ux-grey;
     
     p {
@@ -418,7 +459,7 @@ figure.element.element-atom {
 .gv-card-header-area{
 
     left: 6px;
-    min-height:90px;
+    min-height:30px;
 
 }
 
@@ -431,19 +472,26 @@ figure.element.element-atom {
 }
 
 
-.card-summary {
-    padding-bottom: 4px;
-    padding-top: 0;
-    font-size: 16px;
-    line-height: 18px;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 300;
+.card-summary { 
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    line-height: 12px;
+    color: $neutral-mid;
+    // font-weight: 700;
+    vertical-align: text-top;
+
 }
 
 h3.card-head {
-     @include fs-header(1);
-     line-height:22px;
-     margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    line-height: 12px;
+    color: $neutral-dark;
+    font-weight: 700;
+    vertical-align: text-top;
+    margin-bottom:3px !important;
 }
 
 
@@ -460,3 +508,19 @@ h3.card-head {
         min-height: 460px;
     }
 }
+
+.main::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 0;
+        position: absolute;
+        top: 0;
+        @include mq(leftCol) {
+            left: 160px;
+            border-right: 1px solid #7BD7FF ;
+        }
+        @include mq(wide) {
+            left: 240px;
+        }
+    }
