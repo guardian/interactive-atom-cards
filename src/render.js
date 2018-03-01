@@ -6,7 +6,7 @@ import cardTemplate from './src/templates/card.html!text'
 
 //duplicate this spreadsheet and update altKey
 
-const altKey = '1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ';
+const altKey = '1wmSdiwatKCF-j0NRm8TcUaQWCNc651nv1G3dDwdCOfA';
 
 export async function render() {
 	 return rp({
