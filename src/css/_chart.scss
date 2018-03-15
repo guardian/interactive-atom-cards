@@ -1,0 +1,75 @@
+$hl-color: $cyan-accent;
+
+$white-color: #CCC;
+$black-color: $hl-color;
+$asian-color: $hl-color; //rgb(0,132,198);
+$latino-color: $hl-color; //rgb(187, 59, 128);
+
+
+.gv-bar-chart{
+    width:100%;
+    margin: 0 0 18px 0;
+    max-width:382px;
+    @include mq(tablet){
+        max-width:620px;
+    }
+}
+
+
+.gv-bar-holder {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    margin-bottom:3px;
+
+    &.white{
+        background: rgba($white-color, 0.25);
+    }
+
+    &.black{
+        background: rgba($black-color, 0.25);
+    }
+
+    &.asian{
+        background: rgba($asian-color, 0.25);
+    }
+
+    &.latino{
+        background: rgba($latino-color, 0.25);
+    }
+    
+}
+
+.gv-total {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: rgba(231, 231, 231, 0.75);
+
+    &.white{
+        background: rgba($white-color, 0.75);
+    }
+
+    &.black{
+        background: rgba($black-color, 0.75);
+    }
+
+    &.asian{
+        background: rgba($asian-color, 0.75);
+    }
+
+    &.latino{
+        background: rgba($latino-color, 0.75);
+    }
+
+
+
+}
+
+.gv-bar-cap {
+    font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}

@@ -1,16 +1,51 @@
 
 
 <div class="main">
-    <div class="interactive-nav display-none">
+    <div class="horizontal-accordion none-mobile">
+      <ul>
+        {{#navGroup}}
+        <li class="init" data-team="{{{Country}}}" key-ref="{{{Order_appearance}}}"  style="background-color: #{{{Color}}}">
+          
+        </li>
+        {{/navGroup}}
+      </ul>
+      <div class="gv-header-container">
+        <div class="gv-kicker">Football</div><br/>
+        <div class="gv-headline">World cup shirts through the ages</div><br/>
+        <div class="gv-standfirst">This will be a standfirst that is up to three lines long This will be a standfirst that is up to three lines long This will be a standfirst.</div>
+
+       </div> 
+    </div>
+
+
+    <div class="horizontal-accordion mobile"><div class="gv-mobile-swatches">{{#navGroup}}<div class="gv-mobile-swatch" data-team="{{{Country}}}" key-ref="{{{Order_appearance}}}"  style="background-color: #{{{Color}}}"
+        ></div>{{/navGroup}}</div><div class="gv-header-container"><div class="gv-kicker">Football</div><br/><div class="gv-headline">World cup shirts through the ages</div><br/><div class="gv-standfirst">This will be a standfirst that is up to three lines long This will be a standfirst that is up to three lines long This will be a standfirst.</div></div></div>
+
+    <div class="gv-byline-slice">
+
+        <div class="share-buttons">
+            <div class="breaker breaker--short"></div>
+
+            <a href="https://www.facebook.com/dialog/share?app_id=180444840287&amp;href=https://gu.com/p/836p6?CMP=share_btn_fb" target="_blank" title="Facebook"> <img src="https://interactive.guim.co.uk/atoms/2018/02/winter-olympics-medals/v/1519634324983/assets/facebook.png" alt=""> </a>
+            <a href="https://twitter.com/intent/tweet?text=Winter%20Olympics%3A%20latest%20medal%20table%20for%20Pyeongchang%202018&amp;url=https://gu.com/p/836p6?CMP=share_btn_tw" target="_blank" title="Twitter"> <img src="https://interactive.guim.co.uk/atoms/2018/02/winter-olympics-medals/v/1519634324983/assets/twitter.png" alt=""> </a>
+            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;su=Winter%20Olympics%3A%20latest%20medal%20table%20for%20Pyeongchang%202018&amp;body=href=https://gu.com/p/836p6" target="_blank" title="Email"> <img src="https://interactive.guim.co.uk/atoms/2018/02/winter-olympics-medals/v/1519634324983/assets/email.png" alt=""> </a>
+        </div>
+
+        <div class="gv-byline">Marcus Christensen and James Dart</div>
+    </div>    
+    <!-- <div class="interactive-nav display-none">
         <div class='interactive-nav__inner'>
            
             {{#groups}}
             <div class="gv-nav-holder">
                 <a href="#group-{{groupRef}}" data-jump-to='{{groupRef}}'>{{Header}}</a>
-            </div>    
+            </div>   
+
+
+
             {{/groups}}
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -21,9 +56,74 @@
     <div class="breaker"></div>
 
     <div class='left-col'  data-title="{{sortOn}}">
-        <div class="left-col-summary">
-            <div class="summary-text">Winners: 1990; 1994; 1998; 2002</div>
-        </div>    
+
+
+        
+        <!-- <div class="left-col-summary">
+            <div class="summary-text">Tournament appearances: {{finalsAppearances}}</div>
+        </div>   -->  
+
+       <!--  <div class="gv-bar-chart">
+
+                    <div class="gv-bar-cap">
+                    Total final appearances: {{finalsAppearances}}
+                    </div>
+                    <div class="gv-bar-holder white">
+                        <div class="gv-total white" style="width: {{{totalTournaments_pc}}}%;"></div>
+                    </div>
+
+                 
+                    <div class="gv-bar-cap">
+                    Knocked out in groups {{groupKO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{group_pc}}}%;"></div>
+                    </div>
+              
+
+
+                    <div class="gv-bar-cap">
+                    Knocked out in last 16 {{r16KO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{r16_pc}}}%;"></div>
+                    </div>
+
+
+                     <div class="gv-bar-cap">
+                    Knocked out in quarter-final {{qfKO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{qf_pc}}}%;"></div>
+                    </div>
+
+                    <div class="gv-bar-cap">
+                    Knocked out in semi-final {{sfKO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{sf_pc}}}%;"></div>
+                    </div>
+
+                    <div class="gv-bar-cap">
+                    Beaten finalist {{ruKO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{ru_pc}}}%;"></div>
+                    </div>
+
+                    <div class="gv-bar-cap">
+                    Winners {{winnerKO}} times
+                    </div>
+                    <div class="gv-bar-holder black">
+                        <div class="gv-total black" style="width: {{{winner_pc}}}%;"></div>
+                    </div>
+
+
+
+                   
+                    
+              
+                </div>   -->
     </div>
         <div class='card-group' id="group-{{groupRef}}" data-scroll data-title="{{sortOn}}">
               

@@ -51,6 +51,7 @@
     "handlebars": "^4.0.10",
     "request-promise": "^4.2.1",
     "rp": "^0.2.0",
+    "scroll-to-element": "^2.0.0",
     "swiper": "^3.4.2"
   }
 }

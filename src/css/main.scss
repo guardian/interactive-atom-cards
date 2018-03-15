@@ -20,6 +20,10 @@ $blue-sport:#1896D7;
 @import "cardItem";
 @import "swiper";
 @import "uxSuite";
+@import "accordian";
+@import "headerArea";
+
+@import "chart";
 
 
 // Uncomment for embeds
@@ -57,4 +61,8 @@ a {
     position: absolute;
     z-index: 1;
     background: #FFF !important;
+}
+
+.hidden{
+    display:none;
 }

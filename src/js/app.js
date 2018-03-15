@@ -1,6 +1,7 @@
 import Swiper from 'swiper'
 import tracker from './tracker'
 import ScrollTrigger from './scrollTrigger'
+import scrollToElement from 'scroll-to-element'
 
 var isAndroidApp = (window.location.origin === "file://" && /(android)/i.test(navigator.userAgent)) ? true : false;
 
@@ -22,14 +23,15 @@ function initSwiper() {
         var paginateTgt = ".paginate" + s;
 
         var swiper = new Swiper(swiperTgt, {
-                paginationClickable: true,
-                loop: true,
-                slidesPerView: 1.2,
-                loopedSlides: cardStacks[s].length,
-                spaceBetween: 10,
-                pagination: paginateTgt,
-                centeredSlides: true
-            })
+            paginationClickable: true,
+            loop: true,
+            slidesPerView: 1.8,
+            loopedSlides: cardStacks[s].length,
+            spaceBetween: 10,
+            pagination: paginateTgt,
+            centeredSlides: true
+        })
+
         //uncomment to change all sliders when 1 slider updates
         // .on('slideChangeEnd', function(currentSwiper, event) {
 
@@ -49,6 +51,7 @@ function initSwiper() {
         //         }
         //     });
         // })
+
         .on('onTouchStart', function(currentSwiper, e) {
                 if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                     window.GuardianJSInterface.registerRelatedCardsTouch(true);
@@ -69,7 +72,8 @@ function initSwiper() {
 }
 
 // init jump bar
-var jumpLinks = document.querySelectorAll('[data-jump-to]'), i;
+var jumpLinks = document.querySelectorAll('[data-jump-to]'),
+    i;
 
 for (i = 0; i < jumpLinks.length; ++i) {
     var jumpLink = jumpLinks[i];
@@ -97,11 +101,10 @@ function scrollTo(element, to, duration) {
         element.scrollTop = element.scrollTop + perTick;
         if (element.scrollTop === to) return;
         scrollTo(element, to, duration - 10);
-        checkFixView();
+        //checkFixView();
     }, 10);
-
-
 }
+
 
 function removeDisabled() {
     let swipeSlides = document.querySelectorAll('.swiper-wrapper');
@@ -146,6 +149,9 @@ function addListeners() {
         }
     )
 
+
+    addAccordianListener();
+
     var Window = window || document;
 
     Window.addEventListener("scroll", WindowScrollListener);
@@ -154,35 +160,101 @@ function addListeners() {
 
 }
 
-function WindowScrollListener() {
-    checkFixView()
+
+var prevClip;
+var firstClick = true;
+
+function addAccordianListener() {       
+
+         document.querySelectorAll('.horizontal-accordion ul li').forEach((el) => {
+
+         //     el.addEventListener('mouseover', function(){ 
+         //        if(firstClick){
+         //            onInitClickAccordian();
+         //            firstClick = false;
+         //        }
+                
+         //        if(prevClip){ 
+         //            prevClip.classList.add("closed"); 
+         //            prevClip.classList.remove("open")
+         //        }
+         //        el.classList.add("open")
+         //        el.classList.remove("closed");
+
+         //        prevClip = el;
+         //     });
+
+             el.addEventListener('click', function(){ 
+                scrollFromAccordian(el.getAttribute("data-team"))
+             });
+        })
+
+
+     document.querySelectorAll('.gv-mobile-swatch').forEach((el) => {
+
+             el.addEventListener('click', function(){ 
+                scrollFromAccordian(el.getAttribute("data-team"))
+             });
+        })
+
+
+
+
+        
+}
+
+function onInitClickAccordian(){
+    document.querySelectorAll('.horizontal-accordion ul li').forEach((listEl) => {
+                    listEl.classList.remove("init");
+                    listEl.classList.add("closed");
+                })
 }
 
 
-function adjustView(){
-let slides = document.querySelectorAll('.swiper-slide');
+function scrollFromAccordian(s){
+    console.log(s)
 
+    document.querySelectorAll('.left-col').forEach((listEl) => {
+                    if(s == listEl.getAttribute("data-title")){
+                      
+                                    scrollToElement(listEl, {
+                                        offset: 0,
+                                        ease: 'outSine',
+                                        duration: 1500
+                                    });
+                    }
+                })
+}
+
+
+
+function WindowScrollListener() {
+    //checkFixView()
+}
+
+
+function adjustView() {
+    let slides = document.querySelectorAll('.swiper-slide');
 
     var prevTop = 0;
     var prevEl;
-    var prevCountry="Narnia";
+    var prevCountry = "Narnia";
     var topPosArr = [];
 
     slides.forEach((el, k) => {
-             if (prevEl && prevCountry!= el.getAttribute("data-country")){ 
-                    prevEl.classList.add("no-border-right");
-                }
-             if(el.offsetTop != prevTop){ 
-                    prevEl.classList.add("no-border-right");
-                }
-             
-             prevTop = el.offsetTop; 
-             prevEl = el;    
-             prevCountry = el.getAttribute("data-country")
+        if (prevEl && prevCountry != el.getAttribute("data-country")) {
+            prevEl.classList.add("no-border-right");
+        }
+        if (el.offsetTop != prevTop) {
+            prevEl.classList.add("no-border-right");
+        }
 
-        })
+        prevTop = el.offsetTop;
+        prevEl = el;
+        prevCountry = el.getAttribute("data-country")
 
-   
+    })
+
 }
 
 
@@ -191,8 +263,10 @@ function getSlidesMaxH() {
     let swipeSlides = document.querySelectorAll('.swiper-slide');
 
     for (var n = 0; n < swipeSlides.length; n++) {
-        if (swipeSlides[n].offsetHeight > maxNoneSwipeH) { a = true;
-            console.log(swipeSlides[n].offsetHeight) };
+        if (swipeSlides[n].offsetHeight > maxNoneSwipeH) {
+            a = true;
+            console.log(swipeSlides[n].offsetHeight)
+        };
     }
 
     return a;
@@ -202,7 +276,7 @@ function checkFixView() {
     let footTop = 0;
     let navTop = document.querySelector(".interactive-nav").getBoundingClientRect().top;
     var pos_top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    
+
     if (document.querySelector(".gv-hidden-footer")) {
         footTop = document.querySelector(".gv-hidden-footer").offsetTop - document.querySelector(".gv-hidden-footer").offsetHeight;
     }
@@ -213,11 +287,7 @@ function checkFixView() {
         document.querySelector('.gv-back-top-btn').classList.add('hidden');
     }
 
-
-
-
 }
 
 // comment out for embed
 initFullScrn();
-

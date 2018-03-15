@@ -164,9 +164,12 @@ body {
     // border-radius: 6px;
     box-sizing: border-box;
     padding: 3px 10px 12px;
-    width: 140px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
     // background-color: $ux-grey;
+    border: none;
+    border-top: 1px solid #7BD7FF;
+    border-bottom: 1px solid #7BD7FF;
     
     p {
         margin: 0;
@@ -176,15 +179,18 @@ body {
     @include mq(tablet) {
         // flex: 1;
         // flex-basis: 300px;
-        width: 140px;
+        // width: 140px;
         // margin-right: 20px;
         // margin-bottom: 24px;
       
         // border-bottom: 1px dotted #7BD7FF;
-        border-right: 1px dotted #7BD7FF;
+        
     }
     @include mq(desktop) {
         width: 140px;
+        height: 220px;
+        border: none;
+        border-right: 1px dotted #7BD7FF;
     }
 
     &.no-border-top{
@@ -436,7 +442,7 @@ div.card-icon {
 }
 
 figure.element.element-atom {
-    margin-top: 9px;
+    margin-top: 0px;
 }
 
 .gv-nav-holder {
@@ -476,11 +482,16 @@ figure.element.element-atom {
 }
 
 
-.gv-card-paragraph-area{
+.gv-card-image-area{
     position: relative;
-    float:  left;
+    
     clear: both;
     margin-top:12px;
+    width:100%;
+    background-repeat:no-repeat;
+    padding-bottom: 180px;
+    background-size: contain;
+    background-position-x: center;
 }
 
 
@@ -530,7 +541,7 @@ h3.card-head {
         top: 0;
         @include mq(leftCol) {
             left: 160px;
-            border-right: 1px solid #7BD7FF ;
+            // border-right: 1px solid #7BD7FF ;
         }
         @include mq(wide) {
             left: 240px;
