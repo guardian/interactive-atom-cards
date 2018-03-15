@@ -1,11 +1,16 @@
 .gv-header-container{
-    position: absolute;
-    top: 0;
+    position: relative;
+    width: calc(100% - 20px);
 
-    @include mq(leftCol){
-        margin-top:120px;
-        margin-left: 180px;
+
+    @include mq(tablet){
+        position:absolute;
+        top:0;
+        margin-top:120px; 
         max-width:420px;
+    }
+    @include mq(leftCol){
+        margin-left: 180px;
     }
     @include mq(wide){
         margin-left: 260px;
