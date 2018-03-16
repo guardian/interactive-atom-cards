@@ -236,7 +236,7 @@ body {
 }
 .swiper-slide:nth-child(odd) {
         border:none;   
-    }
+}
 @include mq(tablet){
     .swiper-slide:nth-child(odd) {
         border-left: 1px solid #7BD7FF;
@@ -244,6 +244,9 @@ body {
     .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
         border:none; 
     }
+
+    
+
 }
 
 @include mq(desktop){
