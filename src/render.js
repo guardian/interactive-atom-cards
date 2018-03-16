@@ -197,6 +197,8 @@ function formatData(data) {
 
         })
 
+        obj.objArr.reverse();
+
         obj.group_pc = (obj.groupKO / allTourneys) * 100;
         obj.r16_pc = (obj.r16KO / allTourneys) * 100;
         obj.qf_pc = (obj.qfKO / allTourneys) * 100;
