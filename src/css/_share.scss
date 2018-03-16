@@ -1,0 +1,137 @@
+.share-wrapper{
+    width:100%;
+}
+
+.share-container {
+    max-width:1260px;
+    
+    padding: 0 10px 6px;
+    
+    height:auto;
+
+    @include mq(tablet){
+
+        margin: 0 10px;
+    }
+
+    @include mq(leftCol){
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .share-inner{
+            position: relative;
+            color:$neutral-1;
+        @include mq(tablet){
+            // height: 48px;
+        }
+
+    .share-inner-left{
+        margin: 24px 0 12px;
+        float:none;
+
+
+        @include mq(tablet){
+            margin: 12px 0;
+            
+        }
+
+        @include mq(leftCol){
+            margin: 0  0 0 220px;
+            padding: 6px 0 0 10px;
+            border-left: 1px solid $cyan-accent;   
+        }
+
+        @include mq(wide){
+            margin: 0;
+            padding: 0;
+            border: none;   
+            float:left;
+        }
+        
+    }    
+
+    .time-stamp{
+        @include fs-textSans(2);
+        margin: 3px 0 9px;
+        color: $neutral-2;
+        @include mq(tablet){
+            @include fs-textSans(2);
+            margin-top: 12px;
+        }
+    }
+
+    .share-inner-main{
+            position: relative;
+            top: 0;
+            margin:0;
+            padding-bottom: 12px;
+                    // @include mq(mobileLandscape){
+                    //     margin-left:20px;
+                    //     margin-right:20px;  
+                    // }
+
+
+                    @include mq(tablet){ 
+                        margin: 12px 0 0;
+                        margin-left: 0;
+                        padding-bottom: 12px;
+                    }
+
+                    @include mq(desktop){
+                        margin: 0 0 0;
+                        margin-left: 0;
+                        padding-bottom: 24px;
+                        max-width: 980px;
+                    }
+
+                    @include mq(leftCol){
+                         margin-left: 220px;
+                         padding-left:0;
+                         margin-right:0;   
+                         padding-bottom: 36px;
+                         border-left: 1px solid $cyan-accent;            
+                    }
+
+                    @include mq(wide){
+                         margin-left: 250px;              
+                    }
+                }   
+    }
+
+    .interactive-share {
+            height: 32px;
+            width: 32px;
+            
+            background-color: #FFF;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 30px;
+            border-radius: 34px;
+            border: 1px solid $cyan-accent;
+            margin-right:3px;
+        &[data-network='facebook'] {
+           
+             background-image: url('<%= path %>/assets/facebook.svg');
+        }
+
+        &[data-network='twitter'] {
+           
+            background-image: url('<%= path %>/assets/twitter.svg');
+            
+           
+        }
+
+        &[data-network='email'] {
+           background-image: url('<%= path %>/assets/mail.svg');
+        }
+
+        
+    }   
+
+}
+

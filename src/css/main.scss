@@ -1,27 +1,11 @@
-
-$blue: #4bc6df;//dc2a7d
-$pink: #dc2a7d;//
-$purple: #7d0068;//
-$grey: #63717a;//
-$yellow: #ffbb00;
-$green: #5ebfba;
-$neutral-light: rgb(231,231,231);
-$neutral-mid: rgb(131,131,131);
-$neutral-dark: rgb(31,31,31);
-
-$yellow-accent: #ffe500;
-$cyan-accent: #7BD7FF;
-
-$blue-sport:#1896D7;
-
-
 @import "mq";
 @import "fonts";
+@import "palette";
 @import "cardItem";
-@import "swiper";
 @import "uxSuite";
 @import "accordian";
 @import "headerArea";
+@import "share";
 
 @import "chart";
 
@@ -46,6 +30,11 @@ a {
     padding-bottom: 3px;
     width: 200vw;
     margin-left: -100%;
+
+    &.under-nav{
+        padding-bottom: 1px;
+        border-top: 1px solid $neutral-6;
+    }
 }
 
 .breaker-top{
@@ -63,12 +52,18 @@ a {
     background: #FFF !important;
 }
 
-.hidden{
-    display:none;
-}
+
 
 
 .show-mobile{
+    display:block;
+
+    @include mq(mobileLandscape){
+        display:none;
+    }
+}
+
+.show-tablet{
     display:block;
 
     @include mq(tablet){
@@ -77,10 +72,16 @@ a {
 }
 
 
+
 .show-desktop{
     display:none;
 
-    @include mq(tablet){
+    @include mq(mobileLandscape){
         display:block;
     }
+}
+
+
+.hidden{
+    display:none;
 }

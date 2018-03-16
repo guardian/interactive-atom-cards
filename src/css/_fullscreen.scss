@@ -5,12 +5,10 @@
 //     height: 100%;
 // }
 
-
-
-
 .main {
     margin: auto;
     min-height: 100vh;
+    padding: 0 20px;
     @each $bp in (tablet, desktop, leftCol, wide) {
         @include mq($bp) {
             max-width: map-get($mq-breakpoints, $bp);
@@ -65,14 +63,14 @@ body {
 .card-group{
     width:100%;
     border-left: none;
-    @include mq(leftCol){
-        width: calc(100% - 180px);
-        margin-left:180px;  
-    }
-    @include mq(wide){
-        width: calc(100% - 260px);
-        margin-left:260px;  
-    }
+    // @include mq(leftCol){
+    //     width: calc(100% - 180px);
+    //     margin-left:180px;  
+    // }
+    // @include mq(wide){
+    //     width: calc(100% - 260px);
+    //     margin-left:260px;  
+    // }
     
 }
 
@@ -92,12 +90,11 @@ body {
     padding: 3px 5px;
     box-decoration-break: clone !important;
     -webkit-box-decoration-break: clone !important;
-
-    
     z-index: 3;
 
     @include mq(leftCol){
         float:left;
+        padding: 3px 5px 3px 0;
         top: -14px;
     }
 
@@ -105,6 +102,8 @@ body {
 }
 
 .left-col::before {
+    position: absolute;
+    top: -16px;
     content: attr(data-title);
     font-size: 24px;
     line-height: 26px;
@@ -114,6 +113,11 @@ body {
     padding: 3px 5px 0px;
     color: #FFF;
     background-color: $blue-sport;
+
+    @include mq(tablet){
+        position: relative;
+        top: -3px;
+    }
 }
 
 .left-col-summary{
@@ -146,51 +150,66 @@ body {
         padding-left: 10px;
         padding-right: 20px;
     }
-    @include mq($from:leftCol, $until:wide) {
+    @include mq(leftCol) {
         padding: 0;
 
     }
 }
 
 .swiper-wrapper {
+    width:100%;
+
     @include mq(tablet) {
         flex-wrap: wrap;
+    }
+
+     &.mobile-init-view{
+        height: 210px;
+
+        @include mq(mobileLandscape){
+            height:240px;
+        }
+        @include mq(tablet){
+            height:auto;
+        }
     }
 }
 
 .swiper-slide {
     font-size: 18px;
     color: $neutral-dark;
-    // border-radius: 6px;
+    float: left;
     box-sizing: border-box;
     padding: 3px 10px 12px;
-    width: 240px;
-    height: 240px;
+    width: calc(50% - 2px);
+    height:210px;
     // background-color: $ux-grey;
     border: none;
-    border-top: 1px solid #7BD7FF;
-    border-bottom: 1px solid #7BD7FF;
+    border-left: 1px solid #7BD7FF;
+
     
     p {
         margin: 0;
         @include fs-headline(2);
         font-family: "Guardian Text Egyptian Web", Georgia, serif;
     }
+
+    @include mq(mobileLandscape){
+            height:240px;
+        }
+    
     @include mq(tablet) {
-        // flex: 1;
-        // flex-basis: 300px;
-        // width: 140px;
-        // margin-right: 20px;
-        // margin-bottom: 24px;
-      
-        // border-bottom: 1px dotted #7BD7FF;
+        height: 280px;
+        width: calc(33% - 10px);
         
-    }
-    @include mq(desktop) {
-        width: 140px;
-        height: 220px;
         border: none;
-        border-right: 1px dotted #7BD7FF;
+        padding: 3px 0;
+        border-left: 1px solid #7BD7FF;
+    }
+
+    @include mq(desktop){
+        height: 280px;
+        width: calc(20% - 10px);
     }
 
     &.no-border-top{
@@ -212,7 +231,34 @@ body {
     .card-links {
         @include fs-bodyCopy(2);
     }
+
+
 }
+.swiper-slide:nth-child(odd) {
+        border:none;   
+    }
+@include mq(tablet){
+    .swiper-slide:nth-child(odd) {
+        border-left: 1px solid #7BD7FF;
+    }
+    .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
+        border:none; 
+    }
+}
+
+@include mq(desktop){
+    .swiper-slide:nth-child(odd) {
+        border-left: 1px solid #7BD7FF;
+    }
+    .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
+        border-left: 1px solid #7BD7FF;
+    }
+    .swiper-slide:nth-child(5n+1) {  /* or 4n+1 */
+        border:none; 
+    }
+
+}
+
 
 .card-analysis {
     border-top: 2px solid rgba(255, 255, 255, 0.2);
@@ -486,12 +532,21 @@ figure.element.element-atom {
     position: relative;
     
     clear: both;
-    margin-top:12px;
+    margin-bottom:12px;
     width:100%;
     background-repeat:no-repeat;
-    padding-bottom: 180px;
+    padding-bottom: 160px;
     background-size: contain;
     background-position-x: center;
+
+    @include mq(mobileLandscape){
+       padding-bottom: 190px; 
+    }
+
+    @include mq(desktop){
+       padding-bottom: 220px; 
+    }
+    
 }
 
 
@@ -514,7 +569,7 @@ h3.card-head {
     color: $neutral-dark;
     font-weight: 700;
     vertical-align: text-top;
-    margin-bottom:3px !important;
+    margin: 3px 0 0 10px !important;
 }
 
 

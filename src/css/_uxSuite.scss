@@ -110,3 +110,43 @@ $ux-dark: #222;
     background-color: $neutral-dark;
     border-color: $neutral-dark;
 }
+
+
+.expand-btn {
+    height: 33px;
+    width: 110px;
+    background: #222;
+    position:relative;
+    margin: 6px 0 0 10px;
+    padding: 0 15px 0 7px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none !important;
+}
+
+.gv-icon--plus {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    svg {
+        fill: #FFF;
+    }
+}
+
+.gv-button-label {
+    position: relative;
+    height: 12px;
+    width: 80px;
+    top: 0px;
+    left: 15px;
+    color: #fff;
+    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 13px;
+    font-weight: 700px;
+}
+
+textarea,
+input,
+button {
+    outline: none;
+}

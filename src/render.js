@@ -211,6 +211,8 @@ function formatData(data) {
         obj = getTeamColor(obj);
 
 
+
+
         // headGroup.map((headOb) => {
         //     if(headOb['card-group'] == obj.sortOn )  {
         //         obj.Header = headOb.Header;
@@ -233,13 +235,21 @@ function formatData(data) {
 function getTeamColor(ob){
 
     teamsArr.map((team, numKey) => {
+         team.borderClass = "border-off";
             if (ob.sortOn == team.Country) { 
                 ob.Color = "#"+team.Color;
                 ob.Order_appearance = "#"+team.Order_appearance;
-
+                ob.borderClass = "border-off";
             }
+
+            if(team.Color==="FEFEFE"){
+                team.borderClass = "border-on";
+            }
+
            
         })
+
+
 
 }
 

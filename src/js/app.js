@@ -14,58 +14,58 @@ function initSwiper() {
 
     removeDisabled();
 
-    for (var s = 0; s < cardStacks.length; s++) {
-        // console.log(document.getElementByID("#pagination-"+s);
-        cardStacks[s].setAttribute('data-stack-position', s + 1);
+    // for (var s = 0; s < cardStacks.length; s++) {
+    //     // console.log(document.getElementByID("#pagination-"+s);
+    //     cardStacks[s].setAttribute('data-stack-position', s + 1);
 
-        // refs added to allow different lengths of swiper
-        var swiperTgt = document.querySelector(".swiperContainer" + s);
-        var paginateTgt = ".paginate" + s;
+    //     // refs added to allow different lengths of swiper
+    //     var swiperTgt = document.querySelector(".swiperContainer" + s);
+    //     var paginateTgt = ".paginate" + s;
 
-        var swiper = new Swiper(swiperTgt, {
-            paginationClickable: true,
-            loop: true,
-            slidesPerView: 1.8,
-            loopedSlides: cardStacks[s].length,
-            spaceBetween: 10,
-            pagination: paginateTgt,
-            centeredSlides: true
-        })
+    //     var swiper = new Swiper(swiperTgt, {
+    //         paginationClickable: true,
+    //         loop: true,
+    //         slidesPerView: 1.8,
+    //         loopedSlides: cardStacks[s].length,
+    //         spaceBetween: 10,
+    //         pagination: paginateTgt,
+    //         centeredSlides: true
+    //     })
 
-        //uncomment to change all sliders when 1 slider updates
-        // .on('slideChangeEnd', function(currentSwiper, event) {
+    //     //uncomment to change all sliders when 1 slider updates
+    //     // .on('slideChangeEnd', function(currentSwiper, event) {
 
-        //     swipers.forEach(function(s,i) {
-        //       var eq = (currentSwiper == s) ? true : false;
-        //       if(eq){
-        //         var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-        //         analytics.registerEvent('stack_card_view', i)
-        //       }
+    //     //     swipers.forEach(function(s,i) {
+    //     //       var eq = (currentSwiper == s) ? true : false;
+    //     //       if(eq){
+    //     //         var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+    //     //         analytics.registerEvent('stack_card_view', i)
+    //     //       }
 
-        //         if (s.activeIndex != currentSwiper.activeIndex) {
-        //           //s.activeIndex = currentSwiper.activeIndex;
-        //             s.slideTo(currentSwiper.activeIndex, 0, false);
-        //         } else {
+    //     //         if (s.activeIndex != currentSwiper.activeIndex) {
+    //     //           //s.activeIndex = currentSwiper.activeIndex;
+    //     //             s.slideTo(currentSwiper.activeIndex, 0, false);
+    //     //         } else {
 
 
-        //         }
-        //     });
-        // })
+    //     //         }
+    //     //     });
+    //     // })
 
-        .on('onTouchStart', function(currentSwiper, e) {
-                if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
-                    window.GuardianJSInterface.registerRelatedCardsTouch(true);
-                }
-            })
-            .on('onTouchEnd', function(currentSwiper, e) {
-                if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
-                    window.GuardianJSInterface.registerRelatedCardsTouch(false);
-                }
-            });
+    //     .on('onTouchStart', function(currentSwiper, e) {
+    //             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
+    //                 window.GuardianJSInterface.registerRelatedCardsTouch(true);
+    //             }
+    //         })
+    //         .on('onTouchEnd', function(currentSwiper, e) {
+    //             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
+    //                 window.GuardianJSInterface.registerRelatedCardsTouch(false);
+    //             }
+    //         });
 
-        swipers.push(swiper);
+    //     swipers.push(swiper);
 
-    }
+    // }
 
     let swipeSlides = document.querySelectorAll('.swiper-slide');
 
@@ -150,6 +150,15 @@ function addListeners() {
     )
 
 
+
+    document.querySelectorAll('.expand-btn').forEach((el) => {
+             el.addEventListener('click', function(){ 
+                el.classList.add("hidden")
+                expandCards(el.getAttribute("data-country"));
+
+             });
+    })
+
     addAccordianListener();
 
     var Window = window || document;
@@ -157,6 +166,19 @@ function addListeners() {
     Window.addEventListener("scroll", WindowScrollListener);
 
     adjustView();
+
+}
+
+function expandCards(s){
+  
+    document.querySelectorAll('.swiper-wrapper').forEach((el) => {
+                console.log(el)
+                if(el.getAttribute("data-country") == s){ 
+
+                    el.classList.remove("mobile-init-view")
+                };
+
+             });
 
 }
 
