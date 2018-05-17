@@ -116,7 +116,7 @@ body {
     font-weight: 700;
     padding: 3px 5px 0;
     color: #FFF;
-    background-color: $blue-sport;
+    background-color: $neutral-1;
 
     @include mq(tablet){
         position: relative;
@@ -189,7 +189,7 @@ body {
     height:210px;
     // background-color: $ux-grey;
     border: none;
-    border-left: 1px solid #7BD7FF;
+    border-left: 1px solid $neutral-main;
 
     
     p {
@@ -208,7 +208,7 @@ body {
         
         border: none;
         padding: 3px 0;
-        border-left: 1px solid #7BD7FF;
+        border-left: 1px solid $neutral-main;
     }
 
     @include mq(desktop){
@@ -243,7 +243,7 @@ body {
 
 @include mq(tablet){
     .swiper-slide:nth-child(odd) {
-        border-left: 1px solid #7BD7FF;
+        border-left: 1px solid $neutral-main;
     }
     .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
         border:none; 
@@ -255,10 +255,10 @@ body {
 
 @include mq(desktop){
     .swiper-slide:nth-child(odd) {
-        border-left: 1px solid #7BD7FF;
+        border-left: 1px solid $neutral-main;
     }
     .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
-        border-left: 1px solid #7BD7FF;
+        border-left: 1px solid $neutral-main;
     }
 
 

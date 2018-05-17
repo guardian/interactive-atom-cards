@@ -91,7 +91,7 @@
                          padding-left:0;
                          margin-right:0;   
                          padding-bottom: 36px;
-                         border-left: 1px solid $cyan-accent;            
+                         border-left: 1px solid $neutral-main;            
                     }
 
                     @include mq(wide){
@@ -112,7 +112,7 @@
             background-repeat: no-repeat;
             background-size: 30px;
             border-radius: 34px;
-            border: 1px solid $cyan-accent;
+            border: 1px solid $neutral-1;
             margin-right:3px;
         &[data-network='facebook'] {
            

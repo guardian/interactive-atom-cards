@@ -1,6 +1,12 @@
+
+
 @import "mq";
 @import "fonts";
 @import "palette";
+
+$neutral-main: $neutral-2;
+
+
 @import "cardItem";
 @import "uxSuite";
 @import "accordian";
@@ -8,6 +14,8 @@
 @import "share";
 
 @import "chart";
+
+
 
 
 // Uncomment for embeds
@@ -26,7 +34,7 @@ a {
 
 .breaker {
 	position:relative;
-    border-top: 1px dotted #7BD7FF;
+    border-top: 1px dotted $neutral-main;
     padding-bottom: 3px;
     width: 200vw;
     margin-left: -100%;
