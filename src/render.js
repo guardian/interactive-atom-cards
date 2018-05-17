@@ -191,6 +191,7 @@ function formatData(data) {
             ob.groupRef = obj.groupRef;
             ob.teamRef = ob.Team.toLowerCase();
             ob.teamRef = ob.teamRef.split(" ").join("-");
+            ob.spriteClass = ob.teamRef + "-" + ob.Year + "-1";
             if (ob['Shirt-Thumb']) { ob.thumbImg = ob.teamRef + "_" + ob.Year + "_1.png" };
 
             obj.lastImg = ob.thumbImg = ob.teamRef + "_" + ob.Year + "_1.png";
