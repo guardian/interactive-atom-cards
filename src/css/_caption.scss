@@ -1,0 +1,40 @@
+.card-caption{
+	position:relative;
+
+	.cap-head-holder{
+		width: calc(100% - 80px);
+	}
+	.header-wrap{
+		
+		display:inline;
+		background-color: $yellow-accent;
+	    padding: 6px 5px 5px 10px;
+	    font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+	    font-size: 16px;
+	    line-height: 16px;
+    	font-weight: 700;
+	    color:$neutral-1;
+	    box-decoration-break: clone;
+	    -webkit-box-decoration-break: clone;
+
+	   
+	}
+
+	span{
+	
+		width: 100%;
+		display:inline;
+		background-color: $yellow-accent;
+	    padding: 6px 5px 5px 10px;
+	   	font-family: "Guardian Headline Full", Georgia;
+	    font-size: 16px;
+	    font-style: italic;
+	    line-height: 18px;
+    	font-weight: 400;
+	    box-decoration-break: clone;
+	    -webkit-box-decoration-break: clone;
+	 
+
+	   
+	}
+}

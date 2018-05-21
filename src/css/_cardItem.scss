@@ -11,3 +11,48 @@
 
 	
 }
+
+
+.card-summary { 
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    line-height: 12px;
+    color: $neutral-mid;
+    // font-weight: 700;
+    vertical-align: text-top;
+
+}
+
+h3.card-head {
+	position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    line-height: 12px;
+    color: $neutral-dark;
+    font-weight: 700;
+    vertical-align: text-top;
+    margin: 3px 0 0 0 !important;
+    padding-left:10px;
+
+    &.winner{
+    	padding-left:25px;
+    }
+
+    &.winner:before {
+		position:absolute;
+		top: -2px;
+		left:5px;
+		content:"★";
+		color:white;
+		width:14px;
+		height:14px;
+		text-align:center;
+		padding: 1px 0 0 1px;
+		background-color: $neutral-1;
+		border-radius: 1000px;
+	}
+}
+
+

@@ -6,9 +6,9 @@ import cardTemplate from './src/templates/card.html!text'
 
 //duplicate this spreadsheet and update altKey
 
-const altKey = '1Fk3YkwTXnnKf1Ofodjpd1rpxvAie_i14YCPD0ciRI88';
-
 const allTourneys = 20;
+
+const urlStr = 'https://interactive.guim.co.uk/docsdata-test/1Fk3YkwTXnnKf1Ofodjpd1rpxvAie_i14YCPD0ciRI88.json';
 
 
 const teamsArr = [{
@@ -144,7 +144,7 @@ const teamsArr = [{
 
 export async function render() {
     return rp({
-        uri: 'https://interactive.guim.co.uk/docsdata-test/' + altKey + '.json',
+        uri: urlStr,
         json: true
     }).then((data) => {
 
@@ -187,7 +187,7 @@ function formatData(data) {
             if (ob.Progress == 'Quarter-final' || ob.Progress == 'Round 2') { obj.qfKO = obj.qfKO + 1 }
             if (ob.Progress == 'Semi-final' || ob.Progress == 'Third Place' || ob.Progress == 'Fourth Place') { obj.sfKO = obj.sfKO + 1 }
             if (ob.Progress == 'Runners-up') { obj.ruKO = obj.ruKO + 1 }
-            if (ob.Progress == 'Winners') { obj.winnerKO = obj.winnerKO + 1 }
+            if (ob.Progress == 'Winners') { obj.winnerKO = obj.winnerKO + 1; console.log(obj) }
             ob.groupRef = obj.groupRef;
             ob.teamRef = ob.Team.toLowerCase();
             ob.teamRef = ob.teamRef.split(" ").join("-");
@@ -196,6 +196,15 @@ function formatData(data) {
 
             obj.lastImg = ob.thumbImg = ob.teamRef + "_" + ob.Year + "_1.png";
 
+            if (ob.captionTitle){ obj.captionTitle = ob.captionTitle; }
+
+            if (ob.captionCopy){ obj.captionCopy = ob.captionCopy; }
+
+            if (ob.captionLink){ obj.captionLink = ob.captionLink;}
+
+            if (ob.Won === "Y"){ ob.trophyWon = true;}
+
+            
         })
 
         obj.objArr.reverse();
@@ -215,6 +224,10 @@ function formatData(data) {
 
 
 
+        getCaption(obj);
+
+
+
 
         // headGroup.map((headOb) => {
         //     if(headOb['card-group'] == obj.sortOn )  {
@@ -229,6 +242,8 @@ function formatData(data) {
     newObj.navGroup = teamsArr;
 
     newObj.groups = groups;
+
+
 
 
     return newObj;
@@ -253,6 +268,31 @@ function getTeamColor(ob){
         })
 
 
+
+}
+
+function getCaption(ob){
+    
+
+
+    // var o = ob.objArr[0];
+
+    // if (o.captionTitle){
+  
+    //     ob.captionTitle = o.captionTitle;
+    // }
+
+    // if (o.captionCopy){
+    
+    //     ob.captionCopy = o.captionCopy;
+    // }
+
+    // if (o.captionLink){
+    
+    //     ob.captionLink = o.captionLink;
+    // }
+
+    // return ob;
 
 }
 

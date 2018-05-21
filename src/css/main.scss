@@ -8,6 +8,8 @@ $neutral-main: $neutral-2;
 
 
 @import "cardItem";
+
+@import "caption";
 @import "uxSuite";
 @import "accordian";
 @import "headerArea";
@@ -19,6 +21,9 @@ $neutral-main: $neutral-2;
 
 
 
+.is-immersive-interactive .l-footer {
+    display: block !important;
+}
 
 // Uncomment for embeds
 //@import "embed";
