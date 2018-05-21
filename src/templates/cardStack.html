@@ -2,16 +2,16 @@
     <div class="swiper-wrapper swipe-disabled mobile-init-view" data-country="{{sortOn}}">
        {{#if captionTitle}}
         <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} card-caption" data-country="{{sortOn}}">
-            <div class="cap-head-holder">
+            <div class="cap-holder">
                 <div class="header-wrap">{{{captionTitle}}}</div>
-            </div>
+            
        
-              <span>{{captionCopy}}</span>
- 
+               <div class="copy-wrap">{{captionCopy}}</div>
+            </div>
         </div>
         {{/if}}
         {{#each objArr}}​
-        <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} " data-country="{{sortOn}}">
+        <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} {{#if yellowBorder}}border-yellow{{/if}}" data-country="{{sortOn}}">
             {{>card}}
         </div>
         {{/each}}

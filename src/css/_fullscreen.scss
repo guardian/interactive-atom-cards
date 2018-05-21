@@ -195,7 +195,9 @@ body {
     // background-color: $ux-grey;
     border: none;
     border-left: 1px solid $neutral-main;
-
+    &.border-yellow{
+        border-left: 1px solid $yellow-accent;
+    }
     
     p {
         margin: 0;
@@ -269,6 +271,8 @@ body {
 
     .swiper-slide:nth-child(5n+1) {  /* or 4n+1 */
         border:none; 
+
+        
     }
 
     
@@ -278,6 +282,12 @@ body {
 
 }
 
+@include mq(leftCol){
+     .swiper-slide:last-child{
+        border-right: 1px solid $neutral-main;
+            width: calc(20% - 9px);
+     }
+}
 
 .card-analysis {
     border-top: 2px solid rgba(255, 255, 255, 0.2);

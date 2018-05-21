@@ -170,6 +170,8 @@ function formatData(data) {
 
     groups = sortByKeys(groups);
 
+
+
     groups.map((obj, k) => {
         obj.groupRef = k;
         obj.groupKO = 0;
@@ -187,7 +189,7 @@ function formatData(data) {
             if (ob.Progress == 'Quarter-final' || ob.Progress == 'Round 2') { obj.qfKO = obj.qfKO + 1 }
             if (ob.Progress == 'Semi-final' || ob.Progress == 'Third Place' || ob.Progress == 'Fourth Place') { obj.sfKO = obj.sfKO + 1 }
             if (ob.Progress == 'Runners-up') { obj.ruKO = obj.ruKO + 1 }
-            if (ob.Progress == 'Winners') { obj.winnerKO = obj.winnerKO + 1; console.log(obj) }
+            if (ob.Progress == 'Winners') { obj.winnerKO = obj.winnerKO + 1; }
             ob.groupRef = obj.groupRef;
             ob.teamRef = ob.Team.toLowerCase();
             ob.teamRef = ob.teamRef.split(" ").join("-");
@@ -196,7 +198,9 @@ function formatData(data) {
 
             obj.lastImg = ob.thumbImg = ob.teamRef + "_" + ob.Year + "_1.png";
 
-            if (ob.captionTitle){ obj.captionTitle = ob.captionTitle; }
+            if (ob.captionTitle){ obj.captionTitle = ob.captionTitle; obj.objArr[obj.objArr.length - 1].yellowBorder = true;  }
+
+          
 
             if (ob.captionCopy){ obj.captionCopy = ob.captionCopy; }
 
@@ -204,10 +208,30 @@ function formatData(data) {
 
             if (ob.Won === "Y"){ ob.trophyWon = true;}
 
+
+
+
+
             
         })
 
         obj.objArr.reverse();
+
+        var prevCap = false;
+
+        // obj.objArr.map((ob, k) => {
+        //         if (prevCap){  console.log(ob); prevCap = false }                
+        //         if (ob.captionTitle){ ob.yellowBorder = true; console.log(ob) }
+        // })
+
+        // obj.objArr((ob, k) => {
+
+        //     console.log(k)
+        //         // if (prevCap){ ob.yellowBorder = true; prevCap = false}
+          
+        //         // if (ob.captionTitle){  prevCap = true}
+
+        // })
 
         obj.group_pc = (obj.groupKO / allTourneys) * 100;
         obj.r16_pc = (obj.r16KO / allTourneys) * 100;

@@ -1,29 +1,40 @@
 .card-caption{
 	position:relative;
-
-	.cap-head-holder{
-		width: calc(100% - 80px);
+	background-color: $yellow-accent;
+	
+	.cap-holder{
+		width: calc(100% - 20px);
 	}
 	.header-wrap{
-		
-		display:inline;
-		background-color: $yellow-accent;
+		position:relative;
+		width: 100%;
+		height: 100px;
 	    padding: 6px 5px 5px 10px;
 	    font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
 	    font-size: 16px;
-	    line-height: 16px;
+	    line-height: 24px;
     	font-weight: 700;
 	    color:$neutral-1;
-	    box-decoration-break: clone;
-	    -webkit-box-decoration-break: clone;
 
 	   
 	}
 
-	span{
-	
+	.header-wrap:after{
+		content: '';
+		position:absolute;
+		background-color: $yellow-accent;
+		transform: rotate(45deg);
+		width:30px;
+		height:30px;
+		bottom:0;
+		right:-15px;
+		
+
+	}	
+
+	.copy-wrap{
+		position:relative;
 		width: 100%;
-		display:inline;
 		background-color: $yellow-accent;
 	    padding: 6px 5px 5px 10px;
 	   	font-family: "Guardian Headline Full", Georgia;
@@ -31,10 +42,17 @@
 	    font-style: italic;
 	    line-height: 18px;
     	font-weight: 400;
-	    box-decoration-break: clone;
-	    -webkit-box-decoration-break: clone;
-	 
 
-	   
 	}
+
+	.copy-wrap:before{
+		content:'';
+		position:absolute;
+		height: 1px;
+		left: -15px;
+		top:-15px;
+		background-color: $neutral-1;
+		width: calc(100% + 35px);
+	}
+
 }
