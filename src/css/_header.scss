@@ -50,12 +50,15 @@ $header-bg:$Highlight-Yellow;
 
     @include mq(tablet){
         margin-left: 20px;
+        border-left: 1px solid #222;
     }
     @include mq(leftCol){
         margin-left: 220px;
     }
     @include mq(wide){
+        margin-top:240px; 
         margin-left: 250px;
+        padding-bottom:60px;
     }
 }
 
@@ -87,13 +90,13 @@ $header-bg:$Highlight-Yellow;
     position: relative;
     display:inline-block;
     padding: 4px 10px 4px 10px;   
-    font-family: "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 700;
+    font-family: "GraunNumbers","Guardian Egyptian Web", Georgia, serif;
+    font-weight: 900;
     font-size: 24px;
     line-height: 24px;
     max-width: 225px;
     color:#000;
-    background-color: $yellow-accent;
+    // background-color: rgba($yellow-accent, 0.2);
 
     @include mq(mobileLandscape){
         font-size: 40px;
@@ -102,9 +105,9 @@ $header-bg:$Highlight-Yellow;
     }
 
      @include mq(tablet){
-        padding: 0 5px 4px 10px;
-        font-size: 50px;
-        line-height: 62px;
+       
+        font-size: 62px;
+        line-height: 64px;
          max-width: 420px;
     }
 }
@@ -125,7 +128,7 @@ $header-bg:$Highlight-Yellow;
         padding-top: 12px;
         padding-left: 0;
         font-size: 20px;
-    line-height: 24px;
+        line-height: 24px;
     }
 
     @include mq(leftCol){
