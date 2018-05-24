@@ -1,5 +1,5 @@
 <div class="swiper-container swiperContainer{{groupRef}}">
-    <div class="swiper-wrapper swipe-disabled mobile-init-view" data-country="{{sortOn}}">
+    <div class="swiper-wrapper swipe-disabled mobile-init-view" {{#if hideMobileExpandButton}}style="height:auto;"{{/if}}data-country="{{sortOn}}">
        {{#if captionTitle}}
         <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} card-caption" data-country="{{sortOn}}">
             <div class="cap-holder">
@@ -17,6 +17,9 @@
         {{/each}}
     </div>
 </div>
+
+
+{{#if showMobileExpandButton}}
 <button class="expand-btn atom__button atom__button--large atom__button--rounded atom--snippet__handle show-tablet" aria-hidden="true" data-country="{{sortOn}}">
     <span class="gv-icon--plus">
           <svg class="icon icon--plus " width="18px" height="18px" viewBox="0 0 18 18">
@@ -25,5 +28,6 @@
           </span>
     <span class="gv-button-label">
           Show more
-          </span>
+    </span>
 </button>
+{{/if}}

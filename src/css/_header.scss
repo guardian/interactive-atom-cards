@@ -15,7 +15,7 @@ $header-bg:$Highlight-Yellow;
 
     @include mq(leftCol){
         // background-image: url('<%= path %>/assets/iso-med-dark.png');
-        height:560px;
+        height:550px;
     }
 
     // @include mq(leftCol) {
@@ -50,16 +50,22 @@ $header-bg:$Highlight-Yellow;
     }
 
     @include mq(tablet){
+        top:60px;
         right: 10px;
         background-image: url('<%= path %>/assets/iso-med-dark.png');
         width:600px;
         height:440px;
     }
 
+    @include mq(desktop){
+        top:20px;
+    }
+
     @include mq(leftCol){
         background-image: url('<%= path %>/assets/iso-med-dark.png');
         width:750px;
         height:540px;
+        top:10px;
         right: 200px;
         background-repeat: none;
     }

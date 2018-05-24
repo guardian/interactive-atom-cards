@@ -4,147 +4,11 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-//duplicate this spreadsheet and update altKey
-
 const allTourneys = 20;
-
-const urlStr = 'https://interactive.guim.co.uk/docsdata-test/1Fk3YkwTXnnKf1Ofodjpd1rpxvAie_i14YCPD0ciRI88.json';
-
-
-const teamsArr = [{
-    "Country": "Cameroon",
-    "Color": "00AA00",
-    "Order_appearance": 1
-}, {
-    "Country": "Bosnia Herzegovina",
-    "Color": "11488E",
-    "Order_appearance": 2
-}, {
-    "Country": "France",
-    "Color": "1F295A",
-    "Order_appearance": 3
-}, {
-    "Country": "Italy",
-    "Color": "1F295A",
-    "Order_appearance": 4
-}, {
-    "Country": "Japan",
-    "Color": "254F8C",
-    "Order_appearance": 5
-}, {
-    "Country": "Nigeria",
-    "Color": "31C49F",
-    "Order_appearance": 6
-}, {
-    "Country": "Mexico",
-    "Color": "3A7566",
-    "Order_appearance": 7
-}, {
-    "Country": "Algeria",
-    "Color": "7ED321",
-    "Order_appearance": 8
-}, {
-    "Country": "Uruguay",
-    "Color": "87B8FA",
-    "Order_appearance": 9
-}, {
-    "Country": "Russia",
-    "Color": "A40E13",
-    "Order_appearance": 10
-}, {
-    "Country": "Argentina",
-    "Color": "A4C9D9",
-    "Order_appearance": 11
-}, {
-    "Country": "Croatia",
-    "Color": "AA0000",
-    "Order_appearance": 12
-}, {
-    "Country": "Costa Rica",
-    "Color": "BC021A",
-    "Order_appearance": 13
-}, {
-    "Country": "Portugal",
-    "Color": "CB0B3E",
-    "Order_appearance": 14
-}, {
-    "Country": "Chile",
-    "Color": "D0021B",
-    "Order_appearance": 15
-}, {
-    "Country": "Spain",
-    "Color": "D12D2E",
-    "Order_appearance": 16
-}, {
-    "Country": "Australia",
-    "Color": "F5A623",
-    "Order_appearance": 17
-}, {
-    "Country": "Colombia",
-    "Color": "F8E71C",
-    "Order_appearance": 18
-}, {
-    "Country": "Switzerland",
-    "Color": "FD293F",
-    "Order_appearance": 19
-}, {
-    "Country": "Belgium",
-    "Color": "FF0000",
-    "Order_appearance": 20
-}, {
-    "Country": "South Korea",
-    "Color": "FF0000",
-    "Order_appearance": 21
-}, {
-    "Country": "Netherlands",
-    "Color": "FF3300",
-    "Order_appearance": 22
-}, {
-    "Country": "Ivory Coast",
-    "Color": "FF6600",
-    "Order_appearance": 23
-}, {
-    "Country": "Ecuador",
-    "Color": "FFAA00",
-    "Order_appearance": 24
-}, {
-    "Country": "Brazil",
-    "Color": "FFCC00",
-    "Order_appearance": 25
-}, {
-    "Country": "England",
-    "Color": "FEFEFE",
-    "Order_appearance": 26
-}, {
-    "Country": "Germany",
-    "Color": "FEFEFE",
-    "Order_appearance": 27
-}, {
-    "Country": "Ghana",
-    "Color": "FEFEFE",
-    "Order_appearance": 28
-}, {
-    "Country": "Greece",
-    "Color": "FEFEFE",
-    "Order_appearance": 29
-}, {
-    "Country": "Honduras",
-    "Color": "FEFEFE",
-    "Order_appearance": 30
-}, {
-    "Country": "Iran",
-    "Color": "FEFEFE",
-    "Order_appearance": 31
-}, {
-    "Country": "USA",
-    "Color": "FEFEFE",
-    "Order_appearance": 32
-}]
-
 
 export async function render() {
     return rp({
-        uri: urlStr,
+        uri: 'https://interactive.guim.co.uk/docsdata-test/1Fk3YkwTXnnKf1Ofodjpd1rpxvAie_i14YCPD0ciRI88.json',
         json: true
     }).then((data) => {
 
@@ -169,8 +33,6 @@ function formatData(data) {
     let groups = groupBy(data.sheets.Sheet1, 'Team');
 
     groups = sortByKeys(groups);
-
-
 
     groups.map((obj, k) => {
         obj.groupRef = k;
@@ -200,18 +62,11 @@ function formatData(data) {
 
             if (ob.captionTitle){ obj.captionTitle = ob.captionTitle; obj.objArr[obj.objArr.length - 1].yellowBorder = true;  }
 
-          
-
             if (ob.captionCopy){ obj.captionCopy = ob.captionCopy; }
 
             if (ob.captionLink){ obj.captionLink = ob.captionLink;}
 
             if (ob.Won === "Y"){ ob.trophyWon = true;}
-
-
-
-
-
             
         })
 
@@ -219,106 +74,33 @@ function formatData(data) {
 
         var prevCap = false;
 
-        // obj.objArr.map((ob, k) => {
-        //         if (prevCap){  console.log(ob); prevCap = false }                
-        //         if (ob.captionTitle){ ob.yellowBorder = true; console.log(ob) }
-        // })
-
-        // obj.objArr((ob, k) => {
-
-        //     console.log(k)
-        //         // if (prevCap){ ob.yellowBorder = true; prevCap = false}
-          
-        //         // if (ob.captionTitle){  prevCap = true}
-
-        // })
-
-        obj.group_pc = (obj.groupKO / allTourneys) * 100;
-        obj.r16_pc = (obj.r16KO / allTourneys) * 100;
-        obj.qf_pc = (obj.qfKO / allTourneys) * 100;
-        obj.sf_pc = (obj.sfKO / allTourneys) * 100;
-        obj.ru_pc = (obj.ruKO / allTourneys) * 100;
-        obj.winner_pc = (obj.winnerKO / allTourneys) * 100;
+        //KEEP FOR TOURNEY PERFORMANCE DATA
+        // obj.group_pc = (obj.groupKO / allTourneys) * 100;
+        // obj.r16_pc = (obj.r16KO / allTourneys) * 100;
+        // obj.qf_pc = (obj.qfKO / allTourneys) * 100;
+        // obj.sf_pc = (obj.sfKO / allTourneys) * 100;
+        // obj.ru_pc = (obj.ruKO / allTourneys) * 100;
+        // obj.winner_pc = (obj.winnerKO / allTourneys) * 100;
 
         obj.finalsAppearances = obj.objArr.length;
 
-        obj.totalTournaments_pc = (obj.finalsAppearances / allTourneys) * 100;
+        if(obj.finalsAppearances > 1 && obj.captionTitle || obj.finalsAppearances > 2 ){ obj.showMobileExpandButton = true }
 
-        obj = getTeamColor(obj);
+        if(obj.finalsAppearances < 2 && obj.captionTitle || obj.finalsAppearances < 3 ){ obj.hideMobileExpandButton = true }   
 
-
-
-        getCaption(obj);
-
-
-
-
-        // headGroup.map((headOb) => {
-        //     if(headOb['card-group'] == obj.sortOn )  {
-        //         obj.Header = headOb.Header;
-        //         obj.Standfirst = headOb.Standfirst;
-        //     }
-        // })
+        // obj.totalTournaments_pc = (obj.finalsAppearances / allTourneys) * 100;
 
 
     });
 
-    newObj.navGroup = teamsArr;
-
     newObj.groups = groups;
-
-
-
 
     return newObj;
 }
 
 
-function getTeamColor(ob){
-
-    teamsArr.map((team, numKey) => {
-         team.borderClass = "border-off";
-            if (ob.sortOn == team.Country) { 
-                ob.Color = "#"+team.Color;
-                ob.Order_appearance = "#"+team.Order_appearance;
-                ob.borderClass = "border-off";
-            }
-
-            if(team.Color==="FEFEFE"){
-                team.borderClass = "border-on";
-            }
-
-           
-        })
 
 
-
-}
-
-function getCaption(ob){
-    
-
-
-    // var o = ob.objArr[0];
-
-    // if (o.captionTitle){
-  
-    //     ob.captionTitle = o.captionTitle;
-    // }
-
-    // if (o.captionCopy){
-    
-    //     ob.captionCopy = o.captionCopy;
-    // }
-
-    // if (o.captionLink){
-    
-    //     ob.captionLink = o.captionLink;
-    // }
-
-    // return ob;
-
-}
 
 
 
@@ -353,17 +135,6 @@ function groupBy(xs, key) {
     }, {});
 };
 
-// function sortByKey(myObj) {
-//     let keys = Object.keys(myObj),i, len = keys.length;
-
-//     keys.sort();
-
-//     for (i = 0; i < len; i++) {
-//       let k = keys[i];
-//  
-//     }
-
-// }
 
 function sortByKeys(obj) {
     let keys = Object.keys(obj),
