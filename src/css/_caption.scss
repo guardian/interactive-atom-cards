@@ -1,18 +1,36 @@
 .card-caption {
-    position: relative;
+position: relative;
+    @include mq($from: mobile, $until: mobileLandscape){
+        width: calc(100% - 30px) !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 5px;
+    }
+
+    @include mq($until: mobileLandscape) {
+            margin-bottom:12px;
+    }
+    
+   
+
+ 
+
     .cap-holder {
-        width: calc(100% - 15px);
+        @include mq(tablet){
+            width: calc(100% - 15px);
+        }
+        
     }
     .header-wrap {
         display: inline;
         position: relative;
         width: 100%;
         height: 100px;
-        padding: 2px 5px 6px 10px;
+        padding: 5px 5px 5px 4px;
         background-color: $header-bg;
         font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 20px;
         font-weight: 900;
         font-variant-numeric: lining-nums;
         -moz-font-feature-settings: "lnum";
@@ -21,6 +39,21 @@
         color: $neutral-1;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
+
+        @include mq(tablet){
+            // font-size: 20px;
+            // line-height: 24px;
+            // font-weight: 900;
+            padding: 3px 10px 6px 10px;
+        }
+
+        @include mq(desktop){
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 900;
+        }
+
+
     }
 
     // .header-wrap:before {
@@ -31,15 +64,32 @@
     // 	background-color: $header-bg;
     // }
     .copy-wrap {
-        // position:relative;
-        width: 100%;
-        padding: 6px 5px 15px 10px;
-        background-color: #FFE500;
-        font-family: "Guardian Headline Full", Georgia;
-        font-size: 18px;
-        line-height: 24px;
-        font-style: italic;
+        width: 100%;       
         font-weight: 400;
-        margin-top: -8px;
+        padding: 6px 5px 15px 6px;
+        margin-top: -2px;
+        background-color: #FFE500;
+        font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+
+        @include mq(tablet){
+            padding: 6px 5px 15px 10px;
+           
+            font-family: "Guardian Headline Full", Georgia;
+            font-size: 16px;
+            line-height: 24px;
+            font-style: italic;
+        }
+
+
+        @include mq(desktop){
+            padding: 6px 5px 15px 10px;
+           
+            font-family: "Guardian Headline Full", Georgia;
+            font-size: 18px;
+            line-height: 24px;
+            font-style: italic;
+        }
     }
 }

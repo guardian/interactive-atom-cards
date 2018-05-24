@@ -568,7 +568,7 @@
 
 
 
-@include mq(tablet){
+@include mq(mobileLandscape){
 
     .gv-sprite-card{ 
         background-image: url('<%= path %>/assets/football-kits-thumbs/a-sprite-218-220.png');

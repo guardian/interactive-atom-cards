@@ -5,14 +5,18 @@
 //     height: 100%;
 // }
 
+$slide-border-color: lighten($neutral-main, 50%);
+
+
 html{
     background-color:#FFF;
+
 }
 
 .main {
     margin: auto;
     min-height: 100vh;
-    padding: 0 20px;
+    padding: 0;
     @each $bp in (tablet, desktop, leftCol, wide) {
         @include mq($bp) {
             max-width: map-get($mq-breakpoints, $bp);
@@ -22,12 +26,7 @@ html{
 
 .element-atom,
 .interactive-atom {
-    margin-left: -10px;
-    margin-right: -10px;
-    @include mq(tablet) {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
+    margin: 0 !important;
 }
 
 .ios,
@@ -81,8 +80,8 @@ body {
 .left-col{
     position:relative;
     float:none;
-    max-width: 180px;
-    height: 8px;
+    max-width: 200px;
+    height: 5px;
     font-size: 16px;
     line-height: 22px;
     font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
@@ -96,6 +95,10 @@ body {
     box-decoration-break: clone !important;
     -webkit-box-decoration-break: clone !important;
     z-index: 3;
+
+    @include mq(tablet){
+        height: 8px;
+    }
 
     @include mq(leftCol){
         height: 22px;
@@ -111,22 +114,36 @@ body {
     position: absolute;
     top: -16px;
     content: attr(data-title);
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 22px;
+
     font-family: "GraunNumbers","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
     font-weight: normal;
     font-weight: 700;
     
-    padding: 3px 5px 0;
+    padding: 3px 5px 2px;
     color: #FFF;
     background-color: $neutral-1;
 
     @include mq(tablet){
         font-size: 28px;
         line-height: 28px;
-        position: relative;
         padding: 6px 10px 5px;
-        top: 0px;
+    }
+
+    @include mq(desktop){
+        font-size: 24px;
+        line-height: 28px;
+        
+        
+        top: -15px;
+    }
+
+   @include mq(leftCol){
+        position: relative;
+        top:0;
+        font-size: 28px;
+        line-height: 28px;
     }
 }
 
@@ -150,15 +167,17 @@ body {
 .swiper-container {
     width: 100%;
     overflow: hidden;
-    padding-top: 12px;
+    
     // height: 300px;
     display: flex;
+    // @include mq(tablet) {
+    //     padding-top: 12px;
+    //     margin-bottom: 24px;
+    // }
     @include mq(tablet) {
-        margin-bottom: 24px;
-    }
-    @include mq(tablet) {
-        padding-left: 10px;
+        padding-top: 9px;
         padding-right: 20px;
+        padding-left: 5px;
     }
     @include mq(leftCol) {
         padding: 0;
@@ -174,10 +193,10 @@ body {
     }
 
      &.mobile-init-view{
-        height: 210px;
+        height: 310px;
 
         @include mq(mobileLandscape){
-            height:240px;
+            height:340px;
         }
         @include mq(tablet){
             height:auto;
@@ -195,10 +214,15 @@ body {
     height:210px;
     // background-color: $ux-grey;
     border: none;
-    border-left: 1px solid $neutral-main;
-    // &.border-yellow{
-    //     border-left: 1px solid $yellow-accent;
-    // }
+    border-left: 1px solid $slide-border-color;
+    &.border-yellow{
+        @include mq($until: mobileLandscape) {
+            border-left: none;
+
+            //border-right: $slide-border-color;
+        }
+        
+    }
     
     p {
         margin: 0;
@@ -208,6 +232,7 @@ body {
 
     @include mq(mobileLandscape){
             height:240px;
+            padding: 3px 10px 12px 6px;
         }
     
     @include mq(tablet) {
@@ -216,7 +241,7 @@ body {
         
         border: none;
         padding: 3px 0;
-        border-left: 1px solid $neutral-main;
+        border-left: 1px solid $slide-border-color;
     }
 
     @include mq(desktop){
@@ -251,7 +276,7 @@ body {
 
 @include mq(tablet){
     .swiper-slide:nth-child(odd) {
-        border-left: 1px solid $neutral-main;
+        border-left: 1px solid $slide-border-color;
     }
     .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
         border:none; 
@@ -263,10 +288,10 @@ body {
 
 @include mq(desktop){
     .swiper-slide:nth-child(odd) {
-        border-left: 1px solid $neutral-main;
+        border-left: 1px solid $slide-border-color;
     }
     .swiper-slide:nth-child(3n+1) {  /* or 4n+1 */
-        border-left: 1px solid $neutral-main;
+        border-left: 1px solid $slide-border-color;
     }
 
 
@@ -285,7 +310,7 @@ body {
 
 @include mq(leftCol){
      .swiper-slide:last-child{
-        border-right: 1px solid $neutral-main;
+        border-right: 1px solid $slide-border-color;
             width: calc(20% - 9px);
      }
 }
