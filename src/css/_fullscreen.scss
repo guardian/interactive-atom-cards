@@ -193,7 +193,7 @@ body {
     }
 
      &.mobile-init-view{
-        height: 310px;
+        height: 190px;
 
         @include mq(mobileLandscape){
             height:340px;
