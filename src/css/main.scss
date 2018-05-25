@@ -5,6 +5,7 @@
 @import "palette";
 
 $neutral-main: $neutral-2;
+$link-color:$Sport-Blue;
 
 
 @import "cardItem";
@@ -18,6 +19,8 @@ $neutral-main: $neutral-2;
 @import "chart";
 
 @import "sprite";
+
+@import "relatedContent";
 
 
 
@@ -99,4 +102,25 @@ a {
 
 .hidden{
     display:none;
+}
+
+.gv-credit {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    color: #767676;
+    padding-top: 12px;
+    padding-bottom: 36px;
+    padding-left:10px;
+    border-top: 1px dotted $neutral-86; 
+    @include mq(tablet){
+         padding-left:0;
+         text-align: right;
+    }
+   
+}
+
+.gv-credit a {
+    font-weight: bold;
+    color: $link-color;
 }

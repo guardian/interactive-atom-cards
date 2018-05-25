@@ -10,12 +10,12 @@
     height:auto;
 
     @include mq(tablet){
-
-        margin: 0 10px;
+        padding: 12px 0 0;
+        margin: 12px 10px;
     }
 
     @include mq(desktop){
-        padding: 0;
+        
         margin: 0;
 
     }

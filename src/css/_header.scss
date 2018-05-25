@@ -187,6 +187,7 @@ $header-bg:$Highlight-Yellow;
     }
 
     @include mq(leftCol){
+        padding-top: 0;
         padding-left: 10px;
     }
 }

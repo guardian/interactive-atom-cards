@@ -5,6 +5,13 @@ import scrollToElement from 'scroll-to-element'
 
 var isAndroidApp = (window.location.origin === "file://" && /(android)/i.test(navigator.userAgent)) ? true : false;
 
+const twitterBaseUrl = 'https://twitter.com/intent/tweet?text=';
+const facebookBaseUrl = 'https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&redirect_uri=http://www.theguardian.com&link=';
+const googleBaseUrl = 'https://plus.google.com/share?url=';
+
+
+//https://gu.com/p/899e5
+
 const maxNoneSwipeH = 160;
 
 function initSwiper() {
@@ -13,59 +20,6 @@ function initSwiper() {
     var cardStacks = document.querySelectorAll('.swiper-container');
 
     removeDisabled();
-
-    // for (var s = 0; s < cardStacks.length; s++) {
-    //     // console.log(document.getElementByID("#pagination-"+s);
-    //     cardStacks[s].setAttribute('data-stack-position', s + 1);
-
-    //     // refs added to allow different lengths of swiper
-    //     var swiperTgt = document.querySelector(".swiperContainer" + s);
-    //     var paginateTgt = ".paginate" + s;
-
-    //     var swiper = new Swiper(swiperTgt, {
-    //         paginationClickable: true,
-    //         loop: true,
-    //         slidesPerView: 1.8,
-    //         loopedSlides: cardStacks[s].length,
-    //         spaceBetween: 10,
-    //         pagination: paginateTgt,
-    //         centeredSlides: true
-    //     })
-
-    //     //uncomment to change all sliders when 1 slider updates
-    //     // .on('slideChangeEnd', function(currentSwiper, event) {
-
-    //     //     swipers.forEach(function(s,i) {
-    //     //       var eq = (currentSwiper == s) ? true : false;
-    //     //       if(eq){
-    //     //         var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-    //     //         analytics.registerEvent('stack_card_view', i)
-    //     //       }
-
-    //     //         if (s.activeIndex != currentSwiper.activeIndex) {
-    //     //           //s.activeIndex = currentSwiper.activeIndex;
-    //     //             s.slideTo(currentSwiper.activeIndex, 0, false);
-    //     //         } else {
-
-
-    //     //         }
-    //     //     });
-    //     // })
-
-    //     .on('onTouchStart', function(currentSwiper, e) {
-    //             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
-    //                 window.GuardianJSInterface.registerRelatedCardsTouch(true);
-    //             }
-    //         })
-    //         .on('onTouchEnd', function(currentSwiper, e) {
-    //             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
-    //                 window.GuardianJSInterface.registerRelatedCardsTouch(false);
-    //             }
-    //         });
-
-    //     swipers.push(swiper);
-
-    // }
 
     let swipeSlides = document.querySelectorAll('.swiper-slide');
 
@@ -159,11 +113,9 @@ function addListeners() {
              });
     })
 
-    addAccordianListener();
-
     var Window = window || document;
 
-    Window.addEventListener("scroll", WindowScrollListener);
+   // Window.addEventListener("scroll", WindowScrollListener);
 
     adjustView();
 
@@ -190,21 +142,7 @@ function addAccordianListener() {
 
          document.querySelectorAll('.horizontal-accordion ul li').forEach((el) => {
 
-         //     el.addEventListener('mouseover', function(){ 
-         //        if(firstClick){
-         //            onInitClickAccordian();
-         //            firstClick = false;
-         //        }
-                
-         //        if(prevClip){ 
-         //            prevClip.classList.add("closed"); 
-         //            prevClip.classList.remove("open")
-         //        }
-         //        el.classList.add("open")
-         //        el.classList.remove("closed");
-
-         //        prevClip = el;
-         //     });
+        
 
              el.addEventListener('click', function(){ 
                 scrollFromAccordian(el.getAttribute("data-team"))
@@ -311,5 +249,37 @@ function checkFixView() {
 
 }
 
+
+
+function share(title, shareURL, fbImg, twImg, hashTag) {
+        var twImgText = twImg ? ` ${twImg.trim()} ` : '';
+        var fbImgQry = fbImg ? `&picture=${encodeURIComponent(fbImg)}` : '';
+        return function(network, extra = '') {
+            var twitterMessage = `${extra}${title}${twImgText}`;
+            var shareWindow;
+
+            if (network === 'twitter') {
+                shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL + '?CMP=share_btn_tw';
+            } else if (network === 'facebook') {
+                shareWindow = facebookBaseUrl + shareURL + fbImgQry + '%3FCMP%3Dshare_btn_fb';
+            } else if (network === 'email') {
+                shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + shareURL;
+            } else if (network === 'google') {
+                shareWindow = googleBaseUrl + shareURL;
+            }
+
+            window.open(shareWindow, network + 'share', 'width=640,height=320');
+        }
+    }
+
+    var shareFn = share('Every kit in World Cup history', 'https://gu.com/p/899e5');
+
+    [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
+        var network = shareEl.getAttribute('data-network');
+        shareEl.addEventListener('click', () => shareFn(network));
+    });
+
 // comment out for embed
 initFullScrn();
+
+

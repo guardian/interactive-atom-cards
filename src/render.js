@@ -32,6 +32,8 @@ function formatData(data) {
 
     let groups = groupBy(data.sheets.Sheet1, 'Team');
 
+    let related = data.sheets.relatedContent[0];
+
     groups = sortByKeys(groups);
 
     groups.map((obj, k) => {
@@ -93,7 +95,12 @@ function formatData(data) {
 
     });
 
+    
+
+    newObj.related = related;
+
     newObj.groups = groups;
+
 
     return newObj;
 }
@@ -105,6 +112,9 @@ function formatData(data) {
 
 
 function compileHTML(dataIn) {
+
+    console.log(dataIn.related.related1Image)
+
     Handlebars.registerHelper('html_decoder', function(text) {
         var str = unescape(text).replace(/&amp;/g, '&');
         return str;
