@@ -25,19 +25,24 @@ position: relative;
         height: 100px;
         padding: 5px 5px 5px 4px;
         background-color: $header-bg;
-        font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
-        font-size: 18px;
-        line-height: 20px;
+        font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 14px;
+        line-height: 18px;
         font-weight: 900;
-        font-variant-numeric: lining-nums;
-        -moz-font-feature-settings: "lnum";
-        -webkit-font-feature-settings: "lnum";
-        font-feature-settings: "lnum";
+       
         color: $neutral-1;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
 
         @include mq(tablet){
+            font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif; 
+            font-variant-numeric: lining-nums;
+            -moz-font-feature-settings: "lnum";
+            -webkit-font-feature-settings: "lnum";
+            font-feature-settings: "lnum";
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 900;
             // font-size: 20px;
             // line-height: 24px;
             // font-weight: 900;
@@ -68,10 +73,12 @@ position: relative;
         font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-size: 14px;
         line-height: 18px;
+        font-style:italic;
+        color:$neutral-20;
 
         @include mq(tablet){
             padding: 3px 5px 15px 10px;
-           
+            
             font-family: "Guardian Headline Full", Georgia;
             font-size: 16px;
             line-height: 24px;
