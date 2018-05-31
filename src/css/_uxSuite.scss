@@ -116,12 +116,19 @@ $ux-dark: #222;
     height: 33px;
     width: 110px;
     background: #222;
-    position:relative;
+    position:absolute;
+    right:20px;
     margin: 6px 0 0 10px;
     padding: 0 15px 0 7px;
     border-radius: 50px;
     cursor: pointer;
     border: none !important;
+}
+
+.gv-button-wrapper{
+    position:relative;
+    width: 100%;
+    margin: 0 10px 12px;
 }
 
 .gv-icon--plus {

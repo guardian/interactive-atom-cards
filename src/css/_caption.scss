@@ -1,7 +1,7 @@
 .card-caption {
 position: relative;
     @include mq($from: mobile, $until: mobileLandscape){
-        width: calc(50% - 30px) !important;
+        width: calc(50% - 8px) !important;
         height: 190px !important;
         padding: 0 !important;
         margin: 0 5px;
@@ -10,10 +10,7 @@ position: relative;
     @include mq($until: mobileLandscape) {
             margin-bottom:12px;
     }
-    
-   
 
- 
 
     .cap-holder {
         @include mq(tablet){
@@ -48,8 +45,7 @@ position: relative;
         }
 
         @include mq(desktop){
-            font-size: 20px;
-            line-height: 24px;
+            line-height: 22px;
             font-weight: 900;
         }
 
@@ -66,7 +62,7 @@ position: relative;
     .copy-wrap {
         width: 100%;       
         font-weight: 400;
-        padding: 6px 5px 15px 6px;
+        padding: 3px 5px 15px 6px;
         margin-top: -2px;
         background-color: #FFE500;
         font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -74,7 +70,7 @@ position: relative;
         line-height: 18px;
 
         @include mq(tablet){
-            padding: 6px 5px 15px 10px;
+            padding: 3px 5px 15px 10px;
            
             font-family: "Guardian Headline Full", Georgia;
             font-size: 16px;
@@ -84,7 +80,7 @@ position: relative;
 
 
         @include mq(desktop){
-            padding: 6px 5px 15px 10px;
+            padding: 3px 5px 15px 10px;
            
             font-family: "Guardian Headline Full", Georgia;
             font-size: 18px;

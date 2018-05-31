@@ -125,25 +125,22 @@ body {
     color: #FFF;
     background-color: $neutral-1;
 
+      white-space: nowrap;
+
     @include mq(tablet){
-        font-size: 28px;
-        line-height: 28px;
-        padding: 6px 10px 5px;
+        font-size: 24px;
+        line-height: 27px;
+        padding: 6px 10px 6px;
     }
 
     @include mq(desktop){
-        font-size: 24px;
-        line-height: 28px;
-        
-        
         top: -15px;
     }
 
    @include mq(leftCol){
-        position: relative;
-        top:0;
-        font-size: 28px;
-        line-height: 28px;
+        top: -6px;
+        padding: 9px 10px 9px;
+        
     }
 }
 
