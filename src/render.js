@@ -95,7 +95,14 @@ function formatData(data) {
 
     });
 
-    
+    groups.forEach(function(s, i){
+
+
+        if(i % 2 == 0){
+
+            s.ad = i;
+        }
+    })
 
     newObj.related = related;
 

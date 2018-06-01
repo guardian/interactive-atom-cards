@@ -379,9 +379,11 @@ div.card-icon {
 }
 
 .pagination {
+    display:none;
     text-align: center;
     line-height: 5px !important;
-    padding: 18px 0 26px;
+    padding: 0;
+    // padding: 18px 0 26px;
     .swiper-pagination-bullet {
         margin-right: 3px;
     }

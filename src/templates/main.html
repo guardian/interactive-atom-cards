@@ -66,8 +66,37 @@ World Cup kits through the ages
     </div>
     <div class='card-group' id="group-{{groupRef}}" data-scroll data-title="{{sortOn}}">
         {{>cardstack}}
-        <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div>
+       <!--  <div class='pagination paginate{{groupRef}}' id="paginate-{{groupRef}}"></div> -->
     </div>
+
+
+    {{#ad}}
+    <section class="ad-section">
+        <div class="c-advert interactive-ad-banner" >
+            <div class="ad-wrapper--desktop hide-until-tablet">
+              <div 
+                id="dfp-ad--int-ad{{ad}}"
+                class="js-ad-slot ad-slot"
+                data-link-name="ad slot -ad{{ad}}" 
+                data-name="-ad{{ad}}"
+                data-tablet="1,1|2,2|300,250|fluid"
+                ></div>
+            </div>
+
+            <div class="ad-wrapper--mobile mobile-only">
+              <div
+                id="dfp-ad--ad{{ad}}"
+                class="js-ad-slot ad-slot"
+                data-link-name="ad slot -ad{{ad}}"
+                data-name="-ad{{ad}}"
+                data-mobile="1,1|2,2|300,250|fluid"
+                ></div>
+            </div>
+        </div>
+    </section>
+    {{/ad}}
+    
+  
     {{/groups}}
     <div class="gv-back-top-btn hidden display-none"></div>
 
