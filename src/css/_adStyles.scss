@@ -1,6 +1,6 @@
 .ad-section{
 	width:100%;
-	max-width:728px;
+	max-width:1300px;
 	background-color: #FFF;
 	margin: 12px 0 36px 0;
 	margin-top: 48px;
@@ -10,11 +10,11 @@
 		}
 
 		@media(min-width:1140px){
-			margin-left:140px;
+			margin-left:0;
 		}
 
 		@media(min-width:1300px){
-			margin-left:240px;
+			margin-left:0;
 		}
 }
 
@@ -57,3 +57,5 @@
 
 
 }
+
+

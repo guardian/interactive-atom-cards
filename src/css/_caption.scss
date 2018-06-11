@@ -1,3 +1,5 @@
+$cappy-bg: #333;
+
 .card-caption {
 position: relative;
     @include mq($from: mobile, $until: mobileLandscape){
@@ -11,6 +13,7 @@ position: relative;
             margin-bottom:12px;
     }
 
+   
 
     .cap-holder {
         @include mq(tablet){
@@ -24,13 +27,13 @@ position: relative;
         width: 100%;
         height: 100px;
         padding: 5px 5px 5px 4px;
-        background-color: $header-bg;
+        background-color: $cappy-bg;
         font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-size: 14px;
         line-height: 18px;
         font-weight: 900;
        
-        color: $neutral-1;
+        color: #FFF;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
 
@@ -68,31 +71,58 @@ position: relative;
         width: 100%;       
         font-weight: 400;
         padding: 3px 5px 15px 6px;
-        margin-top: -2px;
-        background-color: #FFE500;
+        margin-top: 2px;
+        background-color: $cappy-bg;
         font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-size: 14px;
         line-height: 18px;
-        font-style:italic;
-        color:$neutral-20;
+        font-style:normal;
+        color:#FFF;
 
         @include mq(tablet){
             padding: 3px 5px 15px 10px;
-            
+            margin-top: -3px;
             font-family: "Guardian Headline Full", Georgia;
             font-size: 16px;
             line-height: 24px;
-            font-style: italic;
+            font-style: normal;
         }
 
 
         @include mq(desktop){
-            padding: 3px 5px 15px 10px;
-           
+            width: calc(100% - 10px);
+            padding: 3px 15px 25px 10px;            
             font-family: "Guardian Headline Full", Georgia;
             font-size: 18px;
             line-height: 24px;
-            font-style: italic;
+            font-style: normal;
+        }
+
+        @include mq(leftCol){
+            margin-top: 2px;
         }
     }
 }
+
+
+.cappy-title{
+        display:block;
+        font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 900;
+        margin: 3px 0 2px;
+        font-style: normal;
+         @include mq(tablet){
+            font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif; 
+            font-variant-numeric: lining-nums;
+            -moz-font-feature-settings: "lnum";
+            -webkit-font-feature-settings: "lnum";
+            font-feature-settings: "lnum";
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 600;
+            margin: 3px 0 3px;
+            
+        }
+    }

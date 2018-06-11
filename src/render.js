@@ -69,10 +69,16 @@ function formatData(data) {
             if (ob.captionLink){ obj.captionLink = ob.captionLink;}
 
             if (ob.Won === "Y"){ ob.trophyWon = true;}
+
+            obj.teamRef = ob.teamRef;
+
+            obj.teamFormatted = ob.Team;
             
         })
 
         obj.objArr.reverse();
+
+
 
         var prevCap = false;
 

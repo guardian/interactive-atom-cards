@@ -115,7 +115,7 @@ $ux-dark: #222;
 .expand-btn {
     height: 33px;
     width: 110px;
-    background: #222;
+    background: $Sport-Blue;
     position:absolute;
     right:20px;
     margin: 6px 0 0 10px;
@@ -125,11 +125,20 @@ $ux-dark: #222;
     border: none !important;
 }
 
+.expand-btn:hover{
+    background: $header-red;
+}
+
 .gv-button-wrapper{
     position:relative;
     width: 100%;
     height: 54px;
     margin: 0 10px 12px;
+    display: block;
+
+    @include mq(tablet){
+        display:none;
+    }
 }
 
 .gv-icon--plus {
@@ -152,6 +161,68 @@ $ux-dark: #222;
     font-size: 13px;
     font-weight: 700px;
 }
+
+
+.gv-quicknav-left {
+    // display: none;
+    // @include mq(leftCol) {
+        font-size: 12px;
+        display: block;
+        color: #fff;
+        position: absolute;
+       
+        span {
+            display:block;
+            font-family: "Guardian Text Sans Web", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            color: $Sport-Blue;
+        }
+
+        select {
+
+        height: 32px;
+        outline: none;
+        text-overflow: ellipsis;
+
+        cursor: pointer;
+        border-radius: 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: $Sport-Blue url("<%= path %>/assets/imgs/arrow.svg") no-repeat 93% 50%;
+        background-size: 20px auto;
+        //background-size: 16px auto;
+        padding: 5px 15px;
+        font-family: "Guardian Text Sans Web", Helvetica, Arial, sans-serif;
+        cursor: pointer;
+        border: 1px solid $Sport-Blue;
+        width: 155px;
+        padding-right: 40px;
+            //width: 100%;
+            //@include fs-GuardianHeadlineFull(1);
+        font-weight: 700;
+        font-size: 12px;
+        }
+
+        @include mq(tablet){
+            top: 100px;
+            left: 0;
+        }
+        @include mq(desktop){
+            top: 100px;
+           
+        }
+
+        @include mq(leftCol){
+            top: 80px;
+            left: 10px;
+        }
+    //}
+}
+    
 
 textarea,
 input,

@@ -1,0 +1,164 @@
+$teamcolors: ( "russia": $news-red,
+
+"saudi-arabia": #36aa46,
+"egypt": $news-red,
+"uruguay": #121212,
+"portugal": #D33832,
+"spain": #D33832,
+"morocco": $news-red,
+"iran": #D33832,
+"france": #023260,
+"australia": #557838,
+"peru": #D33832,
+"denmark": $news-red,
+"argentina": #555555,
+"iceland": #2C6AFF,
+"croatia": #D33832,
+"nigeria": #36aa46,
+"brazil": #2C6AFF,
+"switzerland": #D33832,
+"costa-rica": #D33832,
+"serbia": #D33832,
+"germany": #121212,
+"mexico": #038176,
+"sweden": #005689,
+"south-korea": #D33832,
+"belgium": $news-red,
+"panama": #D33832,
+"tunisia": #D33832,
+"england": #023260,
+"poland": #D33832,
+"senegal": #038176,
+"colombia": #005689,
+"japan": #023260);
+
+
+$shirtcolors: ( "russia": $news-red,
+"saudi-arabia": #36aa46,
+"egypt": $news-red,
+"uruguay": #A5BFE1,
+"portugal": #D33832,
+"spain": #D33832,
+"morocco": #D33832,
+"iran": #f6f6f6,
+"france": #023260,
+"australia": #FFCC44,
+"peru": #f6f6f6,
+"denmark": $news-red,
+"argentina": #A5BFE1,
+"iceland": #2C6AFF,
+"croatia": #D33832,
+"nigeria": #36aa46,
+"brazil": $highlight-yellow,
+"switzerland": #D33832,
+"costa-rica": #D33832,
+"serbia": $news-red,
+"germany": #f6f6f6,
+"mexico": #038176,
+"sweden": $highlight-yellow,
+"south-korea": #D33832,
+"belgium": $news-red,
+"panama": #D33832,
+"tunisia": #f6f6f6,
+"england": #f6f6f6,
+"poland": #D33832,
+"senegal": #f6f6f6,
+"colombia": #FFEF78,
+"japan": #023260);
+
+
+$shortscolors: ( "russia": #f6f6f6,
+"saudi-arabia": #f6f6f6,
+"egypt": #f6f6f6,
+"uruguay": #121212,
+"portugal": #D33832,
+"spain": #005689,
+"morocco": #36aa46,
+"iran": #f6f6f6,
+"france": #f6f6f6,
+"australia": #FFCC44,
+"peru": #f6f6f6,
+"denmark": #f6f6f6,
+"argentina": #121212,
+"iceland": #2C6AFF,
+"croatia": #f6f6f6,
+"nigeria": #f6f6f6,
+"brazil": #2C6AFF,
+"switzerland": #f6f6f6,
+"costa-rica": #005689,
+"serbia": #D33832,
+"germany": #121212,
+"mexico": #f6f6f6,
+"sweden": #005689,
+"south-korea": #121212,
+"belgium": $news-red,
+"panama": #D33832,
+"tunisia": #f6f6f6,
+"england": #023260,
+"poland": #D33832,
+"senegal": #f6f6f6,
+"colombia": #023260,
+"japan": #023260);
+
+
+
+$sockscolors: ( "russia": $news-red,
+"saudi-arabia": #36aa46,
+"egypt": #333333,
+"uruguay": #A5BFE1,
+"portugal": #36aa46,
+"spain": #333333,
+"morocco": $news-red,
+"iran": #D33832,
+"france": $news-red,
+"australia": #FFCC44,
+"peru": #f6f6f6,
+"denmark": $news-red,
+"argentina": #333333,
+"iceland": #2C6AFF,
+"croatia": #005689,
+"nigeria": #f6f6f6,
+"brazil": #f6f6f6,
+"switzerland": #D33832,
+"costa-rica": #f6f6f6,
+"serbia": #f6f6f6,
+"germany": #f6f6f6,
+"mexico": $news-red,
+"sweden": $highlight-yellow,
+"south-korea": #D33832,
+"belgium": $news-red,
+"panama": #D33832,
+"tunisia": #f6f6f6,
+"england": #f6f6f6,
+"poland": #f6f6f6,
+"senegal": #f6f6f6,
+"colombia": $news-red,
+"japan": #023260);
+
+
+// COLOURISING TEAMS CSS
+@each $name,
+$value in $teamcolors {
+    
+    .#{$name}-breaker {
+        border-top: 1px solid $value!important;
+        
+    }
+    .#{$name}-team-title {
+        &:after {
+            background-color: $value !important;
+        }
+    }
+    .#{$name}-caption-copy {
+        background-color: darken($value, 20%) !important;
+    }
+    .#{$name}-mobile-button {
+        background-color: $value !important;
+    }
+}
+
+//OVERRIDES
+.argentina-breaker,
+.uruguay-breaker {
+    border-top: 1px solid $Sport-Blue !important;
+}

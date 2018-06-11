@@ -103,6 +103,14 @@ function addListeners() {
         }
     )
 
+    document.getElementById('wcLogo').classList.remove("hide");
+
+    document.getElementById('wcLogo').addEventListener("click",
+        function(e) {
+            window.open("https://www.gu.com/football/world-cup-2018");
+        }
+    )
+
 
 
     document.querySelectorAll('.expand-btn').forEach((el) => {
@@ -112,6 +120,18 @@ function addListeners() {
 
              });
     })
+
+
+    document.querySelectorAll('.gv-team-filter').forEach(teamFilter => {
+        console.log(teamFilter)
+        teamFilter.addEventListener("change", function( e ) {
+            //showTeam( e.target.value );
+            
+            var tgt = "teamAnchor"+e.target.value; 
+            console.log( tgt );
+            document.getElementById(tgt).scrollIntoView(true);
+            }, false );
+    });
 
     var Window = window || document;
 

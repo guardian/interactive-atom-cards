@@ -3,10 +3,10 @@
        {{#if captionTitle}}
         <div class="swiper-slide swiper-slide--{{groupRef}}--{{ref}} card-caption" data-country="{{sortOn}}">
             <div class="cap-holder">
-                <div class="header-wrap">{{{captionTitle}}}</div>
+                
             
        
-               <div class="copy-wrap">{{captionCopy}}</div>
+               <div class="copy-wrap {{teamRef}}-caption-copy"><span class="cappy-title">{{{captionTitle}}}</span>{{captionCopy}}</div>
             </div>
         </div>
         {{/if}}
@@ -22,7 +22,7 @@
 
 {{#if showMobileExpandButton}}
       <div class="gv-button-wrapper" data-country="{{sortOn}}">
-        <button class="expand-btn atom__button atom__button--large atom__button--rounded atom--snippet__handle show-tablet" aria-hidden="true" data-country="{{sortOn}}">
+        <button class="expand-btn atom__button atom__button--large atom__button--rounded atom--snippet__handle show-tablet {{teamRef}}-mobile-button" aria-hidden="true" data-country="{{sortOn}}">
             <span class="gv-icon--plus">
                   <svg class="icon icon--plus " width="18px" height="18px" viewBox="0 0 18 18">
                   <path d="M8.2 0h1.6l.4 7.8 7.8.4v1.6l-7.8.4-.4 7.8H8.2l-.4-7.8L0 9.8V8.2l7.8-.4.4-7.8z"></path>

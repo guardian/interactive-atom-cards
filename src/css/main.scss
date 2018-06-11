@@ -7,6 +7,7 @@
 $neutral-main: $neutral-2;
 $link-color:$Sport-Blue;
 
+$Sport-Blue: #00B7FF;
 
 @import "cardItem";
 @import "header";
@@ -21,6 +22,8 @@ $link-color:$Sport-Blue;
 @import "sprite";
 
 @import "relatedContent";
+
+@import "teamcolours";
 
 
 
@@ -44,10 +47,45 @@ a {
 
 .breaker {
 	position:relative;
-    border-top: 1px dotted $neutral-main;
-    padding-bottom: 3px;
+    border-top: 1px dotted $Sport-Blue;
+    padding-bottom: 2px;
     width: 200vw;
     margin-left: -100%;
+
+    &--short {
+        border-top: 1px dotted $Sport-Blue;
+        margin-bottom: 3px;
+        @include mq(mobile) {
+            display: none;
+        }
+
+        @include mq(leftCol) {
+            display: block;
+            width: 140px;
+            margin-left: 0px;
+        }
+
+        @include mq(wide) {
+            width: 220px;
+        }
+        &--last{
+            @include mq(mobile) {
+            display: none;
+        }
+
+        @include mq(leftCol) {
+            display: block; width: 140px;
+            margin-left: 0px;
+        }
+
+        @include mq(wide) {
+            width: 220px;
+        }
+            border-top: 1px dotted $Sport-Blue;
+            margin-top:3px;
+            margin-bottom:10px;
+        }
+    }
 
     &.under-nav{
         padding-bottom: 1px;
@@ -56,7 +94,7 @@ a {
 }
 
 .breaker-top{
-
+    // margin-top:12px;
 }
 
 .spacer{
@@ -123,4 +161,17 @@ a {
 .gv-credit a {
     font-weight: bold;
     color: $link-color;
+}
+
+.gv-page-width {
+    margin: 0 auto;
+    @each $bp in (phablet,
+    tablet,
+    desktop,
+    leftCol,
+    wide) {
+        @include mq($bp) {
+            max-width: map-get($mq-breakpoints, $bp);
+        }
+    }
 }

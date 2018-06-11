@@ -1,137 +1,109 @@
-.share-wrapper{
-    width:100%;
+.share-wrapper {
+    width: 100%;
 }
 
 .share-container {
-    max-width:1260px;
-    
+    max-width: 1260px;
     padding: 0 10px 6px;
-    
-    height:auto;
+    height: auto;
+    @include mq(tablet) {
+        padding: 12px 0 0;
+        margin: 12px 10px 90px;
+    }
 
-    @include mq(tablet){
+    @include mq(desktop) {
         padding: 12px 0 0;
         margin: 12px 10px;
     }
-
-    @include mq(desktop){
-        
-        margin: 0;
-
+    @include mq(leftCol) {
+        margin: 0 ;
     }
-
-    .share-inner{
-            position: relative;
-            color:$neutral-1;
-        @include mq(tablet){
+    .share-inner {
+        position: relative;
+        color: $neutral-1;
+        @include mq(tablet) {
             // height: 48px;
         }
-
-    .share-inner-left{
-        margin: 24px 0 12px;
-        float:none;
-
-
-        @include mq(tablet){
-            margin: 12px 0;
-            
+        .share-inner-left {
+            margin: 24px 0 12px;
+            float: none;
+            @include mq(tablet) {
+                margin: 12px 0;
+            }
+            @include mq(leftCol) {
+                margin: 0;
+                padding: 0;
+                float: left;
+                //border-left: 1px solid $Sport-Blue;   
+            }
+            @include mq(wide) {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
         }
-
-        @include mq(leftCol){
-            margin: 0  0 0 220px;
-            padding: 6px 0 0 10px;
-            border-left: 1px solid $neutral-main;   
-        }
-
-        @include mq(wide){
-            margin: 0;
-            padding: 0;
-            border: none;   
-            float:left;
-        }
-        
-    }    
-
-    .time-stamp{
-        @include fs-textSans(2);
-        margin: 3px 0 9px;
-        color: $neutral-2;
-        @include mq(tablet){
+        .time-stamp {
             @include fs-textSans(2);
-            margin-top: 12px;
+            margin: 3px 0 9px;
+            color: $neutral-2;
+            @include mq(tablet) {
+                @include fs-textSans(2);
+                margin-top: 12px;
+            }
         }
-    }
-
-    .share-inner-main{
+        .share-inner-main {
             position: relative;
             top: 0;
-            margin:0;
-            padding-bottom: 12px;
-                    // @include mq(mobileLandscape){
-                    //     margin-left:20px;
-                    //     margin-right:20px;  
-                    // }
-
-
-                    @include mq(tablet){ 
-                        margin: 12px 0 0;
-                        margin-left: 0;
-                        padding-bottom: 12px;
-                    }
-
-                    @include mq(desktop){
-                        margin: 0 0 0;
-                        margin-left: 0;
-                        padding-bottom: 24px;
-                        max-width: 980px;
-                    }
-
-                    @include mq(leftCol){
-                         margin-left: 220px;
-                         padding-left:0;
-                         margin-right:0;   
-                         padding-bottom: 36px;
-                         border-left: 1px solid $neutral-main;            
-                    }
-
-                    @include mq(wide){
-                         margin-left: 250px;              
-                    }
-                }   
+            margin: 0;
+            padding-bottom: 80px;
+            // @include mq(mobileLandscape){
+            //     margin-left:20px;
+            //     margin-right:20px;  
+            // }
+            @include mq(tablet) {
+                margin: 12px 0 0;
+                margin-left: 0;
+                padding-bottom: 12px;
+            }
+            @include mq(desktop) {
+                margin: 0 0 0;
+                margin-left: 0;
+                padding-bottom: 90px;
+                max-width: 980px;
+            }
+            @include mq(leftCol) {
+                margin-left: 220px;
+                padding-left: 0;
+                margin-right: 0;
+                padding-bottom: 80px;
+                border-left: 1px solid $Sport-Blue;
+            }
+            @include mq(wide) {
+                margin-left: 250px;
+            }
+        }
     }
-
     .interactive-share {
-            height: 32px;
-            width: 32px;
-            
-            background-color: #FFF;
-            display: inline-block;
-            cursor: pointer;
-            outline: none;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 30px;
-            border-radius: 34px;
-            border: 1px solid $neutral-1;
-            margin-right:3px;
+        height: 32px;
+        width: 32px;
+        background-color: #FFF;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        border-radius: 34px;
+        border: 1px solid $Sport-Blue;
+        margin-right: 3px;
         &[data-network='facebook'] {
-           
-             background-image: url('<%= path %>/assets/facebook.svg');
+            background-image: url('<%= path %>/assets/facebook.svg');
         }
-
         &[data-network='twitter'] {
-           
             background-image: url('<%= path %>/assets/twitter.svg');
-            
-           
         }
-
         &[data-network='email'] {
-           background-image: url('<%= path %>/assets/mail.svg');
+            background-image: url('<%= path %>/assets/mail.svg');
         }
-
-        
-    }   
-
+    }
 }
-
