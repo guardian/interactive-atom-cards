@@ -29,7 +29,7 @@ h3.card-head {
     color: $neutral-dark;
     font-weight: 700;
     vertical-align: text-top;
-    margin: 6px 0 0 0!important;
+    margin: 3px 0!important;
     padding-left:10px;
 
     &.winner{
@@ -48,6 +48,10 @@ h3.card-head {
 		padding: 1px 0 0 1px;
 		background-color: $neutral-1;
 		border-radius: 1000px;
+	}
+
+	@include mq(leftCol){
+		margin: 6px 0 0 0!important;
 	}
 }
 

@@ -91,13 +91,19 @@ body {
     background-color: none;
     border-right:none;
     top: 0px;
-    padding: 3px 5px;
+    padding: 3px 5px 7px;
     box-decoration-break: clone !important;
     -webkit-box-decoration-break: clone !important;
     z-index: 3;
 
     @include mq(tablet){
         height: 8px;
+        padding: 3px 5px 7px;
+    }
+
+    @include mq(desktop){
+        height: 8px;
+        padding: 3px 5px 4px;
     }
 
     @include mq(leftCol){
@@ -112,7 +118,7 @@ body {
 
 .left-col::after {
     position: absolute;
-    top: -16px;
+    top: -12px;
     content: attr(data-title);
     font-size: 20px;
     line-height: 22px;
