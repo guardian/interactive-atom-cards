@@ -146,11 +146,13 @@ $value in $teamcolors {
     }
     .#{$name}-team-title {
         &:after {
-            background-color: $value !important;
+            background-color:transparent !important;
+            color: $value !important;
         }
     }
     .#{$name}-caption-copy {
-        background-color: darken($value, 20%) !important;
+        background-color:transparent !important;
+        color: darken($value, 20%) !important;
     }
     .#{$name}-mobile-button {
         background-color: $value !important;

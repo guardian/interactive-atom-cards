@@ -81,7 +81,7 @@ body {
     position:relative;
     float:none;
     max-width: 200px;
-    height: 5px;
+    height: 18px;
     font-size: 16px;
     line-height: 22px;
     font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
@@ -96,18 +96,22 @@ body {
     -webkit-box-decoration-break: clone !important;
     z-index: 3;
 
+    @include mq(mobileLandscape){
+        padding: 3px 5px 4px;
+    }
+
     @include mq(tablet){
-        height: 8px;
-        padding: 3px 5px 7px;
+        height: 27px;
+        padding: 3px 5px 4px;
     }
 
     @include mq(desktop){
-        height: 8px;
+        height: 27px;
         padding: 3px 5px 4px;
     }
 
     @include mq(leftCol){
-        height: 22px;
+        height: 33px;
         float:left;
         padding: 3px 5px 4px 0;
         top: -6px;   
@@ -118,12 +122,12 @@ body {
 
 .left-col::after {
     position: absolute;
-    top: -12px;
+    top: -6px;
     content: attr(data-title);
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 30px;
+    line-height: 32px;
 
-    font-family: "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+    font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
     font-weight: normal;
     font-weight: 700;
     
@@ -131,20 +135,22 @@ body {
     color: #FFF;
     background-color: $Sport-Blue;
 
-      white-space: nowrap;
+    white-space: nowrap;
 
     @include mq(tablet){
-        font-size: 24px;
-        line-height: 27px;
-        padding: 6px 10px 6px;
+        top: -6px;
+        font-size: 39px;
+        line-height: 41px;
     }
 
     @include mq(desktop){
-        top: -15px;
+        font-size: 39px;
+        line-height: 41px;
+        top: -6px;
     }
 
-   @include mq(leftCol){
-        top: -6px;
+   @include mq(leftCol){    
+        top: -2px;
         padding: 9px 10px 10px;
         
     }

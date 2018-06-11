@@ -80,8 +80,8 @@ position: relative;
         color:#FFF;
 
         @include mq(tablet){
-            padding: 3px 5px 15px 10px;
-            margin-top: -3px;
+            padding: 0 5px 15px 10px;
+            margin-top: 0;
             font-family: "Guardian Headline Full", Georgia;
             font-size: 16px;
             line-height: 24px;

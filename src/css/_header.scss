@@ -189,15 +189,16 @@ $header-blue: $Sport-Blue;
             font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
             font-weight: normal;
             font-size: 32px;
-            line-height: 40px;
+            line-height: 32px;
             font-weight: 700;
             display:inline;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
-            padding: 4px 10px 4px 10px;
+            padding: 4px 10px 6px 10px;
             background-color:$header-blue;
             color:white;
             @include mq(tablet){
+                padding: 4px 10px 4px 10px;
                 font-size: 50px;
                 line-height: 62px;
             }
