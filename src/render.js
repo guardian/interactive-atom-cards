@@ -89,6 +89,7 @@ function formatData(data) {
         // obj.sf_pc = (obj.sfKO / allTourneys) * 100;
         // obj.ru_pc = (obj.ruKO / allTourneys) * 100;
         // obj.winner_pc = (obj.winnerKO / allTourneys) * 100;
+        // obj.totalTournaments_pc = (obj.finalsAppearances / allTourneys) * 100;
 
         obj.finalsAppearances = obj.objArr.length;
 
@@ -96,7 +97,10 @@ function formatData(data) {
 
         if(obj.finalsAppearances < 2 && obj.captionTitle || obj.finalsAppearances < 3 ){ obj.hideMobileExpandButton = true }   
 
-        // obj.totalTournaments_pc = (obj.finalsAppearances / allTourneys) * 100;
+        //hacky override to incorporate last minute content change and get launched    
+        if(obj.teamRef=="senegal" || obj.teamRef=="serbia" ){ obj.hideMobileExpandButton = false; obj.showMobileExpandButton = true  }
+
+        
 
 
     });

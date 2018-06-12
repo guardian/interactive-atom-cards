@@ -292,7 +292,7 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
         }
     }
 
-    var shareFn = share('Every kit in World Cup history', 'https://gu.com/p/899e5');
+    var shareFn = share('World Cup kits through the ages', 'https://gu.com/p/899e5');
 
     [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
         var network = shareEl.getAttribute('data-network');

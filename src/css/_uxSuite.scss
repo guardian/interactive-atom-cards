@@ -178,7 +178,7 @@ $ux-dark: #222;
             font-weight: 400;
             margin-bottom: 3px;
             margin-top: 3px;
-            color: $Sport-Blue;
+            color: $neutral-7;
         }
 
         select {
@@ -192,13 +192,13 @@ $ux-dark: #222;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background: $Sport-Blue url("<%= path %>/assets/imgs/arrow.svg") no-repeat 93% 50%;
+        background: $neutral-20 url("<%= path %>/assets/imgs/arrow.svg") no-repeat 93% 50%;
         background-size: 20px auto;
         //background-size: 16px auto;
         padding: 5px 15px;
         font-family: "Guardian Text Sans Web", Helvetica, Arial, sans-serif;
         cursor: pointer;
-        border: 1px solid $Sport-Blue;
+        border: 1px solid $neutral-20;
         width: 155px;
         padding-right: 40px;
             //width: 100%;
