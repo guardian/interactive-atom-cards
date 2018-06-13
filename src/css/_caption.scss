@@ -3,7 +3,7 @@ $cappy-bg: #333;
 .card-caption {
 position: relative;
     @include mq($from: mobile, $until: mobileLandscape){
-        width: calc(50% - 8px) !important;
+        width: calc(50% - 20px) !important;
         height: 190px !important;
         padding: 0 !important;
         margin: 0 5px;
