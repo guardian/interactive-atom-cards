@@ -210,16 +210,16 @@ $ux-dark: #222;
         }
 
         @include mq(tablet){
-            top: 100px;
+            top: 120px;
             left: 0;
         }
         @include mq(desktop){
-            top: 100px;
+            top: 120px;
            
         }
 
         @include mq(leftCol){
-            top: 80px;
+            top: 110px;
             left: 10px;
         }
     //}
