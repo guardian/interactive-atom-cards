@@ -205,6 +205,8 @@ $ux-dark: #222;
             //@include fs-GuardianHeadlineFull(1);
         font-weight: 700;
         font-size: 12px;
+
+        color: #fff !important;
         }
 
         @include mq(tablet){
