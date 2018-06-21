@@ -28,7 +28,7 @@ function initSwiper() {
                 loop: true,
                 slidesPerView: 1.2,
                 loopedSlides: cardStacks[s].length,
-                spaceBetween: 10,
+                spaceBetween: 15,
                 pagination: paginateTgt,
                 centeredSlides: true
             })

@@ -4,13 +4,10 @@ import mainTemplate from './src/templates/main.html!text'
 import cardStackTemplate from './src/templates/cardStack.html!text'
 import cardTemplate from './src/templates/card.html!text'
 
-//duplicate this spreadsheet and update altKey
-
-const altKey = '1uCh5_YF7uPgLuuaFbPL_ZSW7HfGlox1DbUhkumf22OQ';
 
 export async function render() {
 	 return rp({
-        uri: 'https://interactive.guim.co.uk/docsdata-test/'+altKey+'.json',
+       uri: 'https://interactive.guim.co.uk/docsdata-test/1hfZDbH8vFm-wdXEqC-qbFC_TIIJxV47-PxJaDtfg3fo.json',
         json: true
     }).then((data) => {
 

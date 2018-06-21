@@ -1,7 +1,8 @@
 <div class="card-icon {{card-color}}" {{#if image}}style="background-image: url('{{image}}')"{{/if}} ></div>
 
+<!-- <div class="card-icon-decorate {{card-color}}" ></div> -->
 <div class="gv-card-header-area">
-	<h3 class="card-head">{{card-head}}</h3>
+	<h2>{{card-head}}</h2>
 
 	
 	<h4 class="card-summary">
@@ -14,7 +15,16 @@
 {{#if card-copy}}
  <p class="card-analysis">{{{card-copy}}}</p>
 {{/if}}
+
+
 </div>
+<!-- {{#if storyLink}}
+<div class="gv-card-button-holder">
+	<a href="{{storyLink}}">
+		<div class="gv-read-more-btn" data-url="{{storyLink}}"><div class="gv-button-label">read more</div></div>
+	</a>
+</div>
+{{/if}} -->
 
 
 <!-- {{#if links}}

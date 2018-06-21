@@ -1,23 +1,15 @@
 
 
 <div class="main">
-    <div class="interactive-nav display-none">
-        <div class='interactive-nav__inner'>
-           
-            {{#groups}}
-            <div class="gv-nav-holder">
-                <a href="#group-{{groupRef}}" data-jump-to='{{groupRef}}'>{{Header}}</a>
-            </div>    
-            {{/groups}}
-        </div>
-    </div>
+    
 
     {{#groups}}
         <div class='card-group' id="group-{{groupRef}}" data-scroll>
-                <div class="card-group__header">
+            <div class="card-group__header">
                     <div class='card-group__header__text' id="group-header-{{groupRef}}">
-                        <h2 class='card-group__header__text__title'>{{Header}}</h2>
-                        <p class='card-group__header__text__description'>{{Standfirst}}</p>
+                        <!-- <h2 class='card-group__header__text__title'>{{Header}}</h2> -->
+                        <!-- <p class='card-group__header__text__description'>{{Standfirst}}</p> -->
+                        <h2>{{Standfirst}}</h2>
                     </div>
                 </div>
             {{>cardstack}}
@@ -25,9 +17,7 @@
         </div>
     {{/groups}}
 
-   <div class="gv-back-top-btn hidden display-none"></div>
+
 
 
 </div>
-<div class="gv-hidden-footer"> </div>
-

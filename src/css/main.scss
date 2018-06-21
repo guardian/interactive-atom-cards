@@ -1,31 +1,20 @@
-
-$blue: #4bc6df;//dc2a7d
-$pink: #dc2a7d;//
-$purple: #7d0068;//
-$grey: #63717a;//
-$yellow: #ffbb00;
-$green: #5ebfba;
-$neutral-light: rgb(231,231,231);
-$neutral-mid: rgb(81,81,81);
-$neutral-dark: rgb(31,31,31);
-
 @import "mq";
 @import "fonts";
+@import "palette";
+$main-accent: $sport-blue;
+$main-accent-yellow: #f7b42d;
+$paradise-yellow: #FFEC00;
+$paradise-grey: #63717A;
+$paradise-warm-grey: #3c3e3c;
+$neutral-dark:$neutral-7;
+$neutral-light:$neutral-96;
 @import "cardItem";
 @import "swiper";
 @import "uxSuite";
-
-
 // Uncomment for embeds
 //@import "embed";
-
 // Uncomment for full screen (including immersive article main media)
 @import "fullscreen";
-
 a {
-   color: #00456e; 
-}
-
-.display-none{
-	display:none !important;
+    color: #00456e;
 }
