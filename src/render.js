@@ -44,9 +44,9 @@ function formatData(data) {
         obj.objArr.map((ob) => {
         	ob.groupRef = obj.groupRef;
         })
-        console.log(obj)
+
         headGroup.map((headOb) => {
-            console.log(headOb)
+         
             if(headOb['card-group'] == obj.sortOn )  {
                 obj.Header = headOb.Header;
                 obj.Standfirst = headOb.Standfirst;

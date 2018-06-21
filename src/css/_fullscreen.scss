@@ -63,35 +63,12 @@ body {
     margin: 20px 20px;
     float: left;
 
-    &.blue {
-        background-color: rgba($blue, 0.4);
-    }
-    &.pink {
-        background-color: rgba($pink, 0.4);
-    }
-    &.yellow {
-        background-color: rgba($yellow, 0.7);
-    }
-    &.green {
-        background-color: rgba($green, 0.6);
-    }
-    &.purple {
-        background-color: rgba($purple, 0.3);
-        @include mq(tablet) {
-            width: 340px;
-        }
-        @include mq(wide) {
-            width: 406px !important;
-        }
-    }
-    &.grey {
-        background-color: rgba($grey, 0.4);
-    }
+   
     p {
         margin: 0;
         @include fs-headline(2);
         font-family: "Guardian Egyptian Web", Georgia, serif;
-        font-weight:600;
+        font-weight:normal;
     }
     @include mq(tablet) {
         // flex: 1;
@@ -159,32 +136,10 @@ div.card-icon {
 
     background-size: cover;
     background-position: center center;
-    background-color: rgba($paradise-yellow, 1);
+    background-color: #a1e1fa;
+    background-blend-mode: multiply;
     margin-right: 5px;
-    &.purple {
-        background-color: $purple;
-        border: 3px solid $purple;
-    }
-    &.blue {
-        background-color: $blue;
-        border: 3px solid $blue;
-    }
-    &.grey {
-        background-color: $grey;
-        border: 3px solid $grey;
-    }
-    &.pink {
-        background-color: $pink;
-        border: 3px solid $pink;
-    }
-    &.green {
-        background-color: $green;
-        border: 3px solid $green;
-    }
-    &.yellow {
-        background-color: $yellow;
-        border: 3px solid $yellow;
-    }
+    
 }
 
 .card-icon:before{
@@ -194,8 +149,8 @@ div.card-icon {
     width: 78px;
     top:-9px;
     left:-9px;
-    border-top: 9px solid $paradise-orange;
-    border-left: 9px solid $paradise-orange;
+    border-top: 9px solid $main-accent;
+    border-left: 9px solid $main-accent;
 }
 
 // .card-icon:after{
@@ -205,8 +160,8 @@ div.card-icon {
 //     width: 78px;
 //     top:6px;
 //     left:6px;
-//     border-right: 9px solid $paradise-orange;
-//     border-bottom: 9px solid $paradise-orange;
+//     border-right: 9px solid $main-accent;
+//     border-bottom: 9px solid $main-accent;
 // }
 
 .pagination {
@@ -227,19 +182,21 @@ div.card-icon {
     margin-bottom: 12px;
     margin-top: -2px;
     z-index: 140;
-    border-top: 1px solid $paradise-orange;
+    border-top: 1px solid $neutral-86;
     // margin-top: 6px;
     @include mq($until: tablet) {
         padding-left: 20px;
     }
     @include mq(tablet) {
-        padding-left: 20px;
+        padding: 0;
+        margin: 0 20px;
     }
     @include mq(leftCol) {
-        padding-left: 180px;
+        padding-left: 160px;
     }
     @include mq(wide) {
-        padding-left: 260px;
+        padding-left: 240px;
+        margin: 0 20px;
     }
     &__text {
         padding-top: 12px;
@@ -247,6 +204,7 @@ div.card-icon {
         max-width: 460px;
         @include mq(tablet) {
             padding-top: 6px;
+            padding-bottom: 9px;
         }
         @include mq(leftCol) {
             max-width: 380px;
@@ -260,7 +218,7 @@ div.card-icon {
             line-height: 20px !important;
             font-weight: 900;
             margin-bottom: 3px;
-            color: $paradise-orange;
+            color: $main-accent;
             @include mq(tablet) {
                 //margin-bottom: 11px;
                 // transform: translateY(5.5px);
@@ -272,13 +230,26 @@ div.card-icon {
             line-height: 26px;
             font-family: "Guardian Egyptian Web", Georgia, serif;
             font-weight: 400;
-            color: $paradise-orange;
+            color: $main-accent;
             @include mq(tablet) {
                 font-size: 36px;
                 line-height: 30px;
                 max-width: 620px;
             }
         }
+    }
+
+    h2{
+        font-size: 1.75rem;
+        line-height: 2rem;
+        font-family: "Guardian Egyptian Web",Georgia,serif;
+        font-weight: normal;
+        @include mq(tablet){
+            font-weight: 200; 
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        
     }
 }
 
@@ -427,14 +398,14 @@ figure.element.element-atom {
     line-height: 20px;
     font-family: "Guardian Egyptian Web", Georgia, serif;
     font-weight: 400;
-     color: $paradise-orange;
+     color: $main-accent;
 }
 
 h3.card-head {
      @include fs-header(4);
      line-height: 24px;
      margin: 0 10px 0 0;
-     color: $paradise-orange;
+     color: $main-accent;
 }
 
 
