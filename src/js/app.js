@@ -33,24 +33,24 @@ function initSwiper() {
                 centeredSlides: true
             })
         //uncomment to change all sliders when 1 slider updates
-        // .on('slideChangeEnd', function(currentSwiper, event) {
+        .on('slideChangeEnd', function(currentSwiper, event) {
 
-        //     swipers.forEach(function(s,i) {
-        //       var eq = (currentSwiper == s) ? true : false;
-        //       if(eq){
-        //         var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-        //         analytics.registerEvent('stack_card_view', i)
-        //       }
+            swipers.forEach(function(s,i) {
+              var eq = (currentSwiper == s) ? true : false;
+              if(eq){
+                var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+                analytics.registerEvent('stack_card_view', i)
+              }
 
-        //         if (s.activeIndex != currentSwiper.activeIndex) {
-        //           //s.activeIndex = currentSwiper.activeIndex;
-        //             s.slideTo(currentSwiper.activeIndex, 0, false);
-        //         } else {
+                if (s.activeIndex != currentSwiper.activeIndex) {
+                  //s.activeIndex = currentSwiper.activeIndex;
+                    s.slideTo(currentSwiper.activeIndex, 0, false);
+                } else {
 
 
-        //         }
-        //     });
-        // })
+                }
+            });
+        })
         .on('onTouchStart', function(currentSwiper, e) {
                 if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                     window.GuardianJSInterface.registerRelatedCardsTouch(true);
