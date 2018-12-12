@@ -10,7 +10,8 @@
     "url": "gulp url",
     "postinstall": "bower install",
     "deploylive": "gulp deploylive",
-    "deploypreview": "gulp deploypreview"
+    "deploypreview": "gulp deploypreview",
+    "paddypower": "babel-node src/server/paddypower.js"
   },
   "author": "",
   "license": "ISC",
@@ -49,8 +50,13 @@
   },
   "dependencies": {
     "handlebars": "^4.0.10",
+    "jsdom": "^13.0.0",
+    "moment": "^2.22.2",
+    "node-fetch": "^2.3.0",
+    "puppeteer": "^1.11.0",
     "request-promise": "^4.2.1",
     "rp": "^0.2.0",
-    "swiper": "^3.4.2"
+    "swiper": "^3.4.2",
+    "x-ray": "^2.3.3"
   }
 }
