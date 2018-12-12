@@ -12,7 +12,8 @@
     "deploylive": "gulp deploylive",
     "deploypreview": "gulp deploypreview",
     "paddypower": "babel-node src/server/paddypower.js",
-    "theresa": "babel-node src/server/theresa.js"
+    "theresa": "babel-node src/server/theresa.js",
+    "williamhill": "babel-node src/server/williamhill.js"
   },
   "author": "",
   "license": "ISC",
@@ -50,6 +51,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "curl-request": "^1.1.1",
     "handlebars": "^4.0.10",
     "jsdom": "^13.0.0",
     "moment": "^2.22.2",
