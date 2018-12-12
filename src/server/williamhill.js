@@ -19,7 +19,7 @@ curl
   }).then(odds => {
 
     const ts = moment().format('YYYY-MM-DD_HHmmss')
-    fs.writeFileSync(`./src/server/toryOdds_${ts}.json`, JSON.stringify(odds))
+    fs.writeFileSync(`./src/server/williamhill/toryOdds_${ts}.json`, JSON.stringify(odds))
     console.log('wrote file for', ts)
   
   })
