@@ -11,7 +11,8 @@
     "postinstall": "bower install",
     "deploylive": "gulp deploylive",
     "deploypreview": "gulp deploypreview",
-    "paddypower": "babel-node src/server/paddypower.js"
+    "paddypower": "babel-node src/server/paddypower.js",
+    "theresa": "babel-node src/server/theresa.js"
   },
   "author": "",
   "license": "ISC",
