@@ -10,7 +10,7 @@ $ux-dark: #222;
     height: 48px;
     margin-top: 36px;
     background-color:  $ux-light;
-    background-image: url(./assets/arrow.svg);
+    background-image: url('<%= path %>/assets/arrow.svg');
     border-radius: 9999px;
 
     background-size: 60%;
@@ -45,7 +45,7 @@ $ux-dark: #222;
 }
 
 .gv-back-top-btn:hover {
-    background-image: url(./assets/arrow-hover.svg);
+    background-image: url('<%= path %>/assets/arrow-hover.svg');
 }
 
 

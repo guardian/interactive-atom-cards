@@ -1,5 +1,5 @@
 
-$blue: #4bc6df;//dc2a7d
+$blue: #00b2ff;//dc2a7d
 $pink: #4bc6df;//
 $purple: #005689;//
 $grey: #4bc6df;//
@@ -14,6 +14,7 @@ $neutral-dark: rgb(31,31,31);
 @import "cardItem";
 @import "swiper";
 @import "uxSuite";
+@import "palette";
 
 
 // Uncomment for embeds
@@ -22,6 +23,147 @@ $neutral-dark: rgb(31,31,31);
 // Uncomment for full screen (including immersive article main media)
 @import "fullscreen";
 
+.ios .hide-app, .android .hide-app {
+   display: none;
+}
+
 a {
    color: #00456e; 
 }
+
+.content__main-column--interactive > p {
+   max-width: 620px;
+
+   @include mq(leftCol) {
+      margin-left: 160px !important;
+   }
+   @include mq(wide) {
+      margin-left: 240px !important;
+   }
+}
+
+//header 
+
+.content__labels {
+   width: 100% !important;
+}
+
+.content__head {
+   padding-top: 24px;
+ }
+ .content__headline {
+     @include fs-header(3);
+     display: inline;
+     padding-bottom: .1em;
+     background: linear-gradient(#121212, #121212) no-repeat;
+     box-shadow: 10px 0 0 #121212, -10px 0 0 #121212;
+     color: #fff;
+     font-size: 50px;
+     line-height: 1.34;
+     @include mq($until: desktop) {
+         font-size: 40px;
+     }
+     &:before {
+     content: ' ';
+     position: absolute;
+     top: 0;
+     min-height: 420px;
+     z-index: 0;
+     width: 1px;
+     background-color: $neutral-86;
+     top: 600px;
+     display: none;
+ 
+     @include mq(leftCol) {
+       top: 4px;
+       display: block;
+       left: 0px;
+     }
+ 
+     @include mq(wide) {
+     }
+   }
+ }
+ 
+ .content--interactive .content__labels {
+   overflow:visible;
+   position: relative;
+   margin-left: 0px;
+   padding-top: 0px;
+   margin-bottom: 2px;
+   z-index: 10;
+ }
+ 
+ .content__label__link {
+   a {
+       cursor: pointer;
+       }
+ }
+ 
+ .label__link-wrapper {
+   width: 100%;
+   background-color: $gu-news-kicker;
+   box-shadow: 6px 0 0 $gu-news-kicker, -10px 0 0 $gu-news-kicker;
+   color: white;
+   padding-bottom: 5px;
+   line-height: 34px;
+   font-size: 20px;
+   @include mq(desktop) {
+       padding-bottom: 6px;
+   }
+ 
+   @include mq(leftCol) {
+     box-shadow: 10px 0 0 $gu-news-kicker, -9px 0 0 $gu-news-kicker;
+ 
+   }
+ }
+ 
+ .content__standfirst {
+     @include fs-headline(2);
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: 200;
+     color: #333;
+     margin-top: 12px;
+     margin-bottom: 24px;
+     max-width: 80%;
+ 
+     @include mq(tablet) {
+       @include fs-headline(3);
+       font-weight: 200;
+       max-width: 540px;
+     }
+     @include mq(leftCol) {
+     margin-bottom: 24px;
+   }
+ }
+ 
+
+ .content__main, .content__head {
+   position: relative;
+ 
+   &:before {
+     position: absolute;
+     top: 0;
+ 
+     height: 100%;
+     min-height: 500px;
+     content: ' ';
+ 
+ 
+     border-left:1px solid #dfdfdf;
+ 
+     @include mq(leftCol) {
+       left: calc((100% - 1140px)/2 + 170px);
+     }
+ 
+     @include mq(wide) {
+       left: calc((100% - 1300px)/2 + 250px);
+     }
+   }
+ 
+   .byline {
+     border-top: none !important;
+     margin-top: 5px;
+   }
+ }

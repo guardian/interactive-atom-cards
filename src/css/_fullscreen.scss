@@ -13,6 +13,11 @@
             max-width: map-get($mq-breakpoints, $bp);
         }
     }
+    box-sizing: border-box;
+    @include mq(tablet) {
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+    }
 }
 
 .element-atom,
@@ -84,35 +89,36 @@ body {
 .swiper-slide {
     font-size: 18px;
     color: $neutral-dark;
-    border-radius: 6px;
+    border-radius: 0px;
     box-sizing: border-box;
     padding: 3px 8px 12px;
     width: calc(100% - 60px);
-    min-height: 300px;
-    background-color: $ux-grey;
+    min-height: 240px;
+    background-color: #f6f6f6;
+    border: 1px solid #dcdcdc; 
     &.blue {
-        background-color: rgba($blue, 0.4);
+        // background-color: rgba($blue, 0.4);
     }
     &.pink {
-        background-color: rgba($pink, 0.4);
+        // background-color: rgba($pink, 0.4);
     }
     &.yellow {
-        background-color: rgba($yellow, 0.7);
+        // background-color: rgba($yellow, 0.7);
     }
     &.green {
-        background-color: rgba($green, 0.6);
+        // background-color: rgba($green, 0.6);
     }
     &.purple {
-        background-color: rgba($purple, 0.3);
-        @include mq(tablet) {
-            width: 340px;
-        }
-        @include mq(wide) {
-            width: 406px !important;
-        }
+        // background-color: rgba($purple, 0.3);
+        // @include mq(tablet) {
+        //     width: 340px;
+        // }
+        // @include mq(wide) {
+        //     width: 406px !important;
+        // }
     }
     &.grey {
-        background-color: rgba($grey, 0.4);
+        // background-color: rgba($grey, 0.4);
     }
     p {
         margin: 0;
@@ -140,7 +146,7 @@ body {
 }
 
 .card-analysis {
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid #dcdcdc;
     padding-top: 4px
 }
 
@@ -179,29 +185,36 @@ div.card-icon {
     background-position: center center;
     background-color: rgba(231, 231, 231, 0.25);
     margin-right: 5px;
+    overflow: hidden;
+    // border: 1px solid $blue;
     &.purple {
         background-color: $purple;
-        border: 3px solid $purple;
+        // border: 3px solid $purple;
     }
     &.blue {
         background-color: $blue;
-        border: 3px solid $blue;
+        // border: 3px solid $blue;
     }
     &.grey {
         background-color: $grey;
-        border: 3px solid $grey;
+        // border: 3px solid $grey;
     }
     &.pink {
         background-color: $pink;
-        border: 3px solid $pink;
+        // border: 3px solid $pink;
     }
     &.green {
         background-color: $green;
-        border: 3px solid $green;
+        // border: 3px solid $green;
     }
     &.yellow {
         background-color: $yellow;
-        border: 3px solid $yellow;
+        // border: 3px solid $yellow;
+    }
+
+    img {
+        width: 100%;
+        mix-blend-mode: luminosity;
     }
 }
 
@@ -214,6 +227,11 @@ div.card-icon {
     }
 }
 
+.card-group {
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
 .card-group__header {
     position: relative;
     box-sizing: border-box;
@@ -223,27 +241,27 @@ div.card-icon {
     margin-bottom: 12px;
     margin-top: -2px;
     z-index: 140;
-    border-top: 1px solid #EEE;
+    border-top: 1px solid #dcdcdc;
     // margin-top: 6px;
     @include mq($until: tablet) {
-        padding-left: 20px;
+        padding-left: 10px;
     }
     @include mq(tablet) {
-        padding-left: 20px;
+        padding-left: 10px;
     }
     @include mq(leftCol) {
-        padding-left: 180px;
+        padding-left: 169px;
     }
     @include mq(wide) {
-        padding-left: 260px;
+        padding-left: 249px;
     }
     &__text {
-        padding-top: 12px;
+        padding-top: 0px;
         width: calc(80% - 10px);
         max-width: 460px;
         min-height: 60px;
         @include mq(tablet) {
-            padding-top: 6px;
+            padding-top: 0px;
             padding-bottom: 12px;
         }
         @include mq(leftCol) {
@@ -254,14 +272,22 @@ div.card-icon {
         }
         &__title {
             margin-top: 0 !important;
-            font-size: 18px !important;
-            line-height: 20px !important;
+            font-size: 18px;
+            line-height: 20px;
             font-weight: 900;
             margin-bottom: 3px;
             color: $neutral-dark;
+            padding-left: 10px; 
+            padding-top: 4px;
+            @include fs-titlepiece(1);
             @include mq(tablet) {
                 //margin-bottom: 11px;
                 // transform: translateY(5.5px);
+                @include fs-titlepiece(3);
+            }
+
+            @include mq(leftCol) {
+                border-left: 1px solid #dcdcdc;
             }
         }
         &__description {
@@ -368,12 +394,29 @@ figure.element.element-atom {
 
 .gv-nav-holder {
     display: inline-block;
-    background-color: #EEE;
-    margin: 0 6px 12px 0;
-    padding: 3px 18px;
-    border-radius: 100px;
+    // border: 1px solid #bdbdbd;
+    // margin: 0 6px 12px 0;
+    // padding: 3px 18px;
+    // border-radius: 100px;
+    color: #333;
+    font-weight: 400;
+    &:after {
+        content: " /";
+    }
+
+    &:last-of-type {
+        &:after {
+            content: "";
+        }
+    }
+
+    &:first-of-type {
+        &:before {
+            content: "Jump to: ";
+        }
+    }
+    
     a {
-        font-weight: 400;
         display: inline-block;
         color: $ux-grey;
         text-decoration: none;
@@ -381,6 +424,7 @@ figure.element.element-atom {
         @include mq(desktop) {
             padding: 0;
         }
+
         &:hover {
             color: #333;
             &::before {
@@ -413,12 +457,13 @@ figure.element.element-atom {
 
 
 .card-summary {
-    padding-bottom: 4px;
+    padding-bottom: 4px; 
     padding-top: 0;
     font-size: 16px;
     line-height: 16px;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 300;
+    @include fs-textSans(3);
+    // font-weight: bold;
+    font-weight: 400;
 }
 
 h3.card-head {
