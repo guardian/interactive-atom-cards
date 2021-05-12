@@ -50,6 +50,6 @@
     "handlebars": "^4.0.10",
     "request-promise": "^4.2.1",
     "rp": "^0.2.0",
-    "swiper": "^3.4.2"
+    "swiper": "^6.5.1"
   }
 }
